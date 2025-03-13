@@ -1,0 +1,4 @@
+- add sand as a small chance for barren combs
+- add night vision to rocky bees ONLY (for now)
+- add flower type stone for rocky bees
+- add flower type ores, for ore-specific bees

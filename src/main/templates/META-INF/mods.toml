@@ -7,7 +7,7 @@ license="GNU GPLv3"
 [[mods]]
 modId="mobees"
 version="${version}"
-displayName="MoBees"
+displayName="Mo' Bees"
 credits="binnie, thedarkcolour"
 authors="Chris Walker (noodlepfp)"
 description='''

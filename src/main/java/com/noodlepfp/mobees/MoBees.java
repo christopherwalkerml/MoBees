@@ -1,15 +1,16 @@
-package com.noodlepfp.mobeeshatched;
+package com.noodlepfp.mobees;
 
 import com.mojang.logging.LogUtils;
+import com.noodlepfp.mobees.core.client.CoreClientHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
@@ -33,6 +34,11 @@ public class MoBees
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "mobees";
+
+    public static ResourceLocation loc(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
+
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
@@ -51,13 +57,6 @@ public class MoBees
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
             .alwaysEat().nutrition(1).saturationMod(2f).build())));
 
-    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-            }).build());
 
     public MoBees(FMLJavaModLoadingContext context)
     {
@@ -78,6 +77,9 @@ public class MoBees
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+        CoreClientHandler ccHandler = new CoreClientHandler();
+        ccHandler.registerEvents(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
