@@ -44,10 +44,11 @@ public class MoreHiveGenCaveWall implements IHiveGen {
 
         BlockState blockState = level.getBlockState(pos);
         while (pos.getY() > minBuildHeight) {
-            if (blockState.is(blocks)) {
+            if (blockState.is(blocks) && canReplace(level.getBlockState(pos), level, pos)) {
                 List<BlockPos> asides = List.of(pos.east(), pos.west(), pos.north(), pos.south());
                 for (BlockPos aside : asides) {
-                    if (canReplace(level.getBlockState(aside), level, aside)) {
+                    if (level.getBlockState(aside).isAir()) {
+                        System.out.println("here !");
                         validPos.add(aside);
                         break;
                     }
@@ -56,8 +57,8 @@ public class MoreHiveGenCaveWall implements IHiveGen {
             pos.move(Direction.DOWN);
             blockState = level.getBlockState(pos);
         }
-
-        return !validPos.isEmpty() ? validPos.get(validPos.size() > 1 ? rand.nextInt(validPos.size()) : 0) : null;
+        final BlockPos hivePos = (!validPos.isEmpty() ? validPos.get(validPos.size() > 1 ? rand.nextInt(validPos.size()) : 0) : null);
+        return hivePos;
     }
 
     @Override

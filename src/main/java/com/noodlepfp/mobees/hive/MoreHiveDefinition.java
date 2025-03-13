@@ -24,10 +24,20 @@ import net.minecraftforge.common.Tags;
 
 public enum MoreHiveDefinition implements IHiveDefinition {
 
-    ROCKY(MoreBeesApicultureBlocks.BEEHIVE.get(MoreBeesBlockHiveType.ROCKY).defaultState(), 2.0F, MoreBeesSpecies.ROCKY, new MoreHiveGenCaveWall(MoreBeesTags.Blocks.ROCKY_BEE_WALL, MoreBeesTags.Blocks.ROCKY_CAVE_REPLACEABLE)) {
+    ROCKY(MoreBeesApicultureBlocks.BEEHIVE.get(MoreBeesBlockHiveType.ROCKY).defaultState(), 3.0F, MoreBeesSpecies.ROCKY, new MoreHiveGenCaveWall(MoreBeesTags.Blocks.ROCKY_BEE_WALL, MoreBeesTags.Blocks.ROCKY_CAVE_REPLACEABLE)) {
         @Override
         public boolean isGoodBiome(Holder<Biome> biome) {
-            return super.isGoodBiome(biome) && biome.is(Tags.Biomes.IS_CAVE);
+            return true;
+        }
+
+        @Override
+        public boolean isGoodHumidity(HumidityType humidity) {
+            return true;
+        }
+
+        @Override
+        public boolean isGoodTemperature(TemperatureType temperature) {
+            return true;
         }
     };
 
