@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/christopherwalkerml/MoBees/issues"
 license="GNU GPLv3"
 
 [[mods]]
-modId="mobeeshatched"
+modId="mobees"
 version="${version}"
 displayName="MoBees"
 credits="binnie, thedarkcolour"
@@ -14,35 +14,28 @@ description='''
 	More Bees for Forestry CE Mod
 	'''
 
-[[dependencies.mobeeshatched]]
-modId="minecraft"
-mandatory=true
-versionRange="${minecraftVersionRange}"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.mobeeshatched]]
+[[dependencies.mobees]]
 modId="forge"
 mandatory=true
 versionRange="${forgeVersionRange}"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.mobeeshatched]]
+[[dependencies.mobees]]
 modId="patchouli"
 mandatory=true
 versionRange="${patchouliVersionRange}"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.mobeeshatched]]
+[[dependencies.mobees]]
 modId="forestry"
 mandatory=true
 versionRange="${forestryVersionRange}"
 ordering="NONE"
 side="CLIENT"
 
-[[dependencies.mobeeshatched]]
+[[dependencies.mobees]]
 modId="jei"
 mandatory=false
 versionRange="${jeiVersionRange}"

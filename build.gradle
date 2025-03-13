@@ -8,9 +8,9 @@ plugins {
     id('com.matthewprenger.cursegradle') version '1.4.0'
 }
 
-group = "noodlepfp.mobeeshatched"
+group = "noodlepfp.mobees"
 version = mobeesVersion
-base.archivesName = "mobeeshatched-$minecraftVersion"
+base.archivesName = "mobees-$minecraftVersion"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -42,7 +42,7 @@ minecraft {
         }
 
         data {
-            args "--mod", "mobeeshatched", "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources/")
+            args "--mod", "mobees", "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources/")
         }
     }
 }
