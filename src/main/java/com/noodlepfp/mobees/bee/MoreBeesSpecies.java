@@ -22,20 +22,20 @@ public class MoreBeesSpecies {
     // public static final ResourceLocation SILVER = mobees("bee_silver"); // TODO imperial, tin/zinc/lead
     // public static final ResourceLocation PLATINUM = mobees("bee_platinum"); // TODO gold, silver
     // public static final ResourceLocation URANIUM = mobees("bee_uranium");
-    // public static final ResourceLocation CERTUS = mobees("bee_certus");
-    // public static final ResourceLocation CERTUS = mobees("bee_unusual");
+    // public static final ResourceLocation CERTUS = mobees("bee_certus"); // TODO budding, mineral
+    // public static final ResourceLocation UNUSUAL = mobees("bee_unusual");
     // public static final ResourceLocation QUANTUM = mobees("bee_quantum");
     // public static final ResourceLocation YELLORIUM = mobees("bee_yellorium");
-    public static final ResourceLocation GOLD = mobees("bee_gold"); // TODO imperial, iron/copper/nickel
-    public static final ResourceLocation LAPIS = mobees("bee_lapis"); // TODO mineral, aquatic
-    public static final ResourceLocation BUDDING = mobees("bee_budding"); // TODO mineral, lapis
-    public static final ResourceLocation AMETHYST = mobees("bee_amethyst"); // TODO mineral, budding
-    public static final ResourceLocation CRYSTALLINE = mobees("bee_crystalline"); // TODO amethyst, budding
+    public static final ResourceLocation GOLD = mobees("bee_gold");
+    public static final ResourceLocation LAPIS = mobees("bee_lapis");
+    public static final ResourceLocation REDSTONE = mobees("bee_redstone");
+    public static final ResourceLocation BUDDING = mobees("bee_budding");
+    public static final ResourceLocation AMETHYST = mobees("bee_amethyst");
+    public static final ResourceLocation CRYSTALLINE = mobees("bee_crystalline");
     public static final ResourceLocation EMERALD = mobees("bee_emerald"); // TODO crystalline, chromatic
     public static final ResourceLocation DIAMOND = mobees("bee_diamond"); // TODO crystalline, chromatic
 
     // EXCITED LINE
-    public static final ResourceLocation REDSTONE = mobees("bee_redstone"); // TODO mineral, valiant
     public static final ResourceLocation LIVELY = mobees("bee_lively"); // TODO redstone, diligent
     public static final ResourceLocation EXCITED = mobees("bee_excited"); // TODO redstone, lively
     public static final ResourceLocation ENERGETIC = mobees("bee_energetic"); // TODO excited, divine

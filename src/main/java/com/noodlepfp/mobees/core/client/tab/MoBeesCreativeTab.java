@@ -27,7 +27,7 @@ public class MoBeesCreativeTab {
     private static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBees.loc("core"));
 
     public static final FeatureCreativeTab MOBEES = REGISTRY.creativeTab("mobees", tab -> {
-        tab.icon(() -> SpeciesUtil.BEE_TYPE.get().createStack(MoreBeesSpecies.COPPER, BeeLifeStage.QUEEN));
+        tab.icon(() -> SpeciesUtil.BEE_TYPE.get().createStack(MoreBeesSpecies.CRYSTALLINE, BeeLifeStage.QUEEN));
         tab.displayItems(MoBeesCreativeTab::addApicultureItems);
         tab.withTabsBefore(ForestryCreativeTabs.FORESTRY.getKey());
         tab.withTabsAfter(ForestryCreativeTabs.ARBORICULTURE.getKey());

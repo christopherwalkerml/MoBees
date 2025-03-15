@@ -13,8 +13,19 @@
       "item": "forestry:honey_drop"
     },
     {
+      "chance": 0.2,
+      "item": "mobees:copper_bit",
+      "count": 3
+    },
+    {
+      "chance": 0.5,
+      "item": "mobees:copper_bit",
+      "count": 2
+    },
+    {
       "chance": 1,
-      "item": "mobees:copper_bit"
+      "item": "mobees:copper_bit",
+      "count": 1
     }
   ],
   "time": 20

@@ -15,10 +15,14 @@ public class MoreBeesTaxa {
     public static final String SPECIES_BUDDING = "Budding";
     public static final String SPECIES_AMETHYST = "Amethyst";
     public static final String SPECIES_CRYSTALLINE = "Crystalline";
+    public static final String SPECIES_EMERALD = "Emerald";
+    public static final String SPECIES_DIAMOND = "Diamond";
     public static final String GENUS_ROCKY = "Rocky";
     public static final String GENUS_MINERAL = "Mineral";
     public static final String GENUS_METALLIC = "Metallic";
-    public static final String GENUS_PIGMENTED = "Pigmented";
+    public static final String GENUS_PRECIOUSMETALLIC = "Precious Metallic";
+    public static final String GENUS_REDSTONE = "Redstone";
+    public static final String GENUS_BUDDING = "Budding";
     public static final String GENUS_CRYSTALLINE = "Crystalline";
 
 }

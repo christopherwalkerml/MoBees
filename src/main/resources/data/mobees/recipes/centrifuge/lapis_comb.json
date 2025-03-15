@@ -1,7 +1,7 @@
 {
   "type": "forestry:centrifuge",
   "input": {
-    "item": "mobees:bee_comb_iron"
+    "item": "mobees:bee_comb_lapis"
   },
   "products": [
     {
@@ -13,18 +13,13 @@
       "item": "forestry:honey_drop"
     },
     {
-      "chance": 0.2,
-      "item": "mobees:iron_bit",
-      "count": 3
-    },
-    {
       "chance": 0.5,
-      "item": "mobees:iron_bit",
+      "item": "minecraft:lapis_lazuli",
       "count": 2
     },
     {
       "chance": 1,
-      "item": "mobees:iron_bit",
+      "item": "minecraft:lapis_lazuli",
       "count": 1
     }
   ],
