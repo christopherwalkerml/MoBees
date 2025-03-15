@@ -1,9 +1,8 @@
-package com.noodlepfp.mobees.features;
+package com.noodlepfp.mobees.feature;
 
 import com.noodlepfp.mobees.MoBees;
 import com.noodlepfp.mobees.item.MoreBeesItemBeeProduce;
 import com.noodlepfp.mobees.item.MoreBeesEnumBeeProduce;
-import forestry.core.items.ItemCraftingMaterial;
 import forestry.modules.features.FeatureItemGroup;
 import forestry.modules.features.FeatureProvider;
 import forestry.modules.features.IFeatureRegistry;

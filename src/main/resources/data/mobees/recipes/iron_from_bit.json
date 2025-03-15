@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mobees:iron_bit"
+    },
+    {
+      "item": "mobees:iron_bit"
+    },
+    {
+      "item": "mobees:iron_bit"
+    },
+    {
+      "item": "mobees:iron_bit"
+    },
+    {
+      "item": "mobees:iron_bit"
+    },
+    {
+      "item": "mobees:iron_bit"
+    },
+    {
+      "item": "mobees:iron_bit"
+    },
+    {
+      "item": "mobees:iron_bit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:iron_ingot"
+  }
+}

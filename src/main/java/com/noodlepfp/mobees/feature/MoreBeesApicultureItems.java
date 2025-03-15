@@ -1,4 +1,4 @@
-package com.noodlepfp.mobees.features;
+package com.noodlepfp.mobees.feature;
 
 import com.noodlepfp.mobees.MoBees;
 import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;

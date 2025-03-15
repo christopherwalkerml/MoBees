@@ -1,0 +1,45 @@
+{
+  "type": "forestry:centrifuge",
+  "input": {
+    "item": "mobees:bee_comb_harmonic"
+  },
+  "products": [
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_blocks"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_chirp"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_far"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_mall"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_mellohi"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_stal"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_strad"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_ward"
+    },
+    {
+      "chance": 0.01,
+      "item": "minecraft:music_disc_wait"
+    }
+  ],
+  "time": 20
+}

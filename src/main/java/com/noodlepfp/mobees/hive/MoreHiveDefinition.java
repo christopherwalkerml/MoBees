@@ -2,7 +2,7 @@ package com.noodlepfp.mobees.hive;
 
 import com.noodlepfp.mobees.bee.MoreBeesSpecies;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
-import com.noodlepfp.mobees.features.MoreBeesApicultureBlocks;
+import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.apiculture.hives.IHiveDefinition;
 import forestry.api.apiculture.hives.IHiveGen;
@@ -20,7 +20,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 
 public enum MoreHiveDefinition implements IHiveDefinition {
 

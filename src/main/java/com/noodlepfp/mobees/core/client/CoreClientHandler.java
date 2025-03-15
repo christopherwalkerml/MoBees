@@ -1,6 +1,6 @@
 package com.noodlepfp.mobees.core.client;
 
-import com.noodlepfp.mobees.features.MoreBeesApicultureItems;
+import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import forestry.api.ForestryConstants;
 import forestry.api.apiculture.genetics.BeeLifeStage;
 import forestry.api.apiculture.genetics.IBeeSpecies;

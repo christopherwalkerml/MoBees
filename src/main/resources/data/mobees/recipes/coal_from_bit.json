@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mobees:coal_bit"
+    },
+    {
+      "item": "mobees:coal_bit"
+    },
+    {
+      "item": "mobees:coal_bit"
+    },
+    {
+      "item": "mobees:coal_bit"
+    },
+    {
+      "item": "mobees:coal_bit"
+    },
+    {
+      "item": "mobees:coal_bit"
+    },
+    {
+      "item": "mobees:coal_bit"
+    },
+    {
+      "item": "mobees:coal_bit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:coal_ingot"
+  }
+}

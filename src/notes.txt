@@ -14,10 +14,12 @@ base combs + drops :
  - mellow : dew, quartz, wax
  - kaolin : clay, drop
 // TODO
-- add night vision to rocky bees ONLY (for now)
-- add flower type stone for rocky bees
-- add flower type ores, for ore-specific bees
+- DONE - add night vision to rocky bees ONLY (for now)
+- DONE - add flower type stone for rocky bees
+- DONE - add flower type ores, for ore-specific bees
 - add jubilance for ore bees. they should be at their optimal ore spawn level for jubilance - extends IBeeJubilance ?
+- add magic bee sprite for some special bees
+- harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
 
 ideas for new bee types..
 - crystalline - needs amethyst buds as flowers, a blocker for the gem line

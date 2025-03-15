@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mobees:diamond_shard"
+    },
+    {
+      "item": "mobees:diamond_shard"
+    },
+    {
+      "item": "mobees:diamond_shard"
+    },
+    {
+      "item": "mobees:diamond_shard"
+    },
+    {
+      "item": "mobees:diamond_shard"
+    },
+    {
+      "item": "mobees:diamond_shard"
+    },
+    {
+      "item": "mobees:diamond_shard"
+    },
+    {
+      "item": "mobees:diamond_shard"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:diamond"
+  }
+}

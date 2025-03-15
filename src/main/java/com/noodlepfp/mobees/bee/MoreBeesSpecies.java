@@ -32,8 +32,8 @@ public class MoreBeesSpecies {
     public static final ResourceLocation BUDDING = mobees("bee_budding");
     public static final ResourceLocation AMETHYST = mobees("bee_amethyst");
     public static final ResourceLocation CRYSTALLINE = mobees("bee_crystalline");
-    public static final ResourceLocation EMERALD = mobees("bee_emerald"); // TODO crystalline, chromatic
-    public static final ResourceLocation DIAMOND = mobees("bee_diamond"); // TODO crystalline, chromatic
+    public static final ResourceLocation EMERALD = mobees("bee_emerald");
+    public static final ResourceLocation DIAMOND = mobees("bee_diamond");
 
     // EXCITED LINE
     public static final ResourceLocation LIVELY = mobees("bee_lively"); // TODO redstone, diligent
@@ -79,10 +79,10 @@ public class MoreBeesSpecies {
 
     // MARBLE LINE
     public static final ResourceLocation MARBLE = mobees("bee_marble");
-    public static final ResourceLocation SCULPTED = mobees("bee_sculpted"); // TODO marble, diligent
-    public static final ResourceLocation CLASSICAL = mobees("bee_classical"); // TODO sculpted, imperial
-    public static final ResourceLocation DIVINE = mobees("bee_divine"); // TODO classical, amethyst
-    public static final ResourceLocation HARMONIC = mobees("bee_harmonic"); // TODO divine, hermitic
+    public static final ResourceLocation SCULPTED = mobees("bee_sculpted");
+    public static final ResourceLocation CLASSICAL = mobees("bee_classical");
+    public static final ResourceLocation DIVINE = mobees("bee_divine");
+    public static final ResourceLocation HARMONIC = mobees("bee_harmonic");
 
     // RGBEE LINE
     public static final ResourceLocation CHROMATIC = mobees("bee_chromatic"); // TODO crystalline, divine

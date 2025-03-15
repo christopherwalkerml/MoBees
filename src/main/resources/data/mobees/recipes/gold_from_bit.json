@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mobees:gold_bit"
+    },
+    {
+      "item": "mobees:gold_bit"
+    },
+    {
+      "item": "mobees:gold_bit"
+    },
+    {
+      "item": "mobees:gold_bit"
+    },
+    {
+      "item": "mobees:gold_bit"
+    },
+    {
+      "item": "mobees:gold_bit"
+    },
+    {
+      "item": "mobees:gold_bit"
+    },
+    {
+      "item": "mobees:gold_bit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:gold_ingot"
+  }
+}
