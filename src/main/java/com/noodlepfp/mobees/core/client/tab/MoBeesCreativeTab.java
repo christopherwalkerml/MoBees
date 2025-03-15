@@ -1,8 +1,10 @@
 package com.noodlepfp.mobees.core.client.tab;
 
 import com.noodlepfp.mobees.MoBees;
+import com.noodlepfp.mobees.bee.MoreBeesSpecies;
 import com.noodlepfp.mobees.features.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.features.MoreBeesApicultureItems;
+import com.noodlepfp.mobees.features.MoreBeesItems;
 import com.noodlepfp.mobees.hive.MoreBeesBlockHiveType;
 import forestry.api.apiculture.ForestryBeeSpecies;
 import forestry.api.apiculture.genetics.BeeLifeStage;
@@ -10,6 +12,7 @@ import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.genetics.ILifeStage;
 import forestry.apiculture.blocks.BlockHiveType;
 import forestry.apiculture.features.ApicultureBlocks;
+import forestry.core.features.CoreItems;
 import forestry.core.tab.ForestryCreativeTabs;
 import forestry.core.utils.SpeciesUtil;
 import forestry.modules.features.FeatureCreativeTab;
@@ -24,7 +27,7 @@ public class MoBeesCreativeTab {
     private static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBees.loc("core"));
 
     public static final FeatureCreativeTab MOBEES = REGISTRY.creativeTab("mobees", tab -> {
-        tab.icon(() -> SpeciesUtil.BEE_TYPE.get().createStack(ForestryBeeSpecies.FOREST, BeeLifeStage.QUEEN));
+        tab.icon(() -> SpeciesUtil.BEE_TYPE.get().createStack(MoreBeesSpecies.COPPER, BeeLifeStage.QUEEN));
         tab.displayItems(MoBeesCreativeTab::addApicultureItems);
         tab.withTabsBefore(ForestryCreativeTabs.FORESTRY.getKey());
         tab.withTabsAfter(ForestryCreativeTabs.ARBORICULTURE.getKey());
@@ -52,5 +55,7 @@ public class MoBeesCreativeTab {
                 }
             }
         }
+
+        MoreBeesItems.CRAFTING_MATERIALS.getItems().forEach(items::accept);
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "forestry:centrifuge",
+  "input": {
+    "item": "mobees:bee_comb_copper"
+  },
+  "products": [
+    {
+      "chance": 0.8,
+      "item": "forestry:beeswax"
+    },
+    {
+      "chance": 0.6,
+      "item": "forestry:honey_drop"
+    },
+    {
+      "chance": 1,
+      "item": "mobees:copper_bit"
+    }
+  ],
+  "time": 20
+}

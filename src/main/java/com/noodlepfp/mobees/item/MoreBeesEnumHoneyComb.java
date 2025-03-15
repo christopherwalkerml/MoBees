@@ -7,25 +7,32 @@ import net.minecraft.util.StringRepresentable;
 import java.awt.*;
 import java.util.Locale;
 
-public enum MBEnumHoneyComb implements StringRepresentable, IItemSubtype, IBlockSubtype {
+public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, IBlockSubtype {
 
-    BARREN(new Color(7564356), new Color(12762791)),
     BONE(new Color(12895407), new Color(14606017)),
+    ROCKY(new Color(9211025), new Color(13027020)),
+    MINERAL(new Color(9211025), new Color(0x91877A)),
     COAL(new Color(10392696), new Color(3682590)),
-    ROCKY(new Color(9211025), new Color(13027020));
-
-    public static final MBEnumHoneyComb[] VALUES = values();
+    COPPER(new Color(0x9F9F9F), new Color(0xE17C38)),
+    IRON(new Color(0x9F9F9F), new Color(0xE3E3E3)),
+    GOLD(new Color(0x9F9F9F), new Color(0xE5C447)),
+    LAPIS(new Color(0x9F9F9F), new Color(0x4A3DF1)),
+    REDSTONE(new Color(0x9F9F9F), new Color(0xF33838)),
+    AMETHYST(new Color(0x9F9F9F), new Color(0xB373EC)),
+    DIAMOND(new Color(0x9F9F9F), new Color(0x78D8EE)),
+    EMERALD(new Color(0x9F9F9F), new Color(0x77FF79));
+    public static final MoreBeesEnumHoneyComb[] VALUES = values();
 
     public final String name;
     public final int primaryColor;
     public final int secondaryColor;
     private final boolean unused;
 
-    MBEnumHoneyComb(Color primary, Color secondary) {
+    MoreBeesEnumHoneyComb(Color primary, Color secondary) {
         this(primary, secondary, false);
     }
 
-    MBEnumHoneyComb(Color primary, Color secondary, boolean unused) {
+    MoreBeesEnumHoneyComb(Color primary, Color secondary, boolean unused) {
         this.unused = unused;
         this.name = toString().toLowerCase(Locale.ENGLISH);
         this.primaryColor = primary.getRGB();
@@ -42,7 +49,7 @@ public enum MBEnumHoneyComb implements StringRepresentable, IItemSubtype, IBlock
         return name;
     }
 
-    public static MBEnumHoneyComb get(int meta) {
+    public static MoreBeesEnumHoneyComb get(int meta) {
         if (meta >= VALUES.length) {
             meta = 0;
         }

@@ -3,12 +3,10 @@ package com.noodlepfp.mobees.bee;
 import com.noodlepfp.mobees.MoBees;
 import com.noodlepfp.mobees.features.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.hive.MoreHiveDefinition;
-import com.noodlepfp.mobees.item.MBEnumHoneyComb;
-import forestry.api.apiculture.ForestryBeeSpecies;
+import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
 import forestry.api.plugin.IApicultureRegistration;
 import forestry.api.plugin.IForestryPlugin;
 import forestry.api.plugin.IGeneticRegistration;
-import forestry.apiculture.hives.HiveDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,10 +24,10 @@ public class MoreBeesPlugin implements IForestryPlugin {
     public void registerApiculture(@SuppressWarnings("null") IApicultureRegistration apiculture) {
         MoreBeesDefinition.defineNewBees(apiculture);
 
-        Supplier<List<ItemStack>> petrifiedComb = getHoneyComb(MBEnumHoneyComb.ROCKY);
+        Supplier<List<ItemStack>> petrifiedComb = getHoneyComb(MoreBeesEnumHoneyComb.ROCKY);
         apiculture.registerHive(MoreBeesSpecies.ROCKY, MoreHiveDefinition.ROCKY)
                 .addDrop(0.80, MoreBeesSpecies.ROCKY, petrifiedComb, 0.5F)
-                .addDrop(0.08, ForestryBeeSpecies.VALIANT, petrifiedComb);
+                .addDrop(0.20, MoreBeesSpecies.MARBLE, petrifiedComb);
     }
 
     @Override
@@ -38,7 +36,7 @@ public class MoreBeesPlugin implements IForestryPlugin {
         MoreBeesTaxonomy.defineTaxa(genetics);
     }
 
-    private static Supplier<List<ItemStack>> getHoneyComb(MBEnumHoneyComb type) {
+    private static Supplier<List<ItemStack>> getHoneyComb(MoreBeesEnumHoneyComb type) {
         return () -> List.of(MoreBeesApicultureItems.BEE_COMBS.stack(type));
     }
 }
