@@ -9,7 +9,7 @@ import java.util.Locale;
 
 public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, IBlockSubtype {
 
-    BONE(new Color(12895407), new Color(14606017)),
+    // BONE(new Color(12895407), new Color(14606017)),
     ROCKY(new Color(9211025), new Color(13027020)),
     MINERAL(new Color(9211025), new Color(0x91877A)),
     COAL(new Color(10392696), new Color(3682590)),

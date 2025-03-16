@@ -6,7 +6,7 @@
 - add magic bee sprite for some special bees
 - DONE - harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
  - alveary sun lamp should glow in game when on?
- - alveary mutator should consume some mutation accelerator item
+ - alveary mutator should consume some mutation accelerator item (or fluid, canister for base game)
 
 ideas for new bee types..
 - malicious/witchy bee - produces witch products
@@ -17,3 +17,6 @@ ideas for new bee types..
   - done species
 
 - librarian bee - fills nearby bookshelves with books.. small chance of enchanted ones
+
+// TODO - make notes / descriptions for items
+- alveary mutator, compounding 1.5x, but caps at 3x.

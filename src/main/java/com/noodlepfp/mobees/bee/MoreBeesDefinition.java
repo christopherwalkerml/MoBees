@@ -63,7 +63,7 @@ public class MoreBeesDefinition {
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COAL), 0.1f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COAL), 0.05f)
-                .addSpecialty(MoreBeesItems.CRAFTING_MATERIALS.stack(MoreBeesEnumBeeProduce.COPPER_BIT), 0.05f)
+                .addSpecialty(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.COPPER_BIT), 0.05f)
                 .setTemperature(TemperatureType.COLD)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_COAL);
@@ -86,7 +86,7 @@ public class MoreBeesDefinition {
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COPPER), 0.06f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COPPER), 0.03f)
-                .addSpecialty(MoreBeesItems.CRAFTING_MATERIALS.stack(MoreBeesEnumBeeProduce.COPPER_BIT), 0.03f)
+                .addSpecialty(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.COPPER_BIT), 0.03f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_COPPER);
                 })
@@ -100,7 +100,7 @@ public class MoreBeesDefinition {
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.IRON), 0.05f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.IRON), 0.025f)
-                .addSpecialty(MoreBeesItems.CRAFTING_MATERIALS.stack(MoreBeesEnumBeeProduce.IRON_BIT), 0.025f)
+                .addSpecialty(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.IRON_BIT), 0.025f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_IRON);
                 })
@@ -114,7 +114,7 @@ public class MoreBeesDefinition {
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.GOLD), 0.07f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.GOLD), 0.035f)
-                .addSpecialty(MoreBeesItems.CRAFTING_MATERIALS.stack(MoreBeesEnumBeeProduce.IRON_BIT), 0.035f)
+                .addSpecialty(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.IRON_BIT), 0.035f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_GOLD);
                 })
@@ -201,7 +201,7 @@ public class MoreBeesDefinition {
                 .setBody(new Color(0x77FF79))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.EMERALD), 0.02f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.EMERALD), 0.01f)
-                .addSpecialty(MoreBeesItems.CRAFTING_MATERIALS.stack(MoreBeesEnumBeeProduce.EMERALD_SHARD), 0.01f)
+                .addSpecialty(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.EMERALD_SHARD), 0.01f)
                 .setTemperature(TemperatureType.COLD)
                 .setHumidity(HumidityType.DAMP)
                 .setGenome(genome -> {
@@ -216,7 +216,7 @@ public class MoreBeesDefinition {
                 .setBody(new Color(8371706))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DIAMOND), 0.01f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DIAMOND), 0.005f)
-                .addSpecialty(MoreBeesItems.CRAFTING_MATERIALS.stack(MoreBeesEnumBeeProduce.DIAMOND_SHARD), 0.005f)
+                .addSpecialty(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.DIAMOND_SHARD), 0.005f)
                 .setTemperature(TemperatureType.COLD)
                 .setHumidity(HumidityType.DAMP)
                 .setGenome(genome -> {

@@ -1,6 +1,8 @@
 package com.noodlepfp.mobees.core.client;
 
+import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
+import com.noodlepfp.mobees.feature.MoreBeesCrateItems;
 import forestry.api.ForestryConstants;
 import forestry.api.apiculture.genetics.BeeLifeStage;
 import forestry.api.apiculture.genetics.IBeeSpecies;
@@ -27,6 +29,7 @@ public class CoreClientHandler implements IClientModuleHandler {
 		modBus.addListener(CoreClientHandler::additionalBakedModels);
 		modBus.addListener(CoreClientHandler::bakeModels);
 		modBus.addListener(CoreClientHandler::registerItemColors);
+		modBus.addListener(CoreClientHandler::registerBlockColors);
 
 		ModuleUtil.getModBus(ForestryConstants.MOD_ID).addListener(EventPriority.HIGHEST, ((ForestryClientApiImpl) IForestryClientApi.INSTANCE)::initializeTextureManager);
 	}
@@ -47,6 +50,11 @@ public class CoreClientHandler implements IClientModuleHandler {
 		ClientManager.INSTANCE.onBakeModels(event);
 	}
 
+	private static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+		// Apiculture
+		event.register(ClientManager.FORESTRY_BLOCK_COLOR, MoreBeesApicultureBlocks.BEE_COMB.blockArray());
+	}
+
 	private static void registerItemColors(RegisterColorHandlersEvent.Item event) {
 		// Apiculture
 		event.register(ClientManager.FORESTRY_ITEM_COLOR,
@@ -55,9 +63,9 @@ public class CoreClientHandler implements IClientModuleHandler {
 				ApicultureItems.BEE_PRINCESS.item(),
 				ApicultureItems.BEE_LARVAE.item()
 		);
-		event.register(ClientManager.FORESTRY_ITEM_COLOR, ApicultureItems.HONEY_DROP.item());
-		event.register(ClientManager.FORESTRY_ITEM_COLOR, ApicultureItems.PROPOLIS.itemArray());
-		event.register(ClientManager.FORESTRY_ITEM_COLOR, ApicultureItems.POLLEN_CLUSTER.itemArray());
+
+		event.register(ClientManager.FORESTRY_ITEM_COLOR, MoreBeesApicultureBlocks.BEE_COMB.blockArray());
+		event.register(ClientManager.FORESTRY_ITEM_COLOR, MoreBeesCrateItems.CRATED_BEE_COMBS.itemArray());
 		event.register(ClientManager.FORESTRY_ITEM_COLOR, MoreBeesApicultureItems.BEE_COMBS.itemArray());
 	}
 }

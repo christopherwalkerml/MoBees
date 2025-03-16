@@ -1,9 +1,11 @@
 package com.noodlepfp.mobees.feature;
 
 import com.noodlepfp.mobees.MoBees;
+import com.noodlepfp.mobees.item.MoreBeesEnumCraftingMaterial;
 import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
 import com.noodlepfp.mobees.item.MoreBeesItemHoneyComb;
-import forestry.apiculture.items.ItemHiveFrame;
+import com.noodlepfp.mobees.item.MoreBeesItemCraftingMaterial;
+import forestry.core.items.ItemCraftingMaterial;
 import forestry.modules.features.*;
 
 @FeatureProvider

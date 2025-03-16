@@ -43,7 +43,7 @@ public class MoreBeesSpecies {
     // EXTRA RELIC BRANCH
     //public static final ResourceLocation BONE = mobees("bee_bone");
     //public static final ResourceLocation MUMMY = mobees("bee_mummy");
-    //public static final ResourceLocation MUMMY = mobees("bee_archaic");
+    //public static final ResourceLocation PREHISTORIC = mobees("bee_prehistoric");
 
     // NUCLEAR LINE
     // public static final ResourceLocation UNSTABLE = mobees("bee_unstable");

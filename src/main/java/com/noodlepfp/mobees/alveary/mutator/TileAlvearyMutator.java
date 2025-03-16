@@ -18,9 +18,9 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         @Override
         public float modifyMutationChance(IGenome genome, IGenome mate, IMutation<IBeeSpecies> mutation, float currentChance) {
             if (getWorkingTime() > 0) {
-                return currentChance * 2;
+                return Math.min(currentChance * 1.5f, 5.0f);
             }
-            return currentChance * 0;
+            return 1.0f;
         }
     };
 
