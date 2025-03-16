@@ -1,8 +1,8 @@
-package com.noodlepfp.mobees.alveary.drain;
+package com.noodlepfp.mobees.alveary;
 
-import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.MoreBeesTileAlveary;
-import forestry.api.apiculture.IBeeModifier;
+import forestry.api.apiculture.genetics.BeeLifeStage;
+import forestry.api.apiculture.genetics.IBee;
+import forestry.api.genetics.capability.IIndividualHandlerItem;
 import forestry.api.multiblock.IAlvearyComponent;
 import forestry.apiculture.blocks.BlockAlveary;
 import forestry.apiculture.multiblock.MultiblockLogicAlveary;
@@ -13,6 +13,7 @@ import forestry.energy.ForestryEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -20,43 +21,50 @@ import net.minecraftforge.common.util.LazyOptional;
 
 import javax.annotation.Nullable;
 
-public class TileAlvearyDrain extends MoreBeesTileAlveary implements IActivatable, IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
-
-
-    private static final int TICKS_PER_CYCLE = 1;
-    private static final int FE_PER_OPERATION = 100;
+public class MoreBeesTileActivatable extends MoreBeesTileAlveary implements IActivatable, IAlvearyComponent.Active<MultiblockLogicAlveary> {
 
     private final ForestryEnergyStorage energyStorage;
     private final LazyOptional<ForestryEnergyStorage> energyCap;
 
     private int workingTime = 0;
+    private int ticksPerOp;
+    private int fePerOp;
+    private final String actionVerb;
 
-    private final IBeeModifier MODIFIER = new IBeeModifier() {
-        @Override
-        public boolean isSealed() {
-            if (workingTime < 20 && EnergyHelper.consumeEnergyToDoWork(energyStorage, TICKS_PER_CYCLE, FE_PER_OPERATION)) {
-                // one tick of work for every 20 RF
-                workingTime += FE_PER_OPERATION / 20;
-            }
+    public MoreBeesTileActivatable(MoreBeesBlockAlvearyType blockType, BlockPos pos, BlockState state, String actionVerb, int ticksPerOp, int fePerOp) {
+        super(blockType, pos, state);
 
-            if (workingTime > 0) {
-                workingTime--;
-                return true;
-            }
-            return false;
-        }
-    };
-
-    public TileAlvearyDrain(BlockPos pos, BlockState state) {
-        super(MoreBeesBlockAlvearyType.SUN, pos, state);
-
+        this.ticksPerOp = ticksPerOp;
+        this.fePerOp = fePerOp;
+        this.actionVerb = actionVerb;
         this.energyStorage = new ForestryEnergyStorage(1000, 2000, EnergyTransferMode.RECEIVE);
         this.energyCap = LazyOptional.of(() -> this.energyStorage);
     }
 
+    public int getWorkingTime() {
+        return workingTime;
+    }
+
+    public ForestryEnergyStorage getEnergyStorage() {
+        return energyStorage;
+    }
+
     @Override
-    public IBeeModifier getBeeModifier() {
-        return MODIFIER;
+    public void updateServer(int tickCount) {
+        if (workingTime < 20 && EnergyHelper.consumeEnergyToDoWork(getEnergyStorage(), ticksPerOp, fePerOp)) {
+            // one tick of work for every 20 RF
+            workingTime += fePerOp / 10;
+        }
+        if (workingTime > 0) {
+            workingTime--;
+            setActive(true);
+        } else {
+            setActive(false);
+        }
+    }
+
+    @Override
+    public void updateClient(int tickCount) {
     }
 
     /* LOADING & SAVING */
@@ -64,14 +72,14 @@ public class TileAlvearyDrain extends MoreBeesTileAlveary implements IActivatabl
     public void load(CompoundTag compoundNBT) {
         super.load(compoundNBT);
         energyStorage.read(compoundNBT);
-        workingTime = compoundNBT.getInt("Heating");
+        workingTime = compoundNBT.getInt(actionVerb);
     }
 
     @Override
     public void saveAdditional(CompoundTag compoundNBT) {
         super.saveAdditional(compoundNBT);
         energyStorage.write(compoundNBT);
-        compoundNBT.putInt("Heating", workingTime);
+        compoundNBT.putInt(actionVerb, workingTime);
     }
 
     /* Network */
@@ -105,4 +113,5 @@ public class TileAlvearyDrain extends MoreBeesTileAlveary implements IActivatabl
         }
         return super.getCapability(capability, facing);
     }
+
 }

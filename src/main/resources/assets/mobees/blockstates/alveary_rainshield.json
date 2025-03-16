@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "state=on": {
+      "model": "mobees:block/alveary_rainshield_on"
+    },
+    "state=off": {
+      "model": "mobees:block/alveary_rainshield_off"
+    }
+  }
+}

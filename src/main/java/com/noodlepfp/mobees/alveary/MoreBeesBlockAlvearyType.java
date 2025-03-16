@@ -9,8 +9,8 @@ import java.util.Locale;
 public enum MoreBeesBlockAlvearyType implements IBlockSubtype {
 
     SUN(true),
-    MUTATOR(false),
-    DRAIN(true);
+    MUTATOR(true),
+    RAINSHIELD(true);
 
     public final boolean activatable;
 
@@ -32,7 +32,7 @@ public enum MoreBeesBlockAlvearyType implements IBlockSubtype {
         return switch (this) {
             case SUN -> MoreBeesApicultureTiles.ALVEARY_SUN;
             case MUTATOR -> MoreBeesApicultureTiles.ALVEARY_MUTATOR;
-            case DRAIN -> MoreBeesApicultureTiles.ALVEARY_DRAIN;
+            case RAINSHIELD -> MoreBeesApicultureTiles.ALVEARY_RAINSHIELD;
         };
     }
 

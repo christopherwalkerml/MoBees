@@ -1,22 +1,18 @@
-package com.noodlepfp.mobees.alveary.sun;
+package com.noodlepfp.mobees.alveary.rainshield;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import forestry.api.apiculture.IBeeModifier;
-import forestry.api.genetics.IGenome;
 import forestry.api.multiblock.IAlvearyComponent;
 import forestry.apiculture.multiblock.MultiblockLogicAlveary;
-import forestry.energy.EnergyHelper;
-import forestry.energy.EnergyTransferMode;
-import forestry.energy.ForestryEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TileAlvearySun extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
+public class TileAlvearyRainShield extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
-        public boolean isAlwaysActive(IGenome genome) {
+        public boolean isSealed() {
             if (getWorkingTime() > 0) {
                 return true;
             }
@@ -24,8 +20,8 @@ public class TileAlvearySun extends MoreBeesTileActivatable implements IAlvearyC
         }
     };
 
-    public TileAlvearySun(BlockPos pos, BlockState state) {
-        super(MoreBeesBlockAlvearyType.SUN, pos, state, "Shining", 1, 300);
+    public TileAlvearyRainShield(BlockPos pos, BlockState state) {
+        super(MoreBeesBlockAlvearyType.RAINSHIELD, pos, state, "Rainproofing", 1, 200);
     }
 
     @Override

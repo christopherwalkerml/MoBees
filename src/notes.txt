@@ -5,6 +5,8 @@
 - add jubilance for ore bees. they should be at their optimal ore spawn level for jubilance - extends IBeeJubilance ?
 - add magic bee sprite for some special bees
 - DONE - harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
+ - alveary sun lamp should glow in game when on?
+ - alveary mutator should consume some mutation accelerator item
 
 ideas for new bee types..
 - malicious/witchy bee - produces witch products
