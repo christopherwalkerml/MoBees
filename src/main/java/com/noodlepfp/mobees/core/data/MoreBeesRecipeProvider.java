@@ -22,6 +22,7 @@ import forestry.core.fluids.ForestryFluids;
 import forestry.core.items.definitions.EnumCraftingMaterial;
 import forestry.core.items.definitions.EnumElectronTube;
 import forestry.core.utils.ModUtil;
+import forestry.storage.features.CrateItems;
 import forestry.storage.items.ItemCrated;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -91,9 +92,9 @@ public class MoreBeesRecipeProvider {
     }
 
     private static void registerCombRecipes(MKRecipeProvider recipes) {
-        for (EnumHoneyComb honeyComb : EnumHoneyComb.VALUES) {
-            ItemLike comb = ApicultureItems.BEE_COMBS.get(honeyComb);
-            Block combBlock = ApicultureBlocks.BEE_COMB.get(honeyComb).block();
+        for (MoreBeesEnumHoneyComb honeyComb : MoreBeesEnumHoneyComb.VALUES) {
+            ItemLike comb = MoreBeesApicultureItems.BEE_COMBS.get(honeyComb);
+            Block combBlock = MoreBeesApicultureBlocks.BEE_COMB.get(honeyComb).block();
             recipes.grid2x2(RecipeCategory.BUILDING_BLOCKS, combBlock, 1, Ingredient.of(comb), "combs");
         }
     }
@@ -105,7 +106,7 @@ public class MoreBeesRecipeProvider {
         new CarpenterRecipeBuilder()
                 .setPackagingTime(Constants.CARPENTER_CRATING_CYCLES)
                 .setLiquid(new FluidStack(Fluids.WATER, Constants.CARPENTER_CRATING_LIQUID_QUANTITY))
-                .setBox(Ingredient.of(MoreBeesCrateItems.CRATE))
+                .setBox(Ingredient.of(CrateItems.CRATE))
                 .recipe(ShapedRecipeBuilder.shaped(RecipeCategory.MISC, crated, 1)
                         .pattern("###")
                         .pattern("###")

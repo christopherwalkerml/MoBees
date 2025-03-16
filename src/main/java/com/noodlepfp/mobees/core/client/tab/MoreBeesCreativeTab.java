@@ -44,7 +44,6 @@ public class MoreBeesCreativeTab {
 
     public static final FeatureCreativeTab MOBEES = REGISTRY.creativeTab("mobees", tab -> {
         tab.icon(() -> SpeciesUtil.BEE_TYPE.get().createStack(MoreBeesSpecies.CRYSTALLINE, BeeLifeStage.QUEEN));
-        tab.displayItems(MoreBeesCreativeTab::addStorageItems);
         tab.displayItems(MoreBeesCreativeTab::addApicultureItems);
         tab.withTabsBefore(ForestryCreativeTabs.FORESTRY.getKey());
         tab.withTabsAfter(ForestryCreativeTabs.ARBORICULTURE.getKey());
@@ -65,7 +64,6 @@ public class MoreBeesCreativeTab {
         MoreBeesApicultureBlocks.ALVEARY.getItems().forEach(items::accept);
 
         // Misc items
-        MoreBeesApicultureBlocks.BEE_COMB.getItems().forEach(items::accept);
         MoreBeesApicultureItems.BEE_COMBS.getItems().forEach(items::accept);
 
         for (ILifeStage stage : SpeciesUtil.BEE_TYPE.get().getLifeStages()) {
@@ -78,10 +76,8 @@ public class MoreBeesCreativeTab {
 
         MoreBeesItems.BEE_PRODUCE_MATERIALS.getItems().forEach(items::accept);
         MoreBeesItems.CRAFTING_MATERIALS.getItems().forEach(items::accept);
-    }
+        MoreBeesApicultureBlocks.BEE_COMB.getItems().forEach(items::accept);
 
-    private static void addStorageItems(CreativeModeTab.ItemDisplayParameters params, CreativeModeTab.Output items) {
-        // Filled crates
         for (FeatureItem<ItemCrated> crate : MoreBeesCrateItems.getCrates()) {
             items.accept(crate);
         }
