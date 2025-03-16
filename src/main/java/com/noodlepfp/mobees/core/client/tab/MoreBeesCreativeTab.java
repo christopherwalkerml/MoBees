@@ -18,28 +18,30 @@ import forestry.modules.features.ModFeatureRegistry;
 import net.minecraft.world.item.CreativeModeTab;
 
 @FeatureProvider
-public class MoBeesCreativeTab {
+public class MoreBeesCreativeTab {
 
     private static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBees.loc("core"));
 
     public static final FeatureCreativeTab MOBEES = REGISTRY.creativeTab("mobees", tab -> {
         tab.icon(() -> SpeciesUtil.BEE_TYPE.get().createStack(MoreBeesSpecies.CRYSTALLINE, BeeLifeStage.QUEEN));
-        tab.displayItems(MoBeesCreativeTab::addApicultureItems);
+        tab.displayItems(MoreBeesCreativeTab::addApicultureItems);
         tab.withTabsBefore(ForestryCreativeTabs.FORESTRY.getKey());
         tab.withTabsAfter(ForestryCreativeTabs.ARBORICULTURE.getKey());
     });
 
     private static void addApicultureItems(CreativeModeTab.ItemDisplayParameters params, CreativeModeTab.Output items) {
         // Frames
-        items.accept(MoreBeesApicultureItems.STURDY_FRAME);
+        // items.accept(MoreBeesApicultureItems.STURDY_FRAME);
 
         // Hives
-        MoreBeesApicultureBlocks.BASE.getItems().forEach(items::accept);
         for (MoreBeesBlockHiveType type : MoreBeesBlockHiveType.values()) {
             if (type.getSpeciesId().toString().contains("mobees")) {
                 items.accept(MoreBeesApicultureBlocks.BEEHIVE.get(type));
             }
         }
+
+        // Alveary
+        MoreBeesApicultureBlocks.ALVEARY.getItems().forEach(items::accept);
 
         // Misc items
         MoreBeesApicultureItems.BEE_COMBS.getItems().forEach(items::accept);

@@ -13,6 +13,6 @@ public class MoBeesModule implements IForestryModule {
     }
 
     public static ResourceLocation mobees(String path) {
-        return new ResourceLocation("mobees", path);
+        return new ResourceLocation(MoBees.MOD_ID, path);
     }
 }

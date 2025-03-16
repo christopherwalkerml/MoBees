@@ -48,7 +48,6 @@ public class MoreHiveGenCaveWall implements IHiveGen {
                 List<BlockPos> asides = List.of(pos.east(), pos.west(), pos.north(), pos.south());
                 for (BlockPos aside : asides) {
                     if (level.getBlockState(aside).isAir()) {
-                        System.out.println("here !");
                         validPos.add(aside);
                         break;
                     }

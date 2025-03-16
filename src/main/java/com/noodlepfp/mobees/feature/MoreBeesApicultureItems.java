@@ -10,5 +10,5 @@ import forestry.modules.features.*;
 public class MoreBeesApicultureItems {
     public static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBees.loc("core"));
     public static final FeatureItemGroup<MoreBeesItemHoneyComb, MoreBeesEnumHoneyComb> BEE_COMBS = REGISTRY.itemGroup(MoreBeesItemHoneyComb::new, "bee_comb", MoreBeesEnumHoneyComb.VALUES);
-    public static final FeatureItem<ItemHiveFrame> STURDY_FRAME = REGISTRY.item(() -> new ItemHiveFrame(2056, 0.75f), "sturdy_frame");
+    // public static final FeatureItem<ItemHiveFrame> STURDY_FRAME = REGISTRY.item(() -> new ItemHiveFrame(2056, 0.75f), "sturdy_frame");
 }

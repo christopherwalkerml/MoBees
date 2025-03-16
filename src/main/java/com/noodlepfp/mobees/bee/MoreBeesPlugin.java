@@ -5,6 +5,7 @@ import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.core.data.MoreBeesFlowerType;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
+import com.noodlepfp.mobees.genetics.effect.MelodicChimeEffect;
 import com.noodlepfp.mobees.hive.MoreHiveDefinition;
 import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
 import forestry.api.plugin.IApicultureRegistration;
@@ -49,7 +50,8 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_EMERALD, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_EMERALD, true));
 
         // effect tags
-        apiculture.registerBeeEffect(MoreBeesEffect.CAVE_SIGHT, new PotionBeeEffect(false, MobEffects.NIGHT_VISION, 500));
+        apiculture.registerBeeEffect(MoreBeesEffect.CAVE_SIGHT, new PotionBeeEffect(false, MobEffects.NIGHT_VISION, 100));
+        apiculture.registerBeeEffect(MoreBeesEffect.MELODIC_CHIME, new MelodicChimeEffect());
     }
 
     @Override

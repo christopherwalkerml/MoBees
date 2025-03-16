@@ -1,8 +1,9 @@
 package com.noodlepfp.mobees.bee;
 
+import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
-import com.noodlepfp.mobees.genetic.allele.MoreBeesAlleles;
+import com.noodlepfp.mobees.genetics.allele.MoreBeesAlleles;
 import com.noodlepfp.mobees.item.MoreBeesEnumBeeProduce;
 import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
 import forestry.api.apiculture.ForestryBeeSpecies;
@@ -128,7 +129,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.LAPIS, MoreBeesTaxa.GENUS_MINERAL, MoreBeesTaxa.SPECIES_LAPIS, true, new Color(0x9F9F9F))
                 .setBody(new Color(0x4A3DF1))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.LAPIS), 0.8f)
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.LAPIS), 0.08f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.LAPIS), 0.4f)
                 .addSpecialty(new ItemStack(Items.LAPIS_LAZULI, 1), 0.25f)
                 .setGenome(genome -> {
@@ -142,9 +143,9 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.REDSTONE, MoreBeesTaxa.GENUS_REDSTONE, MoreBeesTaxa.SPECIES_REDSTONE, true, new Color(0x9F9F9F))
                 .setBody(new Color(0xF33838))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.4f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.2f)
-                .addSpecialty(new ItemStack(Items.REDSTONE, 1), 0.2f)
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.04f)
+                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.02f)
+                .addSpecialty(new ItemStack(Items.REDSTONE, 1), 0.02f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_REDSTONE);
                 })
@@ -159,7 +160,6 @@ public class MoreBeesDefinition {
                 .addSpecialty(new ItemStack(Items.AMETHYST_SHARD, 1), 0.005f)
                 .setTemperature(TemperatureType.COLD)
                 .setHumidity(HumidityType.DAMP)
-                .setGlint(true)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_AMETHYST);
                 })
@@ -205,11 +205,10 @@ public class MoreBeesDefinition {
                 .setTemperature(TemperatureType.COLD)
                 .setHumidity(HumidityType.DAMP)
                 .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_DIAMOND);
+                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_EMERALD);
                 })
                 .addMutations(mutations -> {
-                    // TODO - replace --- mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.CHROMATIC, 3);
-                    mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.ROCKY, 3);
+                    mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.CHROMATIC, 2);
                 })
                 .setAuthority("noodlepfp");
 
@@ -221,11 +220,10 @@ public class MoreBeesDefinition {
                 .setTemperature(TemperatureType.COLD)
                 .setHumidity(HumidityType.DAMP)
                 .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_EMERALD);
+                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_DIAMOND);
                 })
                 .addMutations(mutations -> {
-                    // TODO - replace --- mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.CHROMATIC, 3);
-                    mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.ROCKY, 3);
+                    mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.CHROMATIC, 3);
                 })
                 .setAuthority("noodlepfp");
 
@@ -264,7 +262,7 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
-        apiculture.registerSpecies(MoreBeesSpecies.HARMONIC, MoreBeesTaxa.GENUS_CLASSICAL, MoreBeesTaxa.SPECIES_HARMONIC, true, new Color(0x9F9F9F))
+        apiculture.registerSpecies(MoreBeesSpecies.HARMONIC, MoreBeesTaxa.GENUS_CLASSICAL, MoreBeesTaxa.SPECIES_HARMONIC, true, new Color(0xFFFFFF))
                 .setBody(new Color(0xE9C1FF))
                 .setStripes(new Color(0x561E10))
                 .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.STRINGY), 0.1f)
@@ -275,6 +273,7 @@ public class MoreBeesDefinition {
                     genome.set(BeeChromosomes.POLLINATION, ForestryAlleles.POLLINATION_SLOW);
                     genome.set(BeeChromosomes.SPEED, ForestryAlleles.SPEED_NORMAL);
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_AMETHYST);
+                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_MELODIC_CHIME);
                 })
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.CLASSICAL, ForestryBeeSpecies.HERMITIC, 4);
@@ -305,6 +304,51 @@ public class MoreBeesDefinition {
                 })
                 .setGlint(true)
                 .setAuthority("noodlepfp");
+
+        // EXCITED LINE
+        apiculture.registerSpecies(MoreBeesSpecies.LIVELY, MoreBeesTaxa.GENUS_REDSTONE, MoreBeesTaxa.SPECIES_LIVELY, true, new Color(0xFF7878))
+                .setBody(new Color(0xC7AA4C))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.1f)
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.06f)
+                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.03f)
+                .addSpecialty(new ItemStack(Items.REDSTONE, 1), 0.03f)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_REDSTONE);
+                })
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.REDSTONE, ForestryBeeSpecies.DILIGENT, 5);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.EXCITED, MoreBeesTaxa.GENUS_EXCITED, MoreBeesTaxa.SPECIES_EXCITED, false, new Color(0xFF5959))
+                .setBody(new Color(0xFFDD74))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.05f)
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.08f)
+                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.04f)
+                .addSpecialty(new ItemStack(Items.REDSTONE, 1), 0.04f)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_REDSTONE);
+                })
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.REDSTONE, ForestryBeeSpecies.DILIGENT, 4);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.ENERGETIC, MoreBeesTaxa.GENUS_EXCITED, MoreBeesTaxa.SPECIES_ENERGETIC, true, new Color(0xFF4847))
+                .setBody(new Color(0xFFDA35))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.1f)
+                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.REDSTONE), 0.05f)
+                .addSpecialty(new ItemStack(Items.REDSTONE, 1), 0.05f)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_REDSTONE);
+                    genome.set(BeeChromosomes.SPEED, ForestryAlleles.SPEED_FASTEST);
+                })
+                .setGlint(true)
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.REDSTONE, ForestryBeeSpecies.DILIGENT, 2);
+                })
+                .setAuthority("noodlepfp");
+
     }
 
 }

@@ -1,41 +1,17 @@
-base combs + drops :
- - honey : wax, drop
- - cocoea : wax, cocoa
- - simmering : refractory wax, phosphor
- - stringy : prop, honey
- - frozen : wax, drop, snowball, crystalline pollen cluster (regen)
- - dripping : dew, drop
- - silky : drop, silky prop (wisp)
- - parched : wax, drop
- - mysterious : pulsating prop (mesh), drop
- - powdery : gunpowder, drop, wax
- - wheaten : wheat, drop, wax
- - mossy : wax, drop
- - mellow : dew, quartz, wax
- - kaolin : clay, drop
 // TODO
 - DONE - add night vision to rocky bees ONLY (for now)
 - DONE - add flower type stone for rocky bees
 - DONE - add flower type ores, for ore-specific bees
 - add jubilance for ore bees. they should be at their optimal ore spawn level for jubilance - extends IBeeJubilance ?
 - add magic bee sprite for some special bees
-- harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
+- DONE - harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
 
 ideas for new bee types..
-- crystalline - needs amethyst buds as flowers, a blocker for the gem line
-  - done species
 - malicious/witchy bee - produces witch products
   - done species
 - mummy bee - produces aged paper that can be turned into books
   - done species
-- RGBee - produces chromata, in dif shapes makes dif dyes
- - done species
-- ore bees - requires their respective ore as a flower (they harvest it.. cuuute)
-  - done species
 - bee bee - creates vanilla honey products
   - done species
-- marble line - leads to musical bees??? :o
-  - done species
 
-- alpine bee - creates pine wood maybe?
 - librarian bee - fills nearby bookshelves with books.. small chance of enchanted ones

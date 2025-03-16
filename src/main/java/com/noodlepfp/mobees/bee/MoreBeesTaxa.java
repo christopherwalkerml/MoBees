@@ -30,6 +30,11 @@ public class MoreBeesTaxa {
     // RGBEE LINE
     public static final String SPECIES_CHROMATIC = "Chromatic";
 
+    // EXCITED LINE
+    public static final String SPECIES_LIVELY = "Lively";
+    public static final String SPECIES_EXCITED = "Excited";
+    public static final String SPECIES_ENERGETIC = "Energetic";
+
     // GENUS
     // ROCKY LINE
     public static final String GENUS_ROCKY = "Rocky";
@@ -47,5 +52,8 @@ public class MoreBeesTaxa {
 
     // RGBEE LINE
     public static final String GENUS_CHROMATIC = "Chromatic";
+
+    // EXCITED LINE
+    public static final String GENUS_EXCITED = "Excited";
 
 }

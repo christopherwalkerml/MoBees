@@ -1,9 +1,8 @@
-package com.noodlepfp.mobees.genetic.allele;
+package com.noodlepfp.mobees.genetics.allele;
 
 import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.core.data.MoreBeesFlowerType;
 import forestry.api.IForestryApi;
-import forestry.api.apiculture.ForestryBeeEffects;
 import forestry.api.apiculture.IFlowerType;
 import forestry.api.apiculture.genetics.IBeeEffect;
 import forestry.api.genetics.alleles.BeeChromosomes;
@@ -28,4 +27,5 @@ public class MoreBeesAlleles {
 
     // EFFECTS
     public static final IRegistryAllele<IBeeEffect> EFFECT_CAVE_SIGHT = REGISTRY.registryAllele(MoreBeesEffect.CAVE_SIGHT, BeeChromosomes.EFFECT);
+    public static final IRegistryAllele<IBeeEffect> EFFECT_MELODIC_CHIME = REGISTRY.registryAllele(MoreBeesEffect.MELODIC_CHIME, BeeChromosomes.EFFECT);
 }

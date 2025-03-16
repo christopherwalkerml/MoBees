@@ -43,6 +43,7 @@ public class MoreBeesSpecies {
     // EXTRA RELIC BRANCH
     //public static final ResourceLocation BONE = mobees("bee_bone");
     //public static final ResourceLocation MUMMY = mobees("bee_mummy");
+    //public static final ResourceLocation MUMMY = mobees("bee_archaic");
 
     // NUCLEAR LINE
     // public static final ResourceLocation UNSTABLE = mobees("bee_unstable");
@@ -58,7 +59,7 @@ public class MoreBeesSpecies {
 
     // EXTRA SWAMPY LINE
     public static final ResourceLocation FUNGAL = mobees("bee_fungal"); // TODO boggy, cultivated
-    public static final ResourceLocation WITCHY = mobees("bee_witchy"); // TODO fungal, hermitic
+    public static final ResourceLocation WITCHY = mobees("bee_witchy"); // TODO fungal, secluded
 
     // EXTRA AQUATIC LINE
     public static final ResourceLocation SHELLED = mobees("bee_shelled"); // TODO aquatic, rocky
@@ -85,5 +86,5 @@ public class MoreBeesSpecies {
     public static final ResourceLocation HARMONIC = mobees("bee_harmonic");
 
     // RGBEE LINE
-    public static final ResourceLocation CHROMATIC = mobees("bee_chromatic"); // TODO crystalline, divine
+    public static final ResourceLocation CHROMATIC = mobees("bee_chromatic");
 }

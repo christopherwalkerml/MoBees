@@ -1,0 +1,10 @@
+{
+  "parent": "forestry:block/apiculture/alveary_plain_normal",
+  "textures": {
+    "particle": "mobees:block/alveary_sun_off",
+    "north": "mobees:block/alveary_sun_off",
+    "east": "mobees:block/alveary_sun_off",
+    "south": "mobees:block/alveary_sun_off",
+    "west": "mobees:block/alveary_sun_off"
+  }
+}
