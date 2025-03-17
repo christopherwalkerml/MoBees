@@ -6,6 +6,10 @@
   "products": [
     {
       "chance": 0.2,
+      "item": "forestry:beeswax"
+    },
+    {
+      "chance": 0.2,
       "item": "minecraft:yellow_dye"
     },
     {

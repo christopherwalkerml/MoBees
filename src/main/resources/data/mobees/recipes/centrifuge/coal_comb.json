@@ -9,10 +9,6 @@
       "item": "forestry:beeswax"
     },
     {
-      "chance": 0.6,
-      "item": "forestry:honey_drop"
-    },
-    {
       "chance": 0.2,
       "item": "mobees:coal_bit",
       "count": 3

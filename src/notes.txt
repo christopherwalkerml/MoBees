@@ -1,3 +1,18 @@
+base combs + drops :
+ - honey : wax, drop
+ - cocoa : wax, cocoa
+ - simmering : refractory wax, phosphor
+ - stringy : prop, honey
+ - frozen : wax, drop, snowball, crystalline pollen cluster (regen)
+ - dripping : dew, drop
+ - silky : drop, silky prop (wisp)
+ - parched : wax, drop
+ - mysterious : pulsating prop (mesh), drop
+ - powdery : gunpowder, drop, wax
+ - wheaten : wheat, drop, wax
+ - mossy : wax, drop
+ - mellow : dew, quartz, wax
+ - kaolin : clay, drop
 // TODO
 - DONE - add night vision to rocky bees ONLY (for now)
 - DONE - add flower type stone for rocky bees
@@ -19,4 +34,4 @@ ideas for new bee types..
 - librarian bee - fills nearby bookshelves with books.. small chance of enchanted ones
 
 // TODO - make notes / descriptions for items
-- alveary mutator, compounding 1.5x, but caps at 3x.
+- alveary mutator, compounding 1.5x, but caps at 5x.

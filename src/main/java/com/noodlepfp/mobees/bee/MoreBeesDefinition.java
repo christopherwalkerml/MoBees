@@ -14,10 +14,13 @@ import forestry.api.core.TemperatureType;
 import forestry.api.plugin.IApicultureRegistration;
 import forestry.apiculture.features.ApicultureItems;
 import forestry.apiculture.items.EnumHoneyComb;
+import forestry.core.features.CoreItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import java.awt.*;
+
+import static forestry.apiculture.features.ApicultureItems.BEE_COMBS;
 
 public class MoreBeesDefinition {
 
@@ -95,7 +98,7 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
-        apiculture.registerSpecies(MoreBeesSpecies.IRON, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_IRON, false, new Color(0x9F9F9F))
+        apiculture.registerSpecies(MoreBeesSpecies.IRON, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_IRON, true, new Color(0x9F9F9F))
                 .setBody(new Color(0xE3E3E3))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.IRON), 0.05f)
@@ -109,7 +112,7 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
-        apiculture.registerSpecies(MoreBeesSpecies.GOLD, MoreBeesTaxa.GENUS_PRECIOUSMETALLIC, MoreBeesTaxa.SPECIES_GOLD, true, new Color(0x9F9F9F))
+        apiculture.registerSpecies(MoreBeesSpecies.GOLD, MoreBeesTaxa.GENUS_PRECIOUSMETALLIC, MoreBeesTaxa.SPECIES_GOLD, false, new Color(0x9F9F9F))
                 .setBody(new Color(0xE5AE47))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.GOLD), 0.07f)
@@ -274,6 +277,7 @@ public class MoreBeesDefinition {
                     genome.set(BeeChromosomes.SPEED, ForestryAlleles.SPEED_NORMAL);
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_AMETHYST);
                     genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_MELODIC_CHIME);
+                    genome.set(BeeChromosomes.TERRITORY, ForestryAlleles.TERRITORY_LARGEST);
                 })
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.CLASSICAL, ForestryBeeSpecies.HERMITIC, 4);
@@ -349,6 +353,74 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
+        // EXTRA NETHER LINE
+        apiculture.registerSpecies(MoreBeesSpecies.CRIMSON, MoreBeesTaxa.GENUS_CRIMSON, MoreBeesTaxa.SPECIES_CRIMSON, false, new Color(0x754141))
+                .setBody(new Color(0xDA5454))
+                .addProduct(BEE_COMBS.stack(EnumHoneyComb.SIMMERING), 0.15f)
+                .addProduct(BEE_COMBS.stack(EnumHoneyComb.PARCHED), 0.1f)
+                .setTemperature(TemperatureType.HELLISH)
+                .setHumidity(HumidityType.ARID)
+                .addMutations(mutations -> {
+                    mutations.add(ForestryBeeSpecies.DEMONIC, ForestryBeeSpecies.SPITEFUL, 8);
+                    mutations.add(ForestryBeeSpecies.DEMONIC, ForestryBeeSpecies.EMBITTERED, 8);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.GLOWSTONE, MoreBeesTaxa.GENUS_CRIMSON, MoreBeesTaxa.SPECIES_GLOWSTONE, true, new Color(0x754141))
+                .setBody(new Color(0xDABF54))
+                .addProduct(BEE_COMBS.stack(EnumHoneyComb.SIMMERING), 0.35f)
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.GLOWING), 0.1f)
+                .setTemperature(TemperatureType.HELLISH)
+                .setHumidity(HumidityType.ARID)
+                .setGlint(true)
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.CRIMSON, ForestryBeeSpecies.DEMONIC, 6);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.DESOLATE, MoreBeesTaxa.GENUS_DESOLATE, MoreBeesTaxa.SPECIES_DESOLATE, true, new Color(0x754141))
+                .setBody(new Color(0xC4B6B6))
+                .addProduct(BEE_COMBS.stack(EnumHoneyComb.PARCHED), 0.2f)
+                .addProduct(CoreItems.ASH.stack(), 0.2f)
+                .setTemperature(TemperatureType.HELLISH)
+                .setHumidity(HumidityType.ARID)
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.CRIMSON, ForestryBeeSpecies.DEMONIC, 7);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.DEVASTATED, MoreBeesTaxa.GENUS_DESOLATE, MoreBeesTaxa.SPECIES_DEVASTATED, true, new Color(0x754141))
+                .setBody(new Color(0x939393))
+                .addProduct(BEE_COMBS.stack(EnumHoneyComb.PARCHED), 0.25f)
+                .addProduct(CoreItems.ASH.stack(), 0.3f)
+                .setTemperature(TemperatureType.HELLISH)
+                .setHumidity(HumidityType.ARID)
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.DESOLATE, ForestryBeeSpecies.INDUSTRIOUS, 6);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.SCRAP, MoreBeesTaxa.GENUS_SCRAP, MoreBeesTaxa.SPECIES_SCRAP, false, new Color(0x754141))
+                .setBody(new Color(0x796161))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SCRAPPED), 0.01f)
+                .addProduct(CoreItems.ASH.stack(), 0.1f)
+                .setTemperature(TemperatureType.HELLISH)
+                .setHumidity(HumidityType.ARID)
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.DEVASTATED, MoreBeesSpecies.RUSTY, 2);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.NETHERITE, MoreBeesTaxa.GENUS_SCRAP, MoreBeesTaxa.SPECIES_NETHERITE, true, new Color(0x754141))
+                .setBody(new Color(0x484848))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SCRAPPED), 0.03f)
+                .addProduct(CoreItems.ASH.stack(), 0.05f)
+                .setTemperature(TemperatureType.HELLISH)
+                .setHumidity(HumidityType.ARID)
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.DEVASTATED, MoreBeesSpecies.SCRAP, 1);
+                })
+                .setAuthority("noodlepfp");
     }
 
 }

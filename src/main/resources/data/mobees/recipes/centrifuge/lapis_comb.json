@@ -5,11 +5,7 @@
   },
   "products": [
     {
-      "chance": 0.8,
-      "item": "forestry:beeswax"
-    },
-    {
-      "chance": 0.6,
+      "chance": 0.4,
       "item": "forestry:honey_drop"
     },
     {

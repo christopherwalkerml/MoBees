@@ -1,0 +1,27 @@
+{
+  "type": "forestry:centrifuge",
+  "input": {
+    "item": "mobees:bee_comb_scrapped"
+  },
+  "products": [
+    {
+      "chance": 0.4,
+      "item": "forestry:beeswax"
+    },
+    {
+      "chance": 0.2,
+      "item": "forestry:honey_drop"
+    },
+    {
+      "chance": 0.3,
+      "item": "mobees:netherite_bit",
+      "count": 2
+    },
+    {
+      "chance": 0.8,
+      "item": "mobees:netherite_bit",
+      "count": 1
+    }
+  ],
+  "time": 40
+}

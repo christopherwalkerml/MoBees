@@ -35,6 +35,14 @@ public class MoreBeesTaxa {
     public static final String SPECIES_EXCITED = "Excited";
     public static final String SPECIES_ENERGETIC = "Energetic";
 
+    // EXTRA NETHER LINE
+    public static final String SPECIES_CRIMSON = "Crimson";
+    public static final String SPECIES_GLOWSTONE = "Glowstone";
+    public static final String SPECIES_DESOLATE = "Desolate";
+    public static final String SPECIES_DEVASTATED = "Devastated";
+    public static final String SPECIES_SCRAP = "Scrap";
+    public static final String SPECIES_NETHERITE = "Netherite";
+
     // GENUS
     // ROCKY LINE
     public static final String GENUS_ROCKY = "Rocky";
@@ -55,5 +63,10 @@ public class MoreBeesTaxa {
 
     // EXCITED LINE
     public static final String GENUS_EXCITED = "Excited";
+
+    // EXTRA NETHER LINE
+    public static final String GENUS_CRIMSON = "Crimson";
+    public static final String GENUS_DESOLATE = "Desolate";
+    public static final String GENUS_SCRAP = "Scrap";
 
 }

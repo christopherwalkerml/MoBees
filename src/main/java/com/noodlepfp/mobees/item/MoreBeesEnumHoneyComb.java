@@ -22,7 +22,9 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     DIAMOND(new Color(0x9F9F9F), new Color(0x78D8EE)),
     EMERALD(new Color(0x9F9F9F), new Color(0x77FF79)),
     HARMONIC(new Color(0x561E10), new Color(0xE9C1FF)),
-    CHROMATIC(new Color(0xFFFFFF), new Color(0xFFFFFF));
+    CHROMATIC(new Color(0xFFFFFF), new Color(0xFFFFFF)),
+    GLOWING(new Color(0x754141), new Color(0xDABF54)),
+    SCRAPPED(new Color(0x754141), new Color(0x484848));
     public static final MoreBeesEnumHoneyComb[] VALUES = values();
 
     public final String name;

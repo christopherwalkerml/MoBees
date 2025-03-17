@@ -36,9 +36,9 @@ public class MoreBeesSpecies {
     public static final ResourceLocation DIAMOND = mobees("bee_diamond");
 
     // EXCITED LINE
-    public static final ResourceLocation LIVELY = mobees("bee_lively"); // TODO redstone, diligent
-    public static final ResourceLocation EXCITED = mobees("bee_excited"); // TODO redstone, lively
-    public static final ResourceLocation ENERGETIC = mobees("bee_energetic"); // TODO excited, divine
+    public static final ResourceLocation LIVELY = mobees("bee_lively");
+    public static final ResourceLocation EXCITED = mobees("bee_excited");
+    public static final ResourceLocation ENERGETIC = mobees("bee_energetic");
 
     // EXTRA RELIC BRANCH
     //public static final ResourceLocation BONE = mobees("bee_bone");
@@ -50,21 +50,22 @@ public class MoreBeesSpecies {
     // public static final ResourceLocation RADIOACTIVE = mobees("bee_radioactive");
 
     // EXTRA NETHER LINE
-    public static final ResourceLocation GLOWSTONE = mobees("bee_glowstone"); // TODO demonic, crimson
-    public static final ResourceLocation CRIMSON = mobees("bee_crimson"); // TODO demonic, spiteful/embittered
-    public static final ResourceLocation DESOLATE = mobees("bee_desolate"); // TODO crimson, warped
-    public static final ResourceLocation DEVASTATED = mobees("bee_devastated"); // TODO desolate, industrious
-    public static final ResourceLocation SCRAP = mobees("bee_scrap"); // TODO devastated, rusty
-    public static final ResourceLocation NETHERITE = mobees("bee_netherite"); // TODO scrap, devastated
+    public static final ResourceLocation CRIMSON = mobees("bee_crimson");
+    public static final ResourceLocation GLOWSTONE = mobees("bee_glowstone");
+    public static final ResourceLocation DESOLATE = mobees("bee_desolate");
+    public static final ResourceLocation DEVASTATED = mobees("bee_devastated");
+    public static final ResourceLocation SCRAP = mobees("bee_scrap");
+    public static final ResourceLocation NETHERITE = mobees("bee_netherite");
 
     // EXTRA SWAMPY LINE
     public static final ResourceLocation FUNGAL = mobees("bee_fungal"); // TODO boggy, cultivated
     public static final ResourceLocation WITCHY = mobees("bee_witchy"); // TODO fungal, secluded
 
     // EXTRA AQUATIC LINE
-    public static final ResourceLocation SHELLED = mobees("bee_shelled"); // TODO aquatic, rocky
-    public static final ResourceLocation TURTLE = mobees("bee_turtle"); // TODO shelled, prismarine
-    public static final ResourceLocation NAUTILUS = mobees("bee_nautilus"); // TODO shelled, abyssal
+    public static final ResourceLocation SHELLED = mobees("bee_shelled"); // TODO prismarine, mineral
+    public static final ResourceLocation TURTLE = mobees("bee_turtle"); // TODO shelled, cultivated
+    public static final ResourceLocation DROWNED = mobees("bee_drowned"); // TODO abyssal, zombified
+    public static final ResourceLocation NAUTILUS = mobees("bee_nautilus"); // TODO drowned, shelled
 
     // EXTRA ENDER LINE
     public static final ResourceLocation PHANTOM = mobees("bee_phantom"); // TODO ender, spectral

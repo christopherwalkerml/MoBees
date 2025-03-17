@@ -11,7 +11,8 @@ public enum MoreBeesEnumBeeProduce implements IItemSubtype {
     COAL_BIT,
     COPPER_BIT,
     IRON_BIT,
-    GOLD_BIT;
+    GOLD_BIT,
+    NETHERITE_BIT;
 
     private final String name;
 
