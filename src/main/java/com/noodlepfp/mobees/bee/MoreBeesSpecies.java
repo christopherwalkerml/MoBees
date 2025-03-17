@@ -58,14 +58,17 @@ public class MoreBeesSpecies {
     public static final ResourceLocation NETHERITE = mobees("bee_netherite");
 
     // EXTRA SWAMPY LINE
-    public static final ResourceLocation FUNGAL = mobees("bee_fungal"); // TODO boggy, cultivated
-    public static final ResourceLocation WITCHY = mobees("bee_witchy"); // TODO fungal, secluded
+    public static final ResourceLocation SPORE = mobees("bee_spore");
+    public static final ResourceLocation GERMINATED = mobees("bee_germinated");
+    public static final ResourceLocation FUNGAL = mobees("bee_fungal");
+    public static final ResourceLocation WITCHY = mobees("bee_witchy");
+    public static final ResourceLocation CURSED = mobees("bee_cursed");
 
     // EXTRA AQUATIC LINE
-    public static final ResourceLocation SHELLED = mobees("bee_shelled"); // TODO prismarine, mineral
-    public static final ResourceLocation TURTLE = mobees("bee_turtle"); // TODO shelled, cultivated
-    public static final ResourceLocation DROWNED = mobees("bee_drowned"); // TODO abyssal, zombified
-    public static final ResourceLocation NAUTILUS = mobees("bee_nautilus"); // TODO drowned, shelled
+    // public static final ResourceLocation SHELLED = mobees("bee_shelled"); // TODO prismarine, mineral
+    // public static final ResourceLocation TURTLE = mobees("bee_turtle"); // TODO shelled, cultivated
+    // public static final ResourceLocation DROWNED = mobees("bee_drowned"); // TODO abyssal, zombified
+    // public static final ResourceLocation NAUTILUS = mobees("bee_nautilus"); // TODO drowned, shelled
 
     // EXTRA ENDER LINE
     public static final ResourceLocation PHANTOM = mobees("bee_phantom"); // TODO ender, spectral
@@ -76,8 +79,8 @@ public class MoreBeesSpecies {
 
     // BEE LINE
     public static final ResourceLocation CAMOUFLAGED = mobees("bee_camouflaged"); // TODO steadfast, tropical
-    public static final ResourceLocation IMPOSTOR = mobees("bee_impostor"); // TODO camouflaged, sinister
-    public static final ResourceLocation BEE_BEE = mobees("bee_beebee"); // TODO impostor, noble
+    public static final ResourceLocation DISGUISED = mobees("bee_disguised"); // TODO camouflaged, sinister
+    public static final ResourceLocation BEE_BEE = mobees("bee_bee"); // TODO disguised, noble
 
     // MARBLE LINE
     public static final ResourceLocation MARBLE = mobees("bee_marble");

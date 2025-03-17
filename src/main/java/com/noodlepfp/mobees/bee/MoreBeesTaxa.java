@@ -43,6 +43,18 @@ public class MoreBeesTaxa {
     public static final String SPECIES_SCRAP = "Scrap";
     public static final String SPECIES_NETHERITE = "Netherite";
 
+    // EXTRA SWAMPY LINE
+    public static final String SPECIES_SPORE = "Spore";
+    public static final String SPECIES_GERMINATED = "Germinated";
+    public static final String SPECIES_FUNGAL = "Fungal";
+    public static final String SPECIES_WITCHY = "Witchy";
+    public static final String SPECIES_CURSED = "Cursed";
+
+    // BEE BEE LINE
+    public static final String SPECIES_CAMOUFLAGED = "Camouflaged";
+    public static final String SPECIES_DISGUISED = "Disguised";
+    public static final String SPECIES_BEE = "Bee";
+
     // GENUS
     // ROCKY LINE
     public static final String GENUS_ROCKY = "Rocky";
@@ -68,5 +80,14 @@ public class MoreBeesTaxa {
     public static final String GENUS_CRIMSON = "Crimson";
     public static final String GENUS_DESOLATE = "Desolate";
     public static final String GENUS_SCRAP = "Scrap";
+
+    // EXTRA SWAMPY LINE
+    public static final String GENUS_SPORE = "Spore";
+    public static final String GENUS_FUNGAL = "Fungal";
+    public static final String GENUS_CURSED = "Cursed";
+
+    // BEEBEE LINE
+    public static final String GENUS_CAMOUFLAGED = "Camouflaged";
+    public static final String GENUS_BEE = "Bee";
 
 }

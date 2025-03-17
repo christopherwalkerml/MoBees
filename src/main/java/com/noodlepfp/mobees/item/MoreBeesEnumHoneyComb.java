@@ -14,7 +14,7 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     MINERAL(new Color(9211025), new Color(0x91877A)),
     COAL(new Color(10392696), new Color(3682590)),
     COPPER(new Color(0x9F9F9F), new Color(0xE17C38)),
-    IRON(new Color(0x9F9F9F), new Color(0xE3E3E3)),
+    IRON(new Color(0x9F9F9F), new Color(0xF8F8F8)),
     GOLD(new Color(0x9F9F9F), new Color(0xE5AE47)),
     LAPIS(new Color(0x9F9F9F), new Color(0x4A3DF1)),
     REDSTONE(new Color(0x9F9F9F), new Color(0xF33838)),
@@ -24,7 +24,8 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     HARMONIC(new Color(0x561E10), new Color(0xE9C1FF)),
     CHROMATIC(new Color(0xFFFFFF), new Color(0xFFFFFF)),
     GLOWING(new Color(0x754141), new Color(0xDABF54)),
-    SCRAPPED(new Color(0x754141), new Color(0x484848));
+    SCRAPPED(new Color(0x754141), new Color(0x484848)),
+    FUNGAL(new Color(0x6B589F), new Color(0xA0A0B9));
     public static final MoreBeesEnumHoneyComb[] VALUES = values();
 
     public final String name;

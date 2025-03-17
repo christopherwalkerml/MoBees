@@ -1,0 +1,33 @@
+{
+  "type": "forestry:centrifuge",
+  "input": {
+    "item": "mobees:bee_comb_fungal"
+  },
+  "products": [
+    {
+      "chance": 0.5,
+      "item": "forestry:honey_drop"
+    },
+    {
+      "chance": 0.1,
+      "item": "minecraft:brown_mushroom",
+      "count": 2
+    },
+    {
+      "chance": 0.2,
+      "item": "minecraft:redstone",
+      "count": 1
+    },
+    {
+      "chance": 0.2,
+      "item": "minecraft:glowstone_dust",
+      "count": 1
+    },
+    {
+      "chance": 0.2,
+      "item": "minecraft:glass_bottle",
+      "count": 1
+    }
+  ],
+  "time": 20
+}
