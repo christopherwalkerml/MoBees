@@ -1,6 +1,8 @@
 package com.noodlepfp.mobees.core.data;
 
+import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.ForestryTags;
+import forestry.apiculture.features.ApicultureBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -10,7 +12,10 @@ import thedarkcolour.modkit.data.MKTagsProvider;
 public class MoreBeesBlockTagsProvider {
 
     public static void addTags(MKTagsProvider<Block> tags, HolderLookup.Provider lookup) {
+        tags.tag(ForestryTags.Blocks.MINEABLE_SCOOP).add(MoreBeesApicultureBlocks.BEEHIVE.blockArray());
+
         tags.tag(MoreBeesTags.Blocks.ROCKY_BEE_WALL).add(Blocks.STONE).add(Blocks.GRANITE).add(Blocks.ANDESITE).add(Blocks.DIORITE);
+        tags.tag(MoreBeesTags.Blocks.ALPINE_HIVE_GROUNDS).add(Blocks.SNOW_BLOCK).add(Blocks.POWDER_SNOW).add(Blocks.PACKED_ICE);
         tags.tag(MoreBeesTags.Blocks.ROCKY_CAVE_REPLACEABLE).add(Blocks.STONE).add(Blocks.GRANITE).add(Blocks.ANDESITE).add(Blocks.DIORITE).add(Blocks.DIRT);
 
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_STONE).add(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, Blocks.COBBLESTONE);

@@ -22,6 +22,9 @@ base combs + drops :
 - DONE - harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
  - alveary sun lamp should glow in game when on?
  - alveary mutator should consume some mutation accelerator item (or fluid, canister for base game)
+ - alveary frame housing
+ - alveary stimulator ^ upgrade of frame housing, expensive
+ - add recipes for new frames
 
 ideas for new bee types..
 - malicious/witchy bee - produces witch products

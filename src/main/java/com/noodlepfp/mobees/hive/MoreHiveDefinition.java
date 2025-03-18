@@ -3,6 +3,7 @@ package com.noodlepfp.mobees.hive;
 import com.noodlepfp.mobees.bee.MoreBeesSpecies;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
+import forestry.api.ForestryTags;
 import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.apiculture.hives.IHiveDefinition;
 import forestry.api.apiculture.hives.IHiveGen;
@@ -19,14 +20,32 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public enum MoreHiveDefinition implements IHiveDefinition {
 
-    ROCKY(MoreBeesApicultureBlocks.BEEHIVE.get(MoreBeesBlockHiveType.ROCKY).defaultState(), 3.0F, MoreBeesSpecies.ROCKY, new MoreHiveGenCaveWall(MoreBeesTags.Blocks.ROCKY_BEE_WALL, MoreBeesTags.Blocks.ROCKY_CAVE_REPLACEABLE)) {
+    ROCKY(MoreBeesApicultureBlocks.BEEHIVE.get(MoreBeesBlockHiveType.ROCKY).defaultState(), 4.0F, MoreBeesSpecies.ROCKY, new MoreHiveGenCaveWall(MoreBeesTags.Blocks.ROCKY_BEE_WALL, MoreBeesTags.Blocks.ROCKY_CAVE_REPLACEABLE)) {
         @Override
         public boolean isGoodBiome(Holder<Biome> biome) {
             return true;
+        }
+
+        @Override
+        public boolean isGoodHumidity(HumidityType humidity) {
+            return true;
+        }
+
+        @Override
+        public boolean isGoodTemperature(TemperatureType temperature) {
+            return true;
+        }
+    },
+    ALPINE(MoreBeesApicultureBlocks.BEEHIVE.get(MoreBeesBlockHiveType.ALPINE).defaultState(), 3.0F, MoreBeesSpecies.ALPINE, new MoreHiveGenMountain(MoreBeesTags.Blocks.ALPINE_HIVE_GROUNDS)) {
+        @Override
+        public boolean isGoodBiome(Holder<Biome> biome) {
+            return biome.is(BiomeTags.IS_MOUNTAIN);
         }
 
         @Override

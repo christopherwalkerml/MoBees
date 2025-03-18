@@ -30,11 +30,6 @@ public class MoreBeesItemModelProvider extends ItemModelProvider {
                 filledCrateModelLayered(id, modLoc("item/bee_combs.0"), modLoc("item/bee_combs.1"));
             }
         }
-
-        // 2d items
-        basicItem(MoreBeesApicultureItems.FRAME_PRESERVATION.get());
-        basicItem(MoreBeesApicultureItems.FRAME_DESTRUCTION.get());
-        basicItem(MoreBeesApicultureItems.FRAME_MUTATION.get());
     }
 
     private static String path(Item block) {

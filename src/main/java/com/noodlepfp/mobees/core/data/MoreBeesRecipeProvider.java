@@ -36,6 +36,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.FluidStack;
 import thedarkcolour.modkit.data.MKRecipeProvider;
 
@@ -88,6 +89,14 @@ public class MoreBeesRecipeProvider {
             recipe.pattern("GCG");
             recipe.pattern("#X#");
             recipe.group("alveary");
+        });
+
+        recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_PRESERVATION, recipe -> {
+            recipe.define('#', Tags.Items.RODS_WOODEN);
+            recipe.define('A', ApicultureItems.AMBROSIA);
+            recipe.pattern("###");
+            recipe.pattern("#A#");
+            recipe.pattern("###");
         });
     }
 

@@ -1,6 +1,5 @@
 package com.noodlepfp.mobees.bee;
 
-import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
 import com.noodlepfp.mobees.genetics.allele.MoreBeesAlleles;
@@ -482,6 +481,9 @@ public class MoreBeesDefinition {
                 .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.MOSSY), 0.2f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.FUNGAL), 0.08f)
                 .setHumidity(HumidityType.DAMP)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.EFFECT, ForestryAlleles.EFFECT_MYCOPHILIC);
+                })
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.GERMINATED, ForestryBeeSpecies.BOGGY, 8);
                 })
@@ -492,6 +494,9 @@ public class MoreBeesDefinition {
                 .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.MOSSY), 0.3f)
                 .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.FUNGAL), 0.12f)
                 .setHumidity(HumidityType.DAMP)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_WITCHING);
+                })
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.FUNGAL, ForestryBeeSpecies.SECLUDED, 5);
                 })
@@ -501,6 +506,9 @@ public class MoreBeesDefinition {
                 .setBody(new Color(0x983232))
                 .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.MYSTERIOUS), 0.02f)
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.FUNGAL), 0.04f)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_CURSED);
+                })
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.WITCHY, ForestryBeeSpecies.DEMONIC, 4);
                 })
@@ -534,6 +542,20 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
+        apiculture.registerSpecies(MoreBeesSpecies.ALPINE, MoreBeesTaxa.GENUS_ALPINE, MoreBeesTaxa.SPECIES_ALPINE, true, new Color(0x92DEE5))
+                .setBody(new Color(0x317547))
+                .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.FROZEN), 0.40f)
+                .setTemperature(TemperatureType.ICY)
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.HIKER, MoreBeesTaxa.GENUS_ALPINE, MoreBeesTaxa.SPECIES_HIKER, true, new Color(0x92DEE5))
+                .setBody(new Color(0x9F9F9F))
+                .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.FROZEN), 0.30f)
+                .setTemperature(TemperatureType.ICY)
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.DISGUISED, ForestryBeeSpecies.NOBLE, 6);
+                })
+                .setAuthority("noodlepfp");
     }
 
 }

@@ -5,14 +5,18 @@ import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.core.data.MoreBeesFlowerType;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
+import com.noodlepfp.mobees.genetics.effect.CursedEffect;
 import com.noodlepfp.mobees.genetics.effect.MelodicChimeEffect;
+import com.noodlepfp.mobees.genetics.effect.WitchingEffect;
 import com.noodlepfp.mobees.hive.MoreHiveDefinition;
 import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
 import forestry.api.plugin.IApicultureRegistration;
 import forestry.api.plugin.IForestryPlugin;
 import forestry.api.plugin.IGeneticRegistration;
 import forestry.apiculture.FlowerType;
+import forestry.apiculture.features.ApicultureItems;
 import forestry.apiculture.genetics.effects.PotionBeeEffect;
+import forestry.apiculture.items.EnumHoneyComb;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
@@ -37,6 +41,10 @@ public class MoreBeesPlugin implements IForestryPlugin {
                 .addDrop(0.80, MoreBeesSpecies.ROCKY, petrifiedComb, 0.5F)
                 .addDrop(0.20, MoreBeesSpecies.MARBLE, petrifiedComb);
 
+        Supplier<List<ItemStack>> frozenComb = getForestryComb(EnumHoneyComb.FROZEN);
+        apiculture.registerHive(MoreBeesSpecies.ALPINE, MoreHiveDefinition.ALPINE)
+                .addDrop(0.80, MoreBeesSpecies.ALPINE, frozenComb, 0.5F);
+
         // flower tags
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_STONE, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_STONE, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_COAL, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_COAL, true));
@@ -50,8 +58,11 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_EMERALD, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_EMERALD, true));
 
         // effect tags
-        apiculture.registerBeeEffect(MoreBeesEffect.CAVE_SIGHT, new PotionBeeEffect(false, MobEffects.NIGHT_VISION, 100));
+        apiculture.registerBeeEffect(MoreBeesEffect.CAVE_SIGHT, new PotionBeeEffect(false, MobEffects.NIGHT_VISION, 240));
+        apiculture.registerBeeEffect(MoreBeesEffect.CAMOUFLAGE, new PotionBeeEffect(false, MobEffects.INVISIBILITY, 240));
         apiculture.registerBeeEffect(MoreBeesEffect.MELODIC_CHIME, new MelodicChimeEffect());
+        apiculture.registerBeeEffect(MoreBeesEffect.WITCHING, new WitchingEffect());
+        apiculture.registerBeeEffect(MoreBeesEffect.CURSED, new CursedEffect());
     }
 
     @Override
@@ -62,5 +73,9 @@ public class MoreBeesPlugin implements IForestryPlugin {
 
     private static Supplier<List<ItemStack>> getHoneyComb(MoreBeesEnumHoneyComb type) {
         return () -> List.of(MoreBeesApicultureItems.BEE_COMBS.stack(type));
+    }
+
+    private static Supplier<List<ItemStack>> getForestryComb(EnumHoneyComb type) {
+        return () -> List.of(ApicultureItems.BEE_COMBS.stack(type));
     }
 }

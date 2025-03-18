@@ -24,6 +24,7 @@ public class MoreBeesTags {
     public static class Blocks {
         public static final TagKey<Block> ROCKY_BEE_WALL = blockTag("hive_grounds/rocky");
         public static final TagKey<Block> ROCKY_CAVE_REPLACEABLE = blockTag("hive_grounds/rocky_cave_replaceable");
+        public static final TagKey<Block> ALPINE_HIVE_GROUNDS = blockTag("hive_grounds/alpine");
 
         // Flowers
         public static final TagKey<Block> ROCK_FLOWERS_STONE = blockTag("flowers/rock");

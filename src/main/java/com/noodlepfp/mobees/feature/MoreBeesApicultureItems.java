@@ -13,21 +13,44 @@ public class MoreBeesApicultureItems {
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_PRESERVATION = REGISTRY.item(() -> new MoreBeesItemHiveFrame
             .MoreBeesItemHiveFrameBuilder(256)
             .setAgeMult(2.0f)
-            .setSpeedMult(0.8f)
-            .setPollinationMult(0.8f)
+            .setDecayMult(0.8f)
             .build(), "frame_preservation");
 
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_DESTRUCTION = REGISTRY.item(() -> new MoreBeesItemHiveFrame
             .MoreBeesItemHiveFrameBuilder(256)
             .setAgeMult(0.2f)
-            .setSpeedMult(1.25f)
-            .setPollinationMult(1.25f)
+            .setSpeedMult(0.5f)
+            .setMutationMult(1.25f)
+            .setDecayMult(1.25f)
             .build(), "frame_destruction");
 
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_MUTATION = REGISTRY.item(() -> new MoreBeesItemHiveFrame
             .MoreBeesItemHiveFrameBuilder(256)
             .setSpeedMult(0.8f)
-            .setPollinationMult(0.8f)
-            .setMutationMult(2.0f)
+            .setDecayMult(1.2f)
+            .setMutationMult(1.8f)
             .build(), "frame_mutation");
+
+    public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_FERTILE = REGISTRY.item(() -> new MoreBeesItemHiveFrame
+            .MoreBeesItemHiveFrameBuilder(256)
+            .setSpeedMult(0.8f)
+            .setDecayMult(1.2f)
+            .setPollinationMult(2.0f)
+            .setMutationMult(1.25f)
+            .build(), "frame_fertile");
+
+    public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_CRIMSON = REGISTRY.item(() -> new MoreBeesItemHiveFrame
+            .MoreBeesItemHiveFrameBuilder(128)
+            .setSpeedMult(0.8f)
+            .setPollinationMult(0.5f)
+            .setIsHellish(true)
+            .build(), "frame_crimson");
+
+    public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_KIND = REGISTRY.item(() -> new MoreBeesItemHiveFrame
+            .MoreBeesItemHiveFrameBuilder(512)
+            .setSpeedMult(1.5f)
+            .setAgeMult(1.5f)
+            .setDecayMult(0.05f)
+            .setMutationMult(0.5f)
+            .build(), "frame_kind");
 }

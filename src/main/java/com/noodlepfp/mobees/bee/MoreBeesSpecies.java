@@ -80,9 +80,9 @@ public class MoreBeesSpecies {
     // public static final ResourceLocation WARDEN = mobees("bee_warden"); // TODO deep_dark, sculk
 
     // BEE LINE
-    public static final ResourceLocation CAMOUFLAGED = mobees("bee_camouflaged"); // TODO steadfast, tropical
-    public static final ResourceLocation DISGUISED = mobees("bee_disguised"); // TODO camouflaged, sinister
-    public static final ResourceLocation BEE_BEE = mobees("bee_bee"); // TODO disguised, noble
+    public static final ResourceLocation CAMOUFLAGED = mobees("bee_camouflaged");
+    public static final ResourceLocation DISGUISED = mobees("bee_disguised");
+    public static final ResourceLocation BEE_BEE = mobees("bee_bee");
 
     // MARBLE LINE
     public static final ResourceLocation MARBLE = mobees("bee_marble");
@@ -93,4 +93,15 @@ public class MoreBeesSpecies {
 
     // RGBEE LINE
     public static final ResourceLocation CHROMATIC = mobees("bee_chromatic");
+
+    // ALPINE LINE
+    public static final ResourceLocation ALPINE = mobees("bee_alpine");
+    public static final ResourceLocation HIKER = mobees("bee_hiker"); // TODO alpine, rocky
+    public static final ResourceLocation PILGRIM = mobees("bee_pilgrim"); // TODO alpine, wary
+    public static final ResourceLocation SPIRITED = mobees("bee_spirited"); // TODO pilgrim, resilient
+    public static final ResourceLocation MYSTERIOUS = mobees("bee_mysterious"); // TODO spirited, monastic
+    public static final ResourceLocation EPHEMERAL = mobees("bee_ephemeral"); // TODO spirited, secluded
+    public static final ResourceLocation FORLORN = mobees("bee_forlorn"); // TODO ephemeral, hermitic
+    public static final ResourceLocation SOULFUL = mobees("bee_soulful"); // TODO forlorn, mysterious
+    public static final ResourceLocation ARCANE = mobees("bee_arcane"); // TODO forlorn, ephemeral
 }

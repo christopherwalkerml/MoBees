@@ -27,5 +27,8 @@ public class MoreBeesAlleles {
 
     // EFFECTS
     public static final IRegistryAllele<IBeeEffect> EFFECT_CAVE_SIGHT = REGISTRY.registryAllele(MoreBeesEffect.CAVE_SIGHT, BeeChromosomes.EFFECT);
+    public static final IRegistryAllele<IBeeEffect> EFFECT_CAMOUFLAGE = REGISTRY.registryAllele(MoreBeesEffect.CAMOUFLAGE, BeeChromosomes.EFFECT);
     public static final IRegistryAllele<IBeeEffect> EFFECT_MELODIC_CHIME = REGISTRY.registryAllele(MoreBeesEffect.MELODIC_CHIME, BeeChromosomes.EFFECT);
+    public static final IRegistryAllele<IBeeEffect> EFFECT_WITCHING = REGISTRY.registryAllele(MoreBeesEffect.WITCHING, BeeChromosomes.EFFECT);
+    public static final IRegistryAllele<IBeeEffect> EFFECT_CURSED = REGISTRY.registryAllele(MoreBeesEffect.CURSED, BeeChromosomes.EFFECT);
 }

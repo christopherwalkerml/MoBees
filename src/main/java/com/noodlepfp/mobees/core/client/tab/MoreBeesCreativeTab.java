@@ -64,6 +64,9 @@ public class MoreBeesCreativeTab {
         items.accept(MoreBeesApicultureItems.FRAME_PRESERVATION);
         items.accept(MoreBeesApicultureItems.FRAME_DESTRUCTION);
         items.accept(MoreBeesApicultureItems.FRAME_MUTATION);
+        items.accept(MoreBeesApicultureItems.FRAME_FERTILE);
+        items.accept(MoreBeesApicultureItems.FRAME_CRIMSON);
+        items.accept(MoreBeesApicultureItems.FRAME_KIND);
 
         // Misc items
         MoreBeesApicultureItems.BEE_COMBS.getItems().forEach(items::accept);

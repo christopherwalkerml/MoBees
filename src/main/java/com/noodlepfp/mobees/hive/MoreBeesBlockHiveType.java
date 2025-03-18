@@ -8,7 +8,8 @@ import java.util.Locale;
 
 public enum MoreBeesBlockHiveType implements IBlockSubtype {
 
-    ROCKY(MoreBeesSpecies.ROCKY);
+    ROCKY(MoreBeesSpecies.ROCKY),
+    ALPINE(MoreBeesSpecies.ALPINE);
 
     private final ResourceLocation speciesUid;
 

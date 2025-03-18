@@ -8,6 +8,7 @@ import forestry.api.apiculture.hives.IHiveFrame;
 import forestry.api.genetics.IGenome;
 import forestry.api.genetics.IMutation;
 import forestry.core.items.ItemForestry;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
@@ -41,30 +43,49 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
     @Override
     public void appendHoverText(ItemStack stack, @org.jetbrains.annotations.Nullable Level world, List<Component> tooltip, TooltipFlag advanced) {
         super.appendHoverText(stack, world, tooltip, advanced);
+        DecimalFormat FORMAT = new DecimalFormat("#.##");
 
         if (beeModifier.speedMult != 1) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.production", beeModifier.speedMult));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.speed_multiplier")
+                    .append(": ")
+                    .append(Component.literal(FORMAT.format(beeModifier.speedMult) + "x")
+                            .withStyle(beeModifier.speedMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.decayMult != 1) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.genetic.decay", beeModifier.decayMult));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.decay_multiplier")
+                    .append(": ")
+                    .append(Component.literal(FORMAT.format(beeModifier.decayMult) + "x")
+                            .withStyle(beeModifier.decayMult > 1 ? ChatFormatting.RED : ChatFormatting.GREEN)));
         }
         if (beeModifier.pollinationMult != 1) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.pollination_multiplier", beeModifier.pollinationMult));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.pollination_multiplier")
+                    .append(": ")
+                    .append(Component.literal(FORMAT.format(beeModifier.pollinationMult) + "x")
+                            .withStyle(beeModifier.pollinationMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.mutationMult != 1) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.mutation_multiplier", beeModifier.mutationMult));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.mutation_multiplier")
+                    .append(": ")
+                    .append(Component.literal(FORMAT.format(beeModifier.mutationMult) + "x")
+                            .withStyle(beeModifier.mutationMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.ageMult != 1) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.lifespan_multiplier", beeModifier.ageMult));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.lifespan_multiplier")
+                    .append(": ")
+                    .append(Component.literal(FORMAT.format(beeModifier.ageMult) + "x")
+                            .withStyle(beeModifier.ageMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.isRainproof) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.is_rainproof", beeModifier.isRainproof));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_rainproof")
+                    .append(": ").append(Component.literal("true").withStyle(ChatFormatting.BLUE)));
         }
         if (beeModifier.isAlwaysSunny) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.is_always_sunny", beeModifier.isAlwaysSunny));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_always_sunny")
+                    .append(": ").append(Component.literal("true").withStyle(ChatFormatting.GREEN)));
         }
         if (beeModifier.isHellish) {
-            tooltip.add(Component.translatable("item.forestry.bee.modifier.is_hellish", beeModifier.isHellish));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_hellish")
+                    .append(": ").append(Component.literal("true").withStyle(ChatFormatting.RED)));
         }
         if (!stack.isDamaged()) {
             tooltip.add(Component.translatable("item.forestry.durability", new Object[]{stack.getMaxDamage()}));
