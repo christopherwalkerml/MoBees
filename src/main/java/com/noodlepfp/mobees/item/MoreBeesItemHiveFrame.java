@@ -11,6 +11,7 @@ import forestry.apiculture.items.ItemCreativeHiveFrame;
 import forestry.core.items.ItemForestry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -24,13 +25,14 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
 
     private final Modifier beeModifier;
 
-    public MoreBeesItemHiveFrame(float ageMult, float speedMult, float pollinationMult, float decayMult, float mutationMult, boolean isRainproof, boolean isAlwaysSunny, boolean isHellish) {
+    public MoreBeesItemHiveFrame(int maxDmg, float ageMult, float speedMult, float pollinationMult, float decayMult, float mutationMult, boolean isRainproof, boolean isAlwaysSunny, boolean isHellish) {
+        super((new Item.Properties()).durability(maxDmg));
         this.beeModifier = new Modifier(ageMult, speedMult, pollinationMult, decayMult, mutationMult, isRainproof, isAlwaysSunny, isHellish);
     }
 
     @Override
     public ItemStack frameUsed(IBeeHousing housing, ItemStack frame, IBee queen, int wear) {
-        return frame;
+        return frame.hurt(wear, housing.getWorldObj().getRandom(), null) ? ItemStack.EMPTY : frame;
     }
 
     @Override
