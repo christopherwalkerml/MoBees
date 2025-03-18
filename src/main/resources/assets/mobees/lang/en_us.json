@@ -83,6 +83,8 @@
   "item.mobees.diamond_shard": "Diamond Drop",
   "item.mobees.mutation_catalyst": "Mutation Catalyst",
   "item.mobees.frame_preservation": "Preservation Frame",
+  "item.mobees.frame_destruction": "Destruction Frame",
+  "item.mobees.frame_mutation": "Mutation Frame",
   "allele.forestry.flower_type.mobees.flower_type_rock_stone": "Rocks",
   "allele.forestry.flower_type.mobees.flower_type_rock_coal": "Coal",
   "allele.forestry.flower_type.mobees.flower_type_rock_copper": "Copper",

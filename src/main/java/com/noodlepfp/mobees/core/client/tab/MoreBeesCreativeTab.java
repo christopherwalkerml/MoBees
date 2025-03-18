@@ -50,9 +50,6 @@ public class MoreBeesCreativeTab {
     });
 
     private static void addApicultureItems(CreativeModeTab.ItemDisplayParameters params, CreativeModeTab.Output items) {
-        // Frames
-        items.accept(MoreBeesApicultureItems.FRAME_PRESERVATION);
-
         // Hives
         for (MoreBeesBlockHiveType type : MoreBeesBlockHiveType.values()) {
             if (type.getSpeciesId().toString().contains("mobees")) {
@@ -62,6 +59,11 @@ public class MoreBeesCreativeTab {
 
         // Alveary
         MoreBeesApicultureBlocks.ALVEARY.getItems().forEach(items::accept);
+
+        // Frames
+        items.accept(MoreBeesApicultureItems.FRAME_PRESERVATION);
+        items.accept(MoreBeesApicultureItems.FRAME_DESTRUCTION);
+        items.accept(MoreBeesApicultureItems.FRAME_MUTATION);
 
         // Misc items
         MoreBeesApicultureItems.BEE_COMBS.getItems().forEach(items::accept);

@@ -7,14 +7,10 @@ import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.apiculture.hives.IHiveFrame;
 import forestry.api.genetics.IGenome;
 import forestry.api.genetics.IMutation;
-import forestry.apiculture.items.ItemCreativeHiveFrame;
 import forestry.core.items.ItemForestry;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -25,9 +21,16 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
 
     private final Modifier beeModifier;
 
-    public MoreBeesItemHiveFrame(int maxDmg, float ageMult, float speedMult, float pollinationMult, float decayMult, float mutationMult, boolean isRainproof, boolean isAlwaysSunny, boolean isHellish) {
-        super((new Item.Properties()).durability(maxDmg));
-        this.beeModifier = new Modifier(ageMult, speedMult, pollinationMult, decayMult, mutationMult, isRainproof, isAlwaysSunny, isHellish);
+    public MoreBeesItemHiveFrame(MoreBeesItemHiveFrameBuilder builder) {
+        super((new Item.Properties()).durability(builder.maxDmg));
+        this.beeModifier = new Modifier(builder.ageMult,
+                builder.speedMult,
+                builder.pollinationMult,
+                builder.decayMult,
+                builder.mutationMult,
+                builder.isRainproof,
+                builder.isAlwaysSunny,
+                builder.isHellish);
     }
 
     @Override
@@ -62,6 +65,9 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
         }
         if (beeModifier.isHellish) {
             tooltip.add(Component.translatable("item.forestry.bee.modifier.is_hellish", beeModifier.isHellish));
+        }
+        if (!stack.isDamaged()) {
+            tooltip.add(Component.translatable("item.forestry.durability", new Object[]{stack.getMaxDamage()}));
         }
     }
 
@@ -128,6 +134,70 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
         @Override
         public boolean isHellish() {
             return isHellish;
+        }
+    }
+
+    public static class MoreBeesItemHiveFrameBuilder {
+
+        // required params
+        private int maxDmg = 64;
+
+        // optional params
+        private float ageMult = 1;
+        private float speedMult = 1;
+        private float pollinationMult = 1;
+        private float decayMult = 1;
+        private float mutationMult = 1;
+        private boolean isRainproof = false;
+        private boolean isAlwaysSunny = false;
+        private boolean isHellish = false;
+
+        public MoreBeesItemHiveFrameBuilder(int maxDmg) {
+            this.maxDmg = maxDmg;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setAgeMult(float ageMult) {
+            this.ageMult = ageMult;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setSpeedMult(float speedMult) {
+            this.speedMult = speedMult;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setPollinationMult(float pollinationMult) {
+            this.pollinationMult = pollinationMult;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setDecayMult(float decayMult) {
+            this.decayMult = decayMult;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setMutationMult(float mutationMult) {
+            this.mutationMult = mutationMult;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setIsRainproof(boolean isRainproof) {
+            this.isRainproof = isRainproof;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setIsAlwaysSunny(boolean isAlwaysSunny) {
+            this.isAlwaysSunny = isAlwaysSunny;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrameBuilder setIsHellish(boolean isHellish) {
+            this.isHellish = isHellish;
+            return this;
+        }
+
+        public MoreBeesItemHiveFrame build() {
+            return new MoreBeesItemHiveFrame(this);
         }
     }
 }
