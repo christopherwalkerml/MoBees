@@ -9,6 +9,8 @@ public class MoreBeesSpecies {
     // ROCK LINE
     public static final ResourceLocation ROCKY = mobees("bee_rocky");
     public static final ResourceLocation STONE = mobees("bee_stone");
+    public static final ResourceLocation TOLERANT = mobees("bee_tolerant");
+    public static final ResourceLocation RESILIENT = mobees("bee_resilient");
     public static final ResourceLocation MINERAL = mobees("bee_mineral");
     public static final ResourceLocation COAL = mobees("bee_coal");
     public static final ResourceLocation RUSTY = mobees("bee_rusty");

@@ -47,6 +47,20 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
+        apiculture.registerSpecies(MoreBeesSpecies.TOLERANT, MoreBeesTaxa.GENUS_ROCKY, MoreBeesTaxa.SPECIES_TOLERANT, false, new Color(0x9F9F9F))
+                .setBody(new Color(0xC5C5C5))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.5f)
+                .setTemperature(TemperatureType.COLD)
+                .setHumidity(HumidityType.DAMP)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.TEMPERATURE_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_1);
+                    genome.set(BeeChromosomes.HUMIDITY_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_1);
+                })
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.STONE, ForestryBeeSpecies.CULTIVATED, 10);
+                })
+                .setAuthority("noodlepfp");
+
         apiculture.registerSpecies(MoreBeesSpecies.MINERAL, MoreBeesTaxa.GENUS_MINERAL, MoreBeesTaxa.SPECIES_MINERAL, true, new Color(0x9F9F9F))
                 .setBody(new Color(0x91877A))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.MINERAL), 0.3f)
@@ -56,7 +70,21 @@ public class MoreBeesDefinition {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ROCK);
                 })
                 .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.STONE, ForestryBeeSpecies.STEADFAST, 8);
+                    mutations.add(MoreBeesSpecies.TOLERANT, ForestryBeeSpecies.STEADFAST, 8);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.RESILIENT, MoreBeesTaxa.GENUS_MINERAL, MoreBeesTaxa.SPECIES_RESILIENT, false, new Color(0x9F9F9F))
+                .setBody(new Color(0xC5C5C5))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.5f)
+                .setTemperature(TemperatureType.COLD)
+                .setHumidity(HumidityType.DAMP)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.TEMPERATURE_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_2);
+                    genome.set(BeeChromosomes.HUMIDITY_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_2);
+                })
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.MINERAL, ForestryBeeSpecies.DILIGENT, 10);
                 })
                 .setAuthority("noodlepfp");
 

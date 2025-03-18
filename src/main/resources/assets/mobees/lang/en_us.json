@@ -82,6 +82,7 @@
   "item.mobees.emerald_shard": "Emerald Drop",
   "item.mobees.diamond_shard": "Diamond Drop",
   "item.mobees.mutation_catalyst": "Mutation Catalyst",
+  "item.mobees.frame_preservation": "Preservation Frame",
   "allele.forestry.flower_type.mobees.flower_type_rock_stone": "Rocks",
   "allele.forestry.flower_type.mobees.flower_type_rock_coal": "Coal",
   "allele.forestry.flower_type.mobees.flower_type_rock_copper": "Copper",
@@ -93,5 +94,11 @@
   "allele.forestry.flower_type.mobees.flower_type_rock_diamond": "Diamond",
   "allele.forestry.flower_type.mobees.flower_type_rock_emerald": "Emerald",
   "allele.forestry.bee_effect.mobees.bee_effect_cave_sight": "Cave Sight",
-  "allele.forestry.bee_effect.mobees.bee_effect_melodic_chime": "Melodic"
+  "allele.forestry.bee_effect.mobees.bee_effect_melodic_chime": "Melodic",
+  "item.forestry.bee.modifier.pollination_multiplier": "Pollination: %.2fx",
+  "item.forestry.bee.modifier.mutation_multiplier": "Mutation: %.2fx",
+  "item.forestry.bee.modifier.is_rainproof": "Shields Rain: %b",
+  "item.forestry.bee.modifier.is_always_sunny": "Simulates Sunlight: %b",
+  "item.forestry.bee.modifier.is_hellish": "Simulates Nether: %b",
+  "item.forestry.bee.modifier.lifespan_multiplier": "Lifespan: %.2fx"
 }

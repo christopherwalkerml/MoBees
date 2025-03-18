@@ -51,7 +51,7 @@ public class MoreBeesCreativeTab {
 
     private static void addApicultureItems(CreativeModeTab.ItemDisplayParameters params, CreativeModeTab.Output items) {
         // Frames
-        // items.accept(MoreBeesApicultureItems.STURDY_FRAME);
+        items.accept(MoreBeesApicultureItems.FRAME_PRESERVATION);
 
         // Hives
         for (MoreBeesBlockHiveType type : MoreBeesBlockHiveType.values()) {

@@ -1,6 +1,7 @@
 package com.noodlepfp.mobees.core.data;
 
 import com.noodlepfp.mobees.MoBees;
+import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import forestry.apiculture.features.ApicultureItems;
 import forestry.core.data.builder.FilledCrateModelBuilder;
 import forestry.core.utils.ModUtil;
@@ -31,7 +32,7 @@ public class MoreBeesItemModelProvider extends ItemModelProvider {
         }
 
         // 2d items
-        // basicItem(ApicultureItems.FRAME_CREATIVE.get());
+        basicItem(MoreBeesApicultureItems.FRAME_PRESERVATION.get());
     }
 
     private static String path(Item block) {

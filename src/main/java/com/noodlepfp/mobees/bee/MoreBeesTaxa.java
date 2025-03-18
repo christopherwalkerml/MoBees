@@ -6,6 +6,8 @@ public class MoreBeesTaxa {
     // ROCKY LINE
     public static final String SPECIES_ROCKY = "Rocky";
     public static final String SPECIES_STONE = "Stone";
+    public static final String SPECIES_TOLERANT = "Tolerant";
+    public static final String SPECIES_RESILIENT = "Resilient";
     public static final String SPECIES_MINERAL = "Mineral";
     public static final String SPECIES_COAL = "Coal";
     public static final String SPECIES_RUSTY = "Rusty";
