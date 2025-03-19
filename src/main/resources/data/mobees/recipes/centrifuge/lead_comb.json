@@ -1,0 +1,32 @@
+{
+  "type": "forestry:centrifuge",
+  "input": {
+    "item": "mobees:bee_comb_gold"
+  },
+  "products": [
+    {
+      "chance": 0.5,
+      "item": "forestry:beeswax"
+    },
+    {
+      "chance": 1,
+      "item": "forestry:honey_drop"
+    },
+    {
+      "chance": 0.2,
+      "item": "mobees:gold_bit",
+      "count": 3
+    },
+    {
+      "chance": 0.5,
+      "item": "mobees:gold_bit",
+      "count": 2
+    },
+    {
+      "chance": 1,
+      "item": "mobees:gold_bit",
+      "count": 1
+    }
+  ],
+  "time": 20
+}

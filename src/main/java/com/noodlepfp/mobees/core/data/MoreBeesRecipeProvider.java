@@ -5,10 +5,7 @@ import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesCrateItems;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
-import com.noodlepfp.mobees.item.MoreBeesEnumBeeProduce;
-import com.noodlepfp.mobees.item.MoreBeesEnumCraftingMaterial;
-import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
-import com.noodlepfp.mobees.item.MoreBeesItemCraftingMaterial;
+import com.noodlepfp.mobees.item.*;
 import forestry.api.ForestryTags;
 import forestry.apiculture.blocks.BlockAlveary;
 import forestry.apiculture.blocks.BlockAlvearyType;
@@ -17,12 +14,14 @@ import forestry.apiculture.features.ApicultureItems;
 import forestry.apiculture.items.EnumHoneyComb;
 import forestry.core.config.Constants;
 import forestry.core.data.builder.CarpenterRecipeBuilder;
+import forestry.core.data.builder.CentrifugeRecipeBuilder;
 import forestry.core.data.builder.FabricatorRecipeBuilder;
 import forestry.core.features.CoreItems;
 import forestry.core.fluids.ForestryFluids;
 import forestry.core.items.definitions.EnumCraftingMaterial;
 import forestry.core.items.definitions.EnumElectronTube;
 import forestry.core.utils.ModUtil;
+import forestry.modules.features.FeatureItem;
 import forestry.storage.features.CrateItems;
 import forestry.storage.items.ItemCrated;
 import it.unimi.dsi.fastutil.objects.ObjectIntPair;
@@ -43,8 +42,10 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.FluidStack;
 import thedarkcolour.modkit.data.MKRecipeProvider;
 
-import java.util.Collections;
+import java.util.*;
 import java.util.function.Consumer;
+
+import static javax.swing.UIManager.put;
 
 public class MoreBeesRecipeProvider {
 
@@ -53,6 +54,7 @@ public class MoreBeesRecipeProvider {
         registerMaterials(recipes);
         registerCarpenter(consumer);
         registerFabricator(consumer);
+        registerCentrifuge(consumer);
     }
 
     private static void registerApicultureRecipes(MKRecipeProvider recipes) {
@@ -158,8 +160,6 @@ public class MoreBeesRecipeProvider {
     }
 
     private static void registerCarpenter(Consumer<FinishedRecipe> consumer) {
-        // crate(consumer, CrateItems.CRATED_ROYAL_JELLY.get(), Ingredient.of(ApicultureItems.ROYAL_JELLY));
-
         for (MoreBeesEnumHoneyComb comb : MoreBeesEnumHoneyComb.VALUES) {
             crate(consumer, MoreBeesCrateItems.CRATED_BEE_COMBS.get(comb).get(), Ingredient.of(MoreBeesApicultureItems.BEE_COMBS.get(comb)));
         }
@@ -178,6 +178,44 @@ public class MoreBeesRecipeProvider {
                         .define('P', CoreItems.CRAFTING_MATERIALS.get(EnumCraftingMaterial.PULSATING_MESH))
                         .define('A', Items.AMETHYST_SHARD))
                 .build(consumer, id("fabricator", "materials", "mutation_catalyst"));
+    }
+
+    private static void registerCentrifuge(Consumer<FinishedRecipe> consumer) {
+        // Register Metal Comb centrifuge processing
+        Map<FeatureItem<MoreBeesItemHoneyComb>, FeatureItem<MoreBeesItemBeeProduce>> combToProduceMap = new HashMap<>() {{
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.COPPER),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.COPPER_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.IRON),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.IRON_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.TIN),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.TIN_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.LEAD),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.LEAD_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.NICKEL),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.NICKEL_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.OSMIUM),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.OSMIUM_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.SILVER),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.SILVER_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.GOLD),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.GOLD_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.PLATINUM),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.PLATINUM_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.ZINC),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ZINC_BIT));
+        }};
+
+        for (FeatureItem<MoreBeesItemHoneyComb> comb : combToProduceMap.keySet()) {
+            new CentrifugeRecipeBuilder()
+                    .setProcessingTime(20)
+                    .setInput(Ingredient.of(comb))
+                    .product(0.8f, CoreItems.CRAFTING_MATERIALS.get(EnumCraftingMaterial.BEESWAX).stack())
+                    .product(0.5f, ApicultureItems.HONEY_DROP.stack())
+                    .product(1.0F, combToProduceMap.get(comb).stack(1))
+                    .product(0.3F, combToProduceMap.get(comb).stack(2))
+                    .product(0.1F, combToProduceMap.get(comb).stack(3))
+                    .build(consumer, id("centrifuge", comb.getName()));
+        }
     }
 
     private static ResourceLocation id(String... path) {

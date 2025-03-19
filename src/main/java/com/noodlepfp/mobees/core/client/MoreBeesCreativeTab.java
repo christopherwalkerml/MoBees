@@ -61,10 +61,11 @@ public class MoreBeesCreativeTab {
         items.accept(MoreBeesApicultureItems.FRAME_CRIMSON);
         items.accept(MoreBeesApicultureItems.FRAME_KIND);
 
+        MoreBeesItems.CRAFTING_MATERIALS.getItems().forEach(items::accept);
+
         // Misc items
         LOGGER.info("Mo' Bees - Checking for Mod Compatible Resources...");
         for (MoreBeesItemHoneyComb comb : MoreBeesApicultureItems.BEE_COMBS.getItems()) {
-            System.out.println(comb.getType().name.toUpperCase());
             MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, comb.getType().name.toUpperCase());
             registerModCompatItem(items, new ItemStack(comb), modCompat, true);
         }
@@ -79,7 +80,7 @@ public class MoreBeesCreativeTab {
         }
 
         for (MoreBeesItemBeeProduce produce : MoreBeesItems.BEE_PRODUCE_MATERIALS.getItems()) {
-            MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, produce.getType().name().toUpperCase());
+            MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, produce.getType().name().toUpperCase().replace("_BIT", ""));
             registerModCompatItem(items, new ItemStack(produce), modCompat, false);
         }
 
@@ -88,10 +89,9 @@ public class MoreBeesCreativeTab {
             registerModCompatItem(items, new ItemStack(blockHoneyComb), modCompat, false);
         }
 
-        MoreBeesItems.CRAFTING_MATERIALS.getItems().forEach(items::accept);
-
         for (FeatureItem<ItemCrated> crate : MoreBeesCrateItems.getCrates()) {
-            items.accept(crate);
+            MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, crate.getName().toUpperCase().replace("CRATED_BEE_COMB_", ""));
+            registerModCompatItem(items, new ItemStack(crate), modCompat, false);
         }
     }
 
