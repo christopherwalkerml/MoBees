@@ -11,6 +11,10 @@ public class MoreBeesItemHoneyComb extends ItemForestry implements IColoredItem 
         this.type = type;
     }
 
+    public MoreBeesEnumHoneyComb getType() {
+        return type;
+    }
+
     @Override
     public int getColorFromItemStack(ItemStack itemstack, int tintIndex) {
         MoreBeesEnumHoneyComb honeyComb = this.type;

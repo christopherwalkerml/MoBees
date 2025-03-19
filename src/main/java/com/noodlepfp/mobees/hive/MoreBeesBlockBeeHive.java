@@ -13,7 +13,9 @@ package com.noodlepfp.mobees.hive;
 
 import com.noodlepfp.mobees.feature.MoreBeesApicultureTiles;
 import forestry.apiculture.blocks.BlockBeeHive;
+import forestry.apiculture.features.ApicultureTiles;
 import forestry.apiculture.tiles.TileHive;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -31,7 +33,11 @@ public class MoreBeesBlockBeeHive extends BlockBeeHive {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> actualType) {
-        return actualType != MoreBeesApicultureTiles.HIVE.tileType() ? null : (level1, pos, state1, t) -> ((TileHive) t).tick(level1);
+        return actualType != MoreBeesApicultureTiles.HIVE.tileType() ? null : (level1, pos, state1, t) -> ((MoreBeesTileHive) t).tick(level1);
     }
 
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new MoreBeesTileHive(pos, state);
+    }
 }

@@ -16,20 +16,19 @@ public class MoreBeesSpecies {
     public static final ResourceLocation RUSTY = mobees("bee_rusty");
     public static final ResourceLocation COPPER = mobees("bee_copper");
     public static final ResourceLocation IRON = mobees("bee_iron");
-    // public static final ResourceLocation TIN = mobees("bee_tin");
-    // public static final ResourceLocation ZINC = mobees("bee_zinc");
-    // public static final ResourceLocation LEAD = mobees("bee_lead");
-    // public static final ResourceLocation NICKEL = mobees("bee_nickel");
-    // public static final ResourceLocation OSMIUM = mobees("bee_osmium");
-    // public static final ResourceLocation SILVER = mobees("bee_silver"); // TODO imperial, tin/zinc/lead
-    // public static final ResourceLocation PLATINUM = mobees("bee_platinum"); // TODO gold, silver
-    // public static final ResourceLocation URANIUM = mobees("bee_uranium");
-    // public static final ResourceLocation CERTUS = mobees("bee_certus"); // TODO budding, mineral
-    // public static final ResourceLocation UNUSUAL = mobees("bee_unusual");
-    // public static final ResourceLocation QUANTUM = mobees("bee_quantum");
-    // public static final ResourceLocation YELLORIUM = mobees("bee_yellorium");
+    public static final ResourceLocation TIN = mobees("bee_tin"); // TODO rusty, industrious
+    public static final ResourceLocation ZINC = mobees("bee_zinc"); // TODO rusty, industrious
+    public static final ResourceLocation LEAD = mobees("bee_lead"); // TODO rusty, industrious
+    public static final ResourceLocation NICKEL = mobees("bee_nickel");
+    public static final ResourceLocation OSMIUM = mobees("bee_osmium");
+    public static final ResourceLocation SILVER = mobees("bee_silver"); // TODO imperial, tin/zinc/lead
+    public static final ResourceLocation PLATINUM = mobees("bee_platinum"); // TODO gold, silver
+    public static final ResourceLocation CERTUS = mobees("bee_certus"); // TODO budding, mineral
+    public static final ResourceLocation UNUSUAL = mobees("bee_unusual");
+    public static final ResourceLocation QUANTUM = mobees("bee_quantum");
     public static final ResourceLocation GOLD = mobees("bee_gold");
     public static final ResourceLocation LAPIS = mobees("bee_lapis");
+    public static final ResourceLocation APATITE = mobees("bee_apatite");
     public static final ResourceLocation REDSTONE = mobees("bee_redstone");
     public static final ResourceLocation BUDDING = mobees("bee_budding");
     public static final ResourceLocation AMETHYST = mobees("bee_amethyst");
@@ -50,6 +49,8 @@ public class MoreBeesSpecies {
     // NUCLEAR LINE
     // public static final ResourceLocation UNSTABLE = mobees("bee_unstable");
     // public static final ResourceLocation RADIOACTIVE = mobees("bee_radioactive");
+    // public static final ResourceLocation URANIUM = mobees("bee_uranium");
+    // public static final ResourceLocation YELLORIUM = mobees("bee_yellorium");
 
     // EXTRA NETHER LINE
     public static final ResourceLocation CRIMSON = mobees("bee_crimson");
@@ -97,7 +98,7 @@ public class MoreBeesSpecies {
     // ALPINE LINE
     public static final ResourceLocation ALPINE = mobees("bee_alpine");
     public static final ResourceLocation HIKER = mobees("bee_hiker"); // TODO alpine, rocky
-    public static final ResourceLocation PILGRIM = mobees("bee_pilgrim"); // TODO alpine, wary
+    public static final ResourceLocation PILGRIM = mobees("bee_pilgrim"); // TODO alpine, hiker
     public static final ResourceLocation SPIRITED = mobees("bee_spirited"); // TODO pilgrim, resilient
     public static final ResourceLocation MYSTERIOUS = mobees("bee_mysterious"); // TODO spirited, monastic
     public static final ResourceLocation EPHEMERAL = mobees("bee_ephemeral"); // TODO spirited, secluded

@@ -25,6 +25,7 @@ base combs + drops :
  - alveary frame housing
  - alveary stimulator ^ upgrade of frame housing, expensive
  - add recipes for new frames
+ - witchy bee only flies in the rain?
 
 ideas for new bee types..
 - malicious/witchy bee - produces witch products

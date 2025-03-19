@@ -12,9 +12,12 @@ public class MoreBeesTaxa {
     public static final String SPECIES_COAL = "Coal";
     public static final String SPECIES_RUSTY = "Rusty";
     public static final String SPECIES_COPPER = "Copper";
+    public static final String SPECIES_TIN = "Tin";
+    public static final String SPECIES_NICKEL = "Nickel";
     public static final String SPECIES_IRON = "Iron";
     public static final String SPECIES_GOLD = "Gold";
     public static final String SPECIES_LAPIS = "Lapis";
+    public static final String SPECIES_APATITE = "Apatine";
     public static final String SPECIES_REDSTONE = "Redstone";
     public static final String SPECIES_BUDDING = "Budding";
     public static final String SPECIES_AMETHYST = "Amethyst";

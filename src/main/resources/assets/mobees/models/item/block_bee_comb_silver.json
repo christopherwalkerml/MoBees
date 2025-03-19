@@ -1,5 +1,5 @@
 {
-  "parent": "mobees:block/alveary_mutator_on",
+  "parent": "forestry:block/block_bee_combs",
   "display": {
     "thirdperson": {
       "rotation": [

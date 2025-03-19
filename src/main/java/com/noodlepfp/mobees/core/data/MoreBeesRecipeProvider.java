@@ -5,6 +5,7 @@ import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesCrateItems;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
+import com.noodlepfp.mobees.item.MoreBeesEnumBeeProduce;
 import com.noodlepfp.mobees.item.MoreBeesEnumCraftingMaterial;
 import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
 import com.noodlepfp.mobees.item.MoreBeesItemCraftingMaterial;
@@ -24,12 +25,14 @@ import forestry.core.items.definitions.EnumElectronTube;
 import forestry.core.utils.ModUtil;
 import forestry.storage.features.CrateItems;
 import forestry.storage.items.ItemCrated;
+import it.unimi.dsi.fastutil.objects.ObjectIntPair;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -40,12 +43,14 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.FluidStack;
 import thedarkcolour.modkit.data.MKRecipeProvider;
 
+import java.util.Collections;
 import java.util.function.Consumer;
 
 public class MoreBeesRecipeProvider {
 
     public static void addRecipes(Consumer<FinishedRecipe> consumer, MKRecipeProvider recipes) {
         registerApicultureRecipes(recipes);
+        registerMaterials(recipes);
         registerCarpenter(consumer);
         registerFabricator(consumer);
     }
@@ -98,6 +103,29 @@ public class MoreBeesRecipeProvider {
             recipe.pattern("#A#");
             recipe.pattern("###");
         });
+    }
+
+    private static void registerMaterials(MKRecipeProvider recipes) {
+        recipes.shapelessCrafting("copper_ingot_from_bits", RecipeCategory.MISC, Items.COPPER_INGOT, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.COPPER_BIT), 8));
+
+        recipes.shapelessCrafting("coal_from_bits", RecipeCategory.MISC, Items.COAL, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.COAL_BIT), 8));
+
+        recipes.shapelessCrafting("iron_ingot_from_bits", RecipeCategory.MISC, Items.IRON_INGOT, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.IRON_BIT), 8));
+
+        recipes.shapelessCrafting("gold_ingot_from_bits", RecipeCategory.MISC, Items.GOLD_INGOT, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.GOLD_BIT), 8));
+
+        recipes.shapelessCrafting("emerald_shard_from_bits", RecipeCategory.MISC, Items.EMERALD, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.EMERALD_SHARD), 8));
+
+        recipes.shapelessCrafting("diamond_shard_from_bits", RecipeCategory.MISC, Items.DIAMOND, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.DIAMOND_SHARD), 8));
+
+        recipes.shapelessCrafting("netherite_scrap_from_bits", RecipeCategory.MISC, Items.NETHERITE_SCRAP, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.NETHERITE_BIT), 8));
     }
 
     private static void registerCombRecipes(MKRecipeProvider recipes) {

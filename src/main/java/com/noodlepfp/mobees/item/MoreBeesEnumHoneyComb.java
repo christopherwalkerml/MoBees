@@ -1,5 +1,6 @@
 package com.noodlepfp.mobees.item;
 
+import com.noodlepfp.mobees.MoBeesModCompat;
 import forestry.api.core.IBlockSubtype;
 import forestry.api.core.IItemSubtype;
 import net.minecraft.util.StringRepresentable;
@@ -14,9 +15,21 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     MINERAL(new Color(9211025), new Color(0x91877A)),
     COAL(new Color(10392696), new Color(3682590)),
     COPPER(new Color(0x9F9F9F), new Color(0xE17C38)),
-    IRON(new Color(0x9F9F9F), new Color(0xF8F8F8)),
+
+    // Mod Compat Hives
+    TIN(new Color(0x9F9F9F), new Color(0xFFFFFF)),
+    ZINC(new Color(0x9F9F9F), new Color(0xDED0A1)),
+    LEAD(new Color(0x9F9F9F), new Color(0x5A6680)),
+    NICKEL(new Color(0x9F9F9F), new Color(0xEFD797)),
+    SILVER(new Color(0x9F9F9F), new Color(0xE8E8E8)),
+    OSMIUM(new Color(0x9F9F9F), new Color(0x9BC2EF)),
+    PLATINUM(new Color(0x9F9F9F), new Color(0xC8FFF5)),
+    CERTUS(new Color(0x9F9F9F), new Color(0xEAD8FC)),
+    YELLORIUM(new Color(0x9F9F9F), new Color(0xFFEA00)),
+    IRON(new Color(0x9F9F9F), new Color(0xD5D5D5)),
     GOLD(new Color(0x9F9F9F), new Color(0xE5AE47)),
     LAPIS(new Color(0x9F9F9F), new Color(0x4A3DF1)),
+    APATITE(new Color(0x9F9F9F), new Color(0x5978EE)),
     REDSTONE(new Color(0x9F9F9F), new Color(0xF33838)),
     AMETHYST(new Color(0x9F9F9F), new Color(0xB373EC)),
     DIAMOND(new Color(0x9F9F9F), new Color(0x78D8EE)),
@@ -31,22 +44,15 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     public final String name;
     public final int primaryColor;
     public final int secondaryColor;
-    private final boolean unused;
 
     MoreBeesEnumHoneyComb(Color primary, Color secondary) {
-        this(primary, secondary, false);
+        this(primary, secondary, null);
     }
 
-    MoreBeesEnumHoneyComb(Color primary, Color secondary, boolean unused) {
-        this.unused = unused;
+    MoreBeesEnumHoneyComb(Color primary, Color secondary, String compatName) {
         this.name = toString().toLowerCase(Locale.ENGLISH);
         this.primaryColor = primary.getRGB();
         this.secondaryColor = secondary.getRGB();
-
-    }
-
-    public boolean isUnused() {
-        return this.unused;
     }
 
     @Override
@@ -60,5 +66,4 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
         }
         return VALUES[meta];
     }
-
 }

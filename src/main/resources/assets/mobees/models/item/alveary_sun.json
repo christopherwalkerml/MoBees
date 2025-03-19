@@ -1,5 +1,5 @@
 {
-  "parent": "mobees:block/alveary_sun_off",
+  "parent": "mobees:block/alveary_sun_on",
   "display": {
     "thirdperson": {
       "rotation": [

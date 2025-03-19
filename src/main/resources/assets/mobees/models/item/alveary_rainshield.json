@@ -1,5 +1,5 @@
 {
-  "parent": "mobees:block/alveary_rainshield_off",
+  "parent": "mobees:block/alveary_rainshield_on",
   "display": {
     "thirdperson": {
       "rotation": [
