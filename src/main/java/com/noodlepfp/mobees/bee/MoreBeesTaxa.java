@@ -14,6 +14,13 @@ public class MoreBeesTaxa {
     public static final String SPECIES_COPPER = "Copper";
     public static final String SPECIES_TIN = "Tin";
     public static final String SPECIES_NICKEL = "Nickel";
+    public static final String SPECIES_LEAD = "Lead";
+    public static final String SPECIES_ZINC = "Zinc";
+    public static final String SPECIES_SILVER = "Silver";
+    public static final String SPECIES_PLATINUM = "Platinum";
+    public static final String SPECIES_OSMIUM = "Osmium";
+    public static final String SPECIES_YELLORIUM = "Yellorium";
+    public static final String SPECIES_CERTUS = "Certus";
     public static final String SPECIES_IRON = "Iron";
     public static final String SPECIES_GOLD = "Gold";
     public static final String SPECIES_LAPIS = "Lapis";

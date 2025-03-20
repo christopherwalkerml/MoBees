@@ -117,6 +117,33 @@ public class MoreBeesRecipeProvider {
         recipes.shapelessCrafting("iron_ingot_from_bits", RecipeCategory.MISC, Items.IRON_INGOT, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.IRON_BIT), 8));
 
+        recipes.shapelessCrafting("tin_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_TIN.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.TIN_BIT), 8));
+
+        recipes.shapelessCrafting("lead_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_LEAD.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.LEAD_BIT), 8));
+
+        recipes.shapelessCrafting("nickel_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_NICKEL.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.NICKEL_BIT), 8));
+
+        recipes.shapelessCrafting("zinc_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_ZINC.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ZINC_BIT), 8));
+
+        recipes.shapelessCrafting("silver_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_SILVER.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.SILVER_BIT), 8));
+
+        recipes.shapelessCrafting("osmium_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_OSMIUM.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.OSMIUM_BIT), 8));
+
+        recipes.shapelessCrafting("platinum_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_PLATINUM.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.PLATINUM_BIT), 8));
+
+        recipes.shapelessCrafting("yellorium_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_YELLORIUM.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.YELLORIUM_BIT), 8));
+
+        recipes.shapelessCrafting("certus_quartz_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.GEMS_CERTUS.toString()), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.CERTUS_BIT), 8));
+
         recipes.shapelessCrafting("gold_ingot_from_bits", RecipeCategory.MISC, Items.GOLD_INGOT, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.GOLD_BIT), 8));
 
@@ -128,6 +155,9 @@ public class MoreBeesRecipeProvider {
 
         recipes.shapelessCrafting("netherite_scrap_from_bits", RecipeCategory.MISC, Items.NETHERITE_SCRAP, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.NETHERITE_BIT), 8));
+
+        recipes.shapelessCrafting("apatite_from_bits", RecipeCategory.MISC, CoreItems.APATITE, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.APATITE_BIT), 8));
     }
 
     private static void registerCombRecipes(MKRecipeProvider recipes) {

@@ -28,25 +28,18 @@ base combs + drops :
  - witchy bee only flies in the rain?
 
 ideas for new bee types..
-- malicious/witchy bee - produces witch products
-  - done species
 - mummy bee - produces aged paper that can be turned into books
   - done species
-- bee bee - creates vanilla honey products
-  - done species
-- apatite bee!
 - withering bee
 - librarian bee - fills nearby bookshelves with books.. small chance of enchanted ones
 - pupil bee -> scholarly bee -> librarian bee (enchanted books?)
                              -> savant bee (paper)
+ - Tinker's Bees
+ - Fluix Bee
 
 - decaying -> skeletal, creepy, rotten
 - slimy drone (slime)
 - volcanic drone (basalt, calcite)
-
-- new frame with low low lifespan for quick mutation. high cost
-- new frame with loong lifespan
-- new frame with high mutation
 
 // TODO - make notes / descriptions for items
 - alveary mutator, compounding 1.5x, but caps at 5x.

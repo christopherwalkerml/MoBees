@@ -1,0 +1,23 @@
+{
+  "type": "forestry:centrifuge",
+  "input": {
+    "item": "mobees:bee_comb_apatite"
+  },
+  "products": [
+    {
+      "chance": 0.4,
+      "item": "forestry:honey_drop"
+    },
+    {
+      "chance": 0.2,
+      "item": "mobees:apatite_bit",
+      "count": 2
+    },
+    {
+      "chance": 1,
+      "item": "mobees:apatite_bit",
+      "count": 1
+    }
+  ],
+  "time": 20
+}
