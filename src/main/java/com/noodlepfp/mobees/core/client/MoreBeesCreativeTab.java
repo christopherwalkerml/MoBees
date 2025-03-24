@@ -2,6 +2,7 @@ package com.noodlepfp.mobees.core.client;
 
 import com.mojang.logging.LogUtils;
 import com.noodlepfp.mobees.MoBees;
+import com.noodlepfp.mobees.MoBeesEnumModCompat;
 import com.noodlepfp.mobees.MoBeesModCompat;
 import com.noodlepfp.mobees.bee.MoreBeesSpecies;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
@@ -10,7 +11,6 @@ import com.noodlepfp.mobees.feature.MoreBeesCrateItems;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
 import com.noodlepfp.mobees.hive.MoreBeesBlockHiveType;
 import com.noodlepfp.mobees.item.MoreBeesBlockHoneyComb;
-import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
 import com.noodlepfp.mobees.item.MoreBeesItemBeeProduce;
 import com.noodlepfp.mobees.item.MoreBeesItemHoneyComb;
 import forestry.api.apiculture.genetics.BeeLifeStage;
@@ -20,7 +20,6 @@ import forestry.core.tab.ForestryCreativeTabs;
 import forestry.core.utils.SpeciesUtil;
 import forestry.modules.features.*;
 import forestry.storage.items.ItemCrated;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -63,51 +62,51 @@ public class MoreBeesCreativeTab {
 
         MoreBeesItems.CRAFTING_MATERIALS.getItems().forEach(items::accept);
 
+        for (MoreBeesItemBeeProduce produce : MoreBeesItems.BEE_PRODUCE_MATERIALS.getItems()) {
+            MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, produce.getType().name().toUpperCase().replace("_BIT", ""));
+            registerModCompatItem(items, new ItemStack(produce), modCompat, false);
+        }
+
         // Misc items
         LOGGER.info("Mo' Bees - Checking for Mod Compatible Resources...");
         for (MoreBeesItemHoneyComb comb : MoreBeesApicultureItems.BEE_COMBS.getItems()) {
-            MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, comb.getType().name.toUpperCase());
+            MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, comb.getType().name.toUpperCase());
             registerModCompatItem(items, new ItemStack(comb), modCompat, true);
         }
 
         for (ILifeStage stage : SpeciesUtil.BEE_TYPE.get().getLifeStages()) {
             for (IBeeSpecies species : SpeciesUtil.getAllBeeSpecies()) {
                 if (species.id().toString().contains("mobees")) {
-                    MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, species.getSpeciesName().toUpperCase());
+                    MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, species.getSpeciesName().toUpperCase());
                     registerModCompatItem(items, species.createStack(stage), modCompat, false);
                 }
             }
         }
 
-        for (MoreBeesItemBeeProduce produce : MoreBeesItems.BEE_PRODUCE_MATERIALS.getItems()) {
-            MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, produce.getType().name().toUpperCase().replace("_BIT", ""));
-            registerModCompatItem(items, new ItemStack(produce), modCompat, false);
-        }
-
         for (MoreBeesBlockHoneyComb blockHoneyComb : MoreBeesApicultureBlocks.BEE_COMB.getBlocks()) {
-            MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, blockHoneyComb.getType().name().toUpperCase());
+            MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, blockHoneyComb.getType().name().toUpperCase());
             registerModCompatItem(items, new ItemStack(blockHoneyComb), modCompat, false);
         }
 
         for (FeatureItem<ItemCrated> crate : MoreBeesCrateItems.getCrates()) {
-            MoBeesModCompat modCompat = EnumUtils.getEnum(MoBeesModCompat.class, crate.getName().toUpperCase().replace("CRATED_BEE_COMB_", ""));
+            MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, crate.getName().toUpperCase().replace("CRATED_BEE_COMB_", ""));
             registerModCompatItem(items, new ItemStack(crate), modCompat, false);
         }
     }
 
-    private static void registerModCompatItem(CreativeModeTab.Output items, ItemStack item, MoBeesModCompat compatEnum, boolean doLog) {
+    private static void registerModCompatItem(CreativeModeTab.Output items, ItemStack item, MoBeesEnumModCompat compatEnum, boolean doLog) {
         if (compatEnum == null) {
             items.accept(item);
             return;
         }
-        String compatStr = compatEnum.getModCompatTag();
-        if (ForgeRegistries.ITEMS.tags().isKnownTagName(TagKey.create(ForgeRegistries.ITEMS.getRegistryKey(), new ResourceLocation("forge", compatStr)))) {
+        TagKey<Item> compatTag = compatEnum.getModCompatTag();
+        if (ForgeRegistries.ITEMS.tags().isKnownTagName(compatTag)) {
             if (doLog) {
-                LOGGER.info(compatStr + " : FOUND");
+                LOGGER.info(compatTag.location() + " : FOUND");
             }
             items.accept(item);
         } else if (doLog) {
-            LOGGER.info(compatStr + " : NOT FOUND");
+            LOGGER.info(compatTag.location() + " : NOT FOUND");
         }
     }
 }

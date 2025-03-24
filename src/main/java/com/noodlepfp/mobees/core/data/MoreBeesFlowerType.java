@@ -8,6 +8,15 @@ public class MoreBeesFlowerType {
     public static final ResourceLocation ROCK_STONE = MoBeesModule.mobees("flower_type_rock_stone");
     public static final ResourceLocation ROCK_COAL = MoBeesModule.mobees("flower_type_rock_coal");
     public static final ResourceLocation ROCK_COPPER = MoBeesModule.mobees("flower_type_rock_copper");
+    public static final ResourceLocation ROCK_TIN = MoBeesModule.mobees("flower_type_rock_tin");
+    public static final ResourceLocation ROCK_ZINC = MoBeesModule.mobees("flower_type_rock_zinc");
+    public static final ResourceLocation ROCK_LEAD = MoBeesModule.mobees("flower_type_rock_lead");
+    public static final ResourceLocation ROCK_NICKEL = MoBeesModule.mobees("flower_type_rock_nickel");
+    public static final ResourceLocation ROCK_SILVER = MoBeesModule.mobees("flower_type_rock_silver");
+    public static final ResourceLocation ROCK_PLATINUM = MoBeesModule.mobees("flower_type_rock_platinum");
+    public static final ResourceLocation ROCK_OSMIUM = MoBeesModule.mobees("flower_type_rock_osmium");
+    public static final ResourceLocation ROCK_YELLORIUM = MoBeesModule.mobees("flower_type_rock_yellorium");
+    public static final ResourceLocation ROCK_CERTUS_QUARTZ = MoBeesModule.mobees("flower_type_rock_certus_quartz");
     public static final ResourceLocation ROCK_IRON = MoBeesModule.mobees("flower_type_rock_iron");
     public static final ResourceLocation ROCK_GOLD = MoBeesModule.mobees("flower_type_rock_gold");
     public static final ResourceLocation ROCK_LAPIS = MoBeesModule.mobees("flower_type_rock_lapis");

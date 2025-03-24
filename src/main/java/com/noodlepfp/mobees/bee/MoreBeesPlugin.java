@@ -49,6 +49,15 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_STONE, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_STONE, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_COAL, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_COAL, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_COPPER, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_COPPER, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_TIN, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_TIN, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_LEAD, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_LEAD, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_NICKEL, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_NICKEL, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ZINC, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ZINC, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_OSMIUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_OSMIUM, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_SILVER, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_PLATINUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_PLATINUM, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_YELLORIUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_YELLORIUM, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_CERTUS_QUARTZ, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_CERTUS_QUARTZ, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_IRON, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_IRON, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_GOLD, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_GOLD, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_LAPIS, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_LAPIS, true));
@@ -59,10 +68,13 @@ public class MoreBeesPlugin implements IForestryPlugin {
 
         // effect tags
         apiculture.registerBeeEffect(MoreBeesEffect.CAVE_SIGHT, new PotionBeeEffect(false, MobEffects.NIGHT_VISION, 240));
-        apiculture.registerBeeEffect(MoreBeesEffect.CAMOUFLAGE, new PotionBeeEffect(false, MobEffects.INVISIBILITY, 240));
+        apiculture.registerBeeEffect(MoreBeesEffect.DARK, new PotionBeeEffect(false, MobEffects.DARKNESS, 240));
+        apiculture.registerBeeEffect(MoreBeesEffect.WITHERED, new PotionBeeEffect(false, MobEffects.WITHER, 100));
+        apiculture.registerBeeEffect(MoreBeesEffect.VANISHING, new PotionBeeEffect(false, MobEffects.INVISIBILITY, 180));
         apiculture.registerBeeEffect(MoreBeesEffect.MELODIC_CHIME, new MelodicChimeEffect());
         apiculture.registerBeeEffect(MoreBeesEffect.WITCHING, new WitchingEffect());
         apiculture.registerBeeEffect(MoreBeesEffect.CURSED, new CursedEffect());
+        apiculture.registerBeeEffect(MoreBeesEffect.ARCANE, new PotionBeeEffect(false, MobEffects.LEVITATION, 40));
     }
 
     @Override

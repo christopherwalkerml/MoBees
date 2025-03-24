@@ -19,6 +19,7 @@ public class MoreBeesTaxa {
     public static final String SPECIES_SILVER = "Silver";
     public static final String SPECIES_PLATINUM = "Platinum";
     public static final String SPECIES_OSMIUM = "Osmium";
+    public static final String SPECIES_UNUSUAL = "Unusual";
     public static final String SPECIES_YELLORIUM = "Yellorium";
     public static final String SPECIES_CERTUS = "Certus";
     public static final String SPECIES_IRON = "Iron";
@@ -78,6 +79,23 @@ public class MoreBeesTaxa {
     public static final String SPECIES_SOULFUL = "Soulful";
     public static final String SPECIES_ARCANE = "Arcane";
 
+    // MOB LINE
+    public static final String SPECIES_BONY = "Bony";
+    public static final String SPECIES_MUMMY = "Mummy";
+    public static final String SPECIES_CREEPY = "Creepy";
+    public static final String SPECIES_SLIMY = "Slimy";
+    public static final String SPECIES_PHANTOM = "Phantom";
+    public static final String SPECIES_WITHERED = "Withered";
+
+    // EXTRA SCULK LINE
+    public static final String SPECIES_WARDEN = "Warden";
+
+    // EXTRA AQUATIC LINE
+    public static final String SPECIES_SHELLED = "Shelled";
+    public static final String SPECIES_TURTLE = "Turtle";
+    public static final String SPECIES_DROWNED = "Drowned";
+    public static final String SPECIES_NAUTILUS = "Nautilus";
+
     // GENUS
     // ROCKY LINE
     public static final String GENUS_ROCKY = "Rocky";
@@ -113,8 +131,20 @@ public class MoreBeesTaxa {
     public static final String GENUS_CAMOUFLAGED = "Camouflaged";
     public static final String GENUS_BEE = "Bee";
 
+    // UNUSUAL LINE
+    public static final String GENUS_UNUSUAL = "Unusual";
+
     // ALPINE LINE
     public static final String GENUS_ALPINE = "Alpine";
     public static final String GENUS_SPIRITED = "Spirited";
     public static final String GENUS_FORLORN = "Forlorn";
+
+    // MOB LINE
+    public static final String GENUS_MONSTER = "Monster";
+
+    // EXTRA SCULK LINE
+    public static final String GENUS_WARDEN = "Warden";
+
+    // EXTRA AQUATIC LINE
+    public static final String GENUS_SHELLED = "Shelled";
 }

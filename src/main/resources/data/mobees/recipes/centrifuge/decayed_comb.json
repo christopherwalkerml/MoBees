@@ -1,0 +1,27 @@
+{
+  "type": "forestry:centrifuge",
+  "input": {
+    "item": "mobees:bee_comb_decayed"
+  },
+  "products": [
+    {
+      "chance": 0.5,
+      "item": "forestry:honey_drop"
+    },
+    {
+      "chance": 0.3,
+      "item": "forestry:beeswax"
+    },
+    {
+      "chance": 0.2,
+      "item": "minecraft:rotten_flesh",
+      "count": 1
+    },
+    {
+      "chance": 0.2,
+      "item": "minecraft:bone_meal",
+      "count": 1
+    }
+  ],
+  "time": 20
+}

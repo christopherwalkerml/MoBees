@@ -40,9 +40,8 @@ public class MoreBeesApicultureItems {
             .build(), "frame_fertile");
 
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_CRIMSON = REGISTRY.item(() -> new MoreBeesItemHiveFrame
-            .MoreBeesItemHiveFrameBuilder(128)
-            .setSpeedMult(0.8f)
-            .setPollinationMult(0.5f)
+            .MoreBeesItemHiveFrameBuilder(256)
+            .setMutationMult(1.25f)
             .setIsHellish(true)
             .build(), "frame_crimson");
 

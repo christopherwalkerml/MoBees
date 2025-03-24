@@ -26,7 +26,7 @@ public class MoreBeesItemModelProvider extends ItemModelProvider {
             Item containedItem = featureCrated.get().getContained().getItem();
             String id = featureCrated.getName();
 
-            if (ApicultureItems.BEE_COMBS.itemEqual(containedItem)) {
+            if (MoreBeesApicultureItems.BEE_COMBS.itemEqual(containedItem)) {
                 filledCrateModelLayered(id, modLoc("item/bee_combs.0"), modLoc("item/bee_combs.1"));
             }
         }

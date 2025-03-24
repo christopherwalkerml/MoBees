@@ -12,7 +12,7 @@ public class MoreBeesItemBlockHoneyComb extends ItemBlockForestry<MoreBeesBlockH
     }
 
     public int getColorFromItemStack(ItemStack stack, int tintIndex) {
-        MoreBeesEnumHoneyComb honeyComb = ((MoreBeesBlockHoneyComb)this.getBlock()).getType();
+        MoreBeesEnumHoneyComb honeyComb = ((MoreBeesBlockHoneyComb)this.getBlock()).getMoreBeesType();
         return tintIndex == 1 ? honeyComb.primaryColor : honeyComb.secondaryColor;
     }
 }

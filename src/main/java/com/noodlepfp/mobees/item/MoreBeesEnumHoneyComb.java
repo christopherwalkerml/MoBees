@@ -1,6 +1,5 @@
 package com.noodlepfp.mobees.item;
 
-import com.noodlepfp.mobees.MoBeesModCompat;
 import forestry.api.core.IBlockSubtype;
 import forestry.api.core.IItemSubtype;
 import net.minecraft.util.StringRepresentable;
@@ -26,6 +25,8 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     PLATINUM(new Color(0x9F9F9F), new Color(0xC8FFF5)),
     CERTUS(new Color(0x9F9F9F), new Color(0xEAD8FC)),
     YELLORIUM(new Color(0x9F9F9F), new Color(0xFFEA00)),
+
+    // BACK TO REGULAR
     IRON(new Color(0x9F9F9F), new Color(0xD5D5D5)),
     GOLD(new Color(0x9F9F9F), new Color(0xE5AE47)),
     LAPIS(new Color(0x9F9F9F), new Color(0x4A3DF1)),
@@ -38,7 +39,10 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     CHROMATIC(new Color(0xFFFFFF), new Color(0xFFFFFF)),
     GLOWING(new Color(0x754141), new Color(0xDABF54)),
     SCRAPPED(new Color(0x754141), new Color(0x484848)),
-    FUNGAL(new Color(0x6B589F), new Color(0xA0A0B9));
+    FUNGAL(new Color(0x6B589F), new Color(0xA0A0B9)),
+    SOULFUL(new Color(0xE394AE), new Color(0x92DEE5)),
+    ARCANE(new Color(0x92DEE5), new Color(0xC494E1)),
+    DECAYED(new Color(0xD2D2D2), new Color(0xAD8484));
     public static final MoreBeesEnumHoneyComb[] VALUES = values();
 
     public final String name;

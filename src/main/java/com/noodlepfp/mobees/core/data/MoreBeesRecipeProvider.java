@@ -1,17 +1,16 @@
 package com.noodlepfp.mobees.core.data;
 
+import com.noodlepfp.mobees.MoBeesEnumModCompat;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesCrateItems;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
 import com.noodlepfp.mobees.item.*;
-import forestry.api.ForestryTags;
 import forestry.apiculture.blocks.BlockAlveary;
 import forestry.apiculture.blocks.BlockAlvearyType;
 import forestry.apiculture.features.ApicultureBlocks;
 import forestry.apiculture.features.ApicultureItems;
-import forestry.apiculture.items.EnumHoneyComb;
 import forestry.core.config.Constants;
 import forestry.core.data.builder.CarpenterRecipeBuilder;
 import forestry.core.data.builder.CentrifugeRecipeBuilder;
@@ -30,8 +29,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -39,19 +36,21 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.conditions.ItemExistsCondition;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.registries.ForgeRegistries;
 import thedarkcolour.modkit.data.MKRecipeProvider;
 
 import java.util.*;
 import java.util.function.Consumer;
-
-import static javax.swing.UIManager.put;
 
 public class MoreBeesRecipeProvider {
 
     public static void addRecipes(Consumer<FinishedRecipe> consumer, MKRecipeProvider recipes) {
         registerApicultureRecipes(recipes);
         registerMaterials(recipes);
+        registerModCompatRecipes(recipes);
         registerCarpenter(consumer);
         registerFabricator(consumer);
         registerCentrifuge(consumer);
@@ -99,15 +98,64 @@ public class MoreBeesRecipeProvider {
         });
 
         recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_PRESERVATION, recipe -> {
-            recipe.define('#', Tags.Items.RODS_WOODEN);
-            recipe.define('A', ApicultureItems.AMBROSIA);
-            recipe.pattern("###");
-            recipe.pattern("#A#");
-            recipe.pattern("###");
+            recipe.define('#', MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ARCANE_WAX));
+            recipe.define('X', ApicultureItems.ROYAL_JELLY);
+            recipe.define('A', ApicultureItems.FRAME_UNTREATED);
+            recipe.pattern("#X#");
+            recipe.pattern("XAX");
+            recipe.pattern("#X#");
+        });
+
+        recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_CRIMSON, recipe -> {
+            recipe.define('#', MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ARCANE_WAX));
+            recipe.define('X', Tags.Items.CROPS_NETHER_WART);
+            recipe.define('A', ApicultureItems.FRAME_UNTREATED);
+            recipe.pattern("#X#");
+            recipe.pattern("XAX");
+            recipe.pattern("#X#");
+        });
+
+        recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_MUTATION, recipe -> {
+            recipe.define('#', MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ARCANE_WAX));
+            recipe.define('X', MoreBeesItems.CRAFTING_MATERIALS.get(MoreBeesEnumCraftingMaterial.MUTAGEN));
+            recipe.define('A', ApicultureItems.FRAME_UNTREATED);
+            recipe.pattern("#X#");
+            recipe.pattern("XAX");
+            recipe.pattern("#X#");
+        });
+
+        recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_DESTRUCTION, recipe -> {
+            recipe.define('#', MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.SOUL_WAX));
+            recipe.define('X', Tags.Items.OBSIDIAN);
+            recipe.define('A', ApicultureItems.FRAME_UNTREATED);
+            recipe.pattern("#X#");
+            recipe.pattern("XAX");
+            recipe.pattern("#X#");
+        });
+
+        recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_FERTILE, recipe -> {
+            recipe.define('#', MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.SOUL_WAX));
+            recipe.define('X', ApicultureItems.ROYAL_JELLY);
+            recipe.define('A', ApicultureItems.FRAME_UNTREATED);
+            recipe.pattern("#X#");
+            recipe.pattern("XAX");
+            recipe.pattern("#X#");
+        });
+
+        recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_KIND, recipe -> {
+            recipe.define('#', MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.SOUL_WAX));
+            recipe.define('X', ApicultureItems.HONEY_DROP);
+            recipe.define('A', ApicultureItems.FRAME_UNTREATED);
+            recipe.pattern("#X#");
+            recipe.pattern("XAX");
+            recipe.pattern("#X#");
         });
     }
 
     private static void registerMaterials(MKRecipeProvider recipes) {
+        recipes.shapelessCrafting("mutagen_crafting", RecipeCategory.MISC, MoreBeesItems.CRAFTING_MATERIALS.get(MoreBeesEnumCraftingMaterial.MUTAGEN), 3,
+                Tags.Items.DUSTS_GLOWSTONE, Tags.Items.DUSTS_REDSTONE, Tags.Items.CROPS);
+
         recipes.shapelessCrafting("copper_ingot_from_bits", RecipeCategory.MISC, Items.COPPER_INGOT, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.COPPER_BIT), 8));
 
@@ -116,33 +164,6 @@ public class MoreBeesRecipeProvider {
 
         recipes.shapelessCrafting("iron_ingot_from_bits", RecipeCategory.MISC, Items.IRON_INGOT, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.IRON_BIT), 8));
-
-        recipes.shapelessCrafting("tin_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_TIN.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.TIN_BIT), 8));
-
-        recipes.shapelessCrafting("lead_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_LEAD.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.LEAD_BIT), 8));
-
-        recipes.shapelessCrafting("nickel_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_NICKEL.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.NICKEL_BIT), 8));
-
-        recipes.shapelessCrafting("zinc_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_ZINC.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ZINC_BIT), 8));
-
-        recipes.shapelessCrafting("silver_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_SILVER.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.SILVER_BIT), 8));
-
-        recipes.shapelessCrafting("osmium_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_OSMIUM.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.OSMIUM_BIT), 8));
-
-        recipes.shapelessCrafting("platinum_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_PLATINUM.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.PLATINUM_BIT), 8));
-
-        recipes.shapelessCrafting("yellorium_ingot_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.INGOTS_YELLORIUM.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.YELLORIUM_BIT), 8));
-
-        recipes.shapelessCrafting("certus_quartz_from_bits", RecipeCategory.MISC, MoreBeesTags.getRandomItemFromTag(MoreBeesTags.Items.GEMS_CERTUS.toString()), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.CERTUS_BIT), 8));
 
         recipes.shapelessCrafting("gold_ingot_from_bits", RecipeCategory.MISC, Items.GOLD_INGOT, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.GOLD_BIT), 8));
@@ -158,6 +179,41 @@ public class MoreBeesRecipeProvider {
 
         recipes.shapelessCrafting("apatite_from_bits", RecipeCategory.MISC, CoreItems.APATITE, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.APATITE_BIT), 8));
+
+        recipes.shapelessCrafting("tin_from_bits", RecipeCategory.MISC, CoreItems.INGOT_TIN, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.TIN_BIT), 8));
+
+        recipes.shapelessCrafting("wither_partial_from_bits", RecipeCategory.MISC, MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.WITHER_SKULL_PARTIAL), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.WITHER_SKULL_BIT), 8));
+
+        recipes.shapelessCrafting("wither_skull_from_bits", RecipeCategory.MISC, Items.WITHER_SKELETON_SKULL, 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.WITHER_SKULL_PARTIAL), 8));
+    }
+
+    private static void registerModCompatRecipes(MKRecipeProvider recipes) {
+        recipes.shapelessCrafting("lead_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.LEAD.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.LEAD_BIT), 8));
+
+        recipes.shapelessCrafting("nickel_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.NICKEL.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.NICKEL_BIT), 8));
+
+        recipes.shapelessCrafting("zinc_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.ZINC.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ZINC_BIT), 8));
+
+        recipes.shapelessCrafting("silver_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.SILVER.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.SILVER_BIT), 8));
+
+        recipes.shapelessCrafting("osmium_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.OSMIUM.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.OSMIUM_BIT), 8));
+
+        recipes.shapelessCrafting("platinum_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.PLATINUM.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.PLATINUM_BIT), 8));
+
+        recipes.shapelessCrafting("yellorium_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.YELLORIUM.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.YELLORIUM_BIT), 8));
+
+        recipes.shapelessCrafting("certus_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.CERTUS.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.CERTUS_BIT), 8));
     }
 
     private static void registerCombRecipes(MKRecipeProvider recipes) {

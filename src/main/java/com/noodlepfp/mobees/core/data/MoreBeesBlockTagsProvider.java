@@ -4,9 +4,12 @@ import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.ForestryTags;
 import forestry.apiculture.features.ApicultureBlocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ForgeBlockTagsProvider;
 import thedarkcolour.modkit.data.MKTagsProvider;
 
 public class MoreBeesBlockTagsProvider {
@@ -18,16 +21,25 @@ public class MoreBeesBlockTagsProvider {
         tags.tag(MoreBeesTags.Blocks.ALPINE_HIVE_GROUNDS).add(Blocks.SNOW_BLOCK).add(Blocks.POWDER_SNOW).add(Blocks.PACKED_ICE);
         tags.tag(MoreBeesTags.Blocks.ROCKY_CAVE_REPLACEABLE).add(Blocks.STONE).add(Blocks.GRANITE).add(Blocks.ANDESITE).add(Blocks.DIORITE).add(Blocks.DIRT);
 
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_STONE).add(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, Blocks.COBBLESTONE);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_COAL).add(Blocks.COAL_ORE, Blocks.DEEPSLATE_COAL_ORE);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_COPPER).add(Blocks.COPPER_ORE, Blocks.DEEPSLATE_COPPER_ORE);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_IRON).add(Blocks.IRON_ORE, Blocks.DEEPSLATE_IRON_ORE);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_GOLD).add(Blocks.GOLD_ORE, Blocks.DEEPSLATE_GOLD_ORE);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_LAPIS).add(Blocks.LAPIS_ORE, Blocks.DEEPSLATE_LAPIS_ORE);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_REDSTONE).add(Blocks.REDSTONE_ORE, Blocks.DEEPSLATE_REDSTONE_ORE);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_STONE).addTag(Tags.Blocks.STONE);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_COAL).addTag(Tags.Blocks.ORES_COAL);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_COPPER).addTag(Tags.Blocks.ORES_COPPER);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_TIN).addOptionalTag(MoreBeesTags.Blocks.F_ORE_TIN);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_ZINC).addOptionalTag(MoreBeesTags.Blocks.F_ORE_ZINC);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_LEAD).addOptionalTag(MoreBeesTags.Blocks.F_ORE_LEAD);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_NICKEL).addOptionalTag(MoreBeesTags.Blocks.F_ORE_NICKEL);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_OSMIUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_OSMIUM);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_PLATINUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_PLATINUM);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER).addOptionalTag(MoreBeesTags.Blocks.F_ORE_SILVER);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_YELLORIUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_YELLORIUM);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_CERTUS_QUARTZ).addOptionalTag(MoreBeesTags.Blocks.F_ORE_CERTUS_QUARTZ);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_IRON).addTag(Tags.Blocks.ORES_IRON);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_GOLD).addTag(Tags.Blocks.ORES_GOLD);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_LAPIS).addTag(Tags.Blocks.ORES_LAPIS);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_REDSTONE).addTag(Tags.Blocks.ORES_REDSTONE);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_AMETHYST).add(Blocks.SMALL_AMETHYST_BUD, Blocks.MEDIUM_AMETHYST_BUD, Blocks.LARGE_AMETHYST_BUD, Blocks.AMETHYST_CLUSTER);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_DIAMOND).add(Blocks.DIAMOND_ORE, Blocks.DEEPSLATE_DIAMOND_ORE);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_EMERALD).add(Blocks.EMERALD_ORE, Blocks.DEEPSLATE_EMERALD_ORE);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_DIAMOND).addTag(Tags.Blocks.ORES_DIAMOND);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_EMERALD).addTag(Tags.Blocks.ORES_EMERALD);
     }
 
 }

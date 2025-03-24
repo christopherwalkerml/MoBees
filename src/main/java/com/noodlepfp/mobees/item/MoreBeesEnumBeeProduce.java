@@ -22,7 +22,11 @@ public enum MoreBeesEnumBeeProduce implements IItemSubtype {
     IRON_BIT,
     GOLD_BIT,
     NETHERITE_BIT,
-    APATITE_BIT;
+    APATITE_BIT,
+    SOUL_WAX,
+    ARCANE_WAX,
+    WITHER_SKULL_BIT,
+    WITHER_SKULL_PARTIAL;
 
     private final String name;
 

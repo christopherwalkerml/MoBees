@@ -6,7 +6,8 @@ import java.util.Locale;
 
 public enum MoreBeesEnumCraftingMaterial implements IItemSubtype {
 
-    MUTATION_CATALYST;
+    MUTATION_CATALYST,
+    MUTAGEN;
 
     private final String name;
 
