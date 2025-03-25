@@ -214,6 +214,12 @@ public class MoreBeesRecipeProvider {
 
         recipes.shapelessCrafting("certus_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.CERTUS.getRegistryObject().get(), 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.CERTUS_BIT), 8));
+
+        recipes.shapelessCrafting("ardite_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.ARDITE.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ARDITE_BIT), 8));
+
+        recipes.shapelessCrafting("cobalt_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.COBALT.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.COBALT_BIT), 8));
     }
 
     private static void registerCombRecipes(MKRecipeProvider recipes) {
@@ -285,6 +291,10 @@ public class MoreBeesRecipeProvider {
                     MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.SILVER_BIT));
             put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.GOLD),
                     MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.GOLD_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.ARDITE),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ARDITE_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.COBALT),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.COBALT_BIT));
             put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.PLATINUM),
                     MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.PLATINUM_BIT));
             put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.ZINC),

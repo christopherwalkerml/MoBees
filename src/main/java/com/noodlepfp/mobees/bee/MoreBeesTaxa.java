@@ -24,6 +24,8 @@ public class MoreBeesTaxa {
     public static final String SPECIES_CERTUS = "Certus";
     public static final String SPECIES_IRON = "Iron";
     public static final String SPECIES_GOLD = "Gold";
+    public static final String SPECIES_ARDITE = "Ardite";
+    public static final String SPECIES_COBALT = "Cobalt";
     public static final String SPECIES_LAPIS = "Lapis";
     public static final String SPECIES_APATITE = "Apatine";
     public static final String SPECIES_REDSTONE = "Redstone";
@@ -81,7 +83,6 @@ public class MoreBeesTaxa {
 
     // MOB LINE
     public static final String SPECIES_BONY = "Bony";
-    public static final String SPECIES_MUMMY = "Mummy";
     public static final String SPECIES_CREEPY = "Creepy";
     public static final String SPECIES_SLIMY = "Slimy";
     public static final String SPECIES_PHANTOM = "Phantom";
@@ -95,6 +96,12 @@ public class MoreBeesTaxa {
     public static final String SPECIES_TURTLE = "Turtle";
     public static final String SPECIES_DROWNED = "Drowned";
     public static final String SPECIES_NAUTILUS = "Nautilus";
+
+    // PUPIL LINE
+    public static final String SPECIES_PUPIL = "Pupil";
+    public static final String SPECIES_STUDIOUS = "Studious";
+    public static final String SPECIES_ERUDITE = "Erudite";
+    public static final String SPECIES_SAGE = "Sage";
 
     // GENUS
     // ROCKY LINE
@@ -147,4 +154,8 @@ public class MoreBeesTaxa {
 
     // EXTRA AQUATIC LINE
     public static final String GENUS_SHELLED = "Shelled";
+
+    // PUPIL LINE
+    public static final String GENUS_PUPIL = "Pupil";
+    public static final String GENUS_ERUDITE = "Erudite";
 }

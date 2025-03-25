@@ -31,8 +31,6 @@ ideas for new bee types..
 - librarian bee - fills nearby bookshelves with books.. small chance of enchanted ones
 - pupil bee -> scholarly bee -> librarian bee (enchanted books?)
                              -> savant bee (paper)
- - Tinker's Bees
- - Fluix Bee
 
 - volcanic drone (basalt, calcite)
 

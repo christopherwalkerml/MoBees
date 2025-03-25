@@ -49,6 +49,8 @@ public class MoreBeesTags {
         public static final TagKey<Block> ROCK_FLOWERS_PLATINUM = blockTag("flowers/platinum");
         public static final TagKey<Block> ROCK_FLOWERS_SILVER = blockTag("flowers/silver");
         public static final TagKey<Block> ROCK_FLOWERS_OSMIUM = blockTag("flowers/osmium");
+        public static final TagKey<Block> ROCK_FLOWERS_ARDITE = blockTag("flowers/ardite");
+        public static final TagKey<Block> ROCK_FLOWERS_COBALT = blockTag("flowers/cobalt");
         public static final TagKey<Block> ROCK_FLOWERS_YELLORIUM = blockTag("flowers/yellorium");
         public static final TagKey<Block> ROCK_FLOWERS_CERTUS_QUARTZ = blockTag("flowers/certus_quartz");
         public static final TagKey<Block> ROCK_FLOWERS_IRON = blockTag("flowers/iron");
@@ -58,6 +60,7 @@ public class MoreBeesTags {
         public static final TagKey<Block> ROCK_FLOWERS_AMETHYST = blockTag("flowers/amethyst");
         public static final TagKey<Block> ROCK_FLOWERS_DIAMOND = blockTag("flowers/diamond");
         public static final TagKey<Block> ROCK_FLOWERS_EMERALD = blockTag("flowers/emerald");
+        public static final TagKey<Block> FLOWERS_READABLE = blockTag("flowers/readable");
 
         // Mod Compat Ores
         public static final TagKey<Block> F_ORE_TIN = forgeBlockTag("ores/tin");
@@ -65,6 +68,8 @@ public class MoreBeesTags {
         public static final TagKey<Block> F_ORE_LEAD = forgeBlockTag("ores/lead");
         public static final TagKey<Block> F_ORE_ZINC = forgeBlockTag("ores/zinc");
         public static final TagKey<Block> F_ORE_OSMIUM = forgeBlockTag("ores/osmium");
+        public static final TagKey<Block> F_ORE_ARDITE = forgeBlockTag("ores/ardite");
+        public static final TagKey<Block> F_ORE_COBALT = forgeBlockTag("ores/cobalt");
         public static final TagKey<Block> F_ORE_PLATINUM = forgeBlockTag("ores/platinum");
         public static final TagKey<Block> F_ORE_SILVER = forgeBlockTag("ores/silver");
         public static final TagKey<Block> F_ORE_CERTUS_QUARTZ = forgeBlockTag("ores/certus_quartz");

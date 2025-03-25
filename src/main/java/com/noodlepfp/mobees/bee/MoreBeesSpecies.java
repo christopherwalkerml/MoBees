@@ -24,8 +24,8 @@ public class MoreBeesSpecies {
     public static final ResourceLocation SILVER = mobees("bee_silver");
     public static final ResourceLocation PLATINUM = mobees("bee_platinum");
     public static final ResourceLocation CERTUS = mobees("bee_certus");
-    public static final ResourceLocation COBALT = mobees("bee_cobalt"); // TODO lapis, desolate
-    public static final ResourceLocation ARDITE = mobees("bee_ardite"); // TODO copper, desolate
+    public static final ResourceLocation COBALT = mobees("bee_cobalt");
+    public static final ResourceLocation ARDITE = mobees("bee_ardite");
     public static final ResourceLocation GOLD = mobees("bee_gold");
     public static final ResourceLocation LAPIS = mobees("bee_lapis");
     public static final ResourceLocation APATITE = mobees("bee_apatite");
@@ -43,7 +43,6 @@ public class MoreBeesSpecies {
 
     // EXTRA ZOMBIFIED BRANCH
     public static final ResourceLocation BONY = mobees("bee_bony");
-    public static final ResourceLocation MUMMY = mobees("bee_mummy");
     public static final ResourceLocation CREEPY = mobees("bee_creepy");
     public static final ResourceLocation SLIMY = mobees("bee_slimy");
     public static final ResourceLocation PHANTOM = mobees("bee_phantom");
@@ -102,4 +101,10 @@ public class MoreBeesSpecies {
     public static final ResourceLocation FORLORN = mobees("bee_forlorn");
     public static final ResourceLocation SOULFUL = mobees("bee_soulful");
     public static final ResourceLocation ARCANE = mobees("bee_arcane");
+
+    // PUPIL BRANCH
+    public static final ResourceLocation PUPIL = mobees("bee_pupil");
+    public static final ResourceLocation STUDIOUS = mobees("bee_studious");
+    public static final ResourceLocation ERUDITE = mobees("bee_erudite");
+    public static final ResourceLocation SAGE = mobees("bee_sage"); // TODO erudite, monastic
 }

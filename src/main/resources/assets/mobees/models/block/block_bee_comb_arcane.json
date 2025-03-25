@@ -1,0 +1,4 @@
+{
+  "parent": "forestry:block/block_bee_combs",
+  "render_type": "minecraft:translucent"
+}

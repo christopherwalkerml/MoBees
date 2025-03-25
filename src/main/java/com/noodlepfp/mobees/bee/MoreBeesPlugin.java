@@ -6,6 +6,7 @@ import com.noodlepfp.mobees.core.data.MoreBeesFlowerType;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.genetics.effect.CursedEffect;
+import com.noodlepfp.mobees.genetics.effect.LibrarianEffect;
 import com.noodlepfp.mobees.genetics.effect.MelodicChimeEffect;
 import com.noodlepfp.mobees.genetics.effect.WitchingEffect;
 import com.noodlepfp.mobees.hive.MoreHiveDefinition;
@@ -54,6 +55,8 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_NICKEL, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_NICKEL, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ZINC, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ZINC, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_OSMIUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_OSMIUM, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ARDITE, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ARDITE, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_COBALT, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_COBALT, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_SILVER, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_PLATINUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_PLATINUM, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_YELLORIUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_YELLORIUM, true));
@@ -65,6 +68,7 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_AMETHYST, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_AMETHYST, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_DIAMOND, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_DIAMOND, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_EMERALD, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_EMERALD, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.READABLE, new FlowerType(MoreBeesTags.Blocks.FLOWERS_READABLE, true));
 
         // effect tags
         apiculture.registerBeeEffect(MoreBeesEffect.CAVE_SIGHT, new PotionBeeEffect(false, MobEffects.NIGHT_VISION, 240));
@@ -75,6 +79,7 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerBeeEffect(MoreBeesEffect.WITCHING, new WitchingEffect());
         apiculture.registerBeeEffect(MoreBeesEffect.CURSED, new CursedEffect());
         apiculture.registerBeeEffect(MoreBeesEffect.ARCANE, new PotionBeeEffect(false, MobEffects.LEVITATION, 40));
+        apiculture.registerBeeEffect(MoreBeesEffect.LIBRARIAN, new LibrarianEffect());
     }
 
     @Override

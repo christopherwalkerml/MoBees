@@ -12,4 +12,5 @@ public class MoreBeesEffect {
     public static final ResourceLocation WITCHING = MoBeesModule.mobees("bee_effect_witching");
     public static final ResourceLocation CURSED = MoBeesModule.mobees("bee_effect_cursed");
     public static final ResourceLocation ARCANE = MoBeesModule.mobees("bee_effect_arcane");
+    public static final ResourceLocation LIBRARIAN = MoBeesModule.mobees("bee_effect_librarian");
 }

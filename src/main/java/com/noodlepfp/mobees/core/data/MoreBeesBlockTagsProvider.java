@@ -29,6 +29,8 @@ public class MoreBeesBlockTagsProvider {
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_LEAD).addOptionalTag(MoreBeesTags.Blocks.F_ORE_LEAD);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_NICKEL).addOptionalTag(MoreBeesTags.Blocks.F_ORE_NICKEL);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_OSMIUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_OSMIUM);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_ARDITE).addOptionalTag(MoreBeesTags.Blocks.F_ORE_ARDITE);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_COBALT).addOptionalTag(MoreBeesTags.Blocks.F_ORE_COBALT);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_PLATINUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_PLATINUM);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER).addOptionalTag(MoreBeesTags.Blocks.F_ORE_SILVER);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_YELLORIUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_YELLORIUM);
@@ -40,6 +42,7 @@ public class MoreBeesBlockTagsProvider {
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_AMETHYST).add(Blocks.SMALL_AMETHYST_BUD, Blocks.MEDIUM_AMETHYST_BUD, Blocks.LARGE_AMETHYST_BUD, Blocks.AMETHYST_CLUSTER);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_DIAMOND).addTag(Tags.Blocks.ORES_DIAMOND);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_EMERALD).addTag(Tags.Blocks.ORES_EMERALD);
+        tags.tag(MoreBeesTags.Blocks.FLOWERS_READABLE).addTag(Tags.Blocks.BOOKSHELVES).add(Blocks.CHISELED_BOOKSHELF);
     }
 
 }
