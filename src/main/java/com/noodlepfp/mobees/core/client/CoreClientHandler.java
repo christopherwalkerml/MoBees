@@ -9,6 +9,7 @@ import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.client.IClientModuleHandler;
 import forestry.api.client.IForestryClientApi;
 import forestry.api.client.apiculture.IBeeClientManager;
+import forestry.apiculture.features.ApicultureBlocks;
 import forestry.apiculture.features.ApicultureItems;
 import forestry.apiimpl.client.ForestryClientApiImpl;
 import forestry.core.features.CoreBlocks;
@@ -41,7 +42,7 @@ public class CoreClientHandler implements IClientModuleHandler {
 
 	private static void onClientSetup(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			CoreBlocks.BASE.getBlocks().forEach((block) -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutoutMipped()));
+			MoreBeesApicultureBlocks.BEE_COMB.getBlocks().forEach((block) -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutout()));
 		});
 	}
 

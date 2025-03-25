@@ -24,5 +24,11 @@ public class MoreBeesBlockHoneyComb extends BlockHoneyComb {
     public MoreBeesEnumHoneyComb getMoreBeesType() {
         return type;
     }
+
+    @OnlyIn(Dist.CLIENT)
+    public int colorMultiplier(BlockState state, @Nullable BlockAndTintGetter level, @Nullable BlockPos pos, int tintIndex) {
+        MoreBeesEnumHoneyComb honeyComb = this.type;
+        return tintIndex == 1 ? honeyComb.primaryColor : honeyComb.secondaryColor;
+    }
 }
 

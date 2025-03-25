@@ -3,11 +3,9 @@ package com.noodlepfp.mobees.genetics.effect;
 import forestry.api.apiculture.IBeeHousing;
 import forestry.api.genetics.IEffectData;
 import forestry.api.genetics.IGenome;
-import forestry.apiculture.genetics.Bee;
 import forestry.core.utils.VecUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -26,14 +24,13 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class LibrarianEffect extends ThrottledBeeEffect {
 
     public LibrarianEffect() {
-        super(false, 20, true, true);
+        super(false, 6000, true, true);
     }
-    // TODO decrease throttle freq.
+
     @Override
     IEffectData doEffectThrottled(IGenome genome, IEffectData storedData, IBeeHousing housing) {
         Level level = housing.getWorldObj();

@@ -604,6 +604,21 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
+        apiculture.registerSpecies(MoreBeesSpecies.WITHERED, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_WITHERED, true, TextColor.fromRgb(0x343434))
+                .setBody(TextColor.fromRgb(0x737373))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
+                .addProduct(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.WITHER_SKULL_BIT), 0.2f)
+                .setGlint(true)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_WITHERED);
+                    genome.set(BeeChromosomes.FLOWER_TYPE, ForestryAlleles.FLOWER_TYPE_NETHER);
+                    genome.set(BeeChromosomes.TEMPERATURE_TOLERANCE, ForestryAlleles.TOLERANCE_UP_1);
+                })
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.BONY, MoreBeesSpecies.NETHERITE, 2);
+                })
+                .setAuthority("noodlepfp");
+
         // EXTRA SWAMPY LINE
         apiculture.registerSpecies(MoreBeesSpecies.SPORE, MoreBeesTaxa.GENUS_SPORE, MoreBeesTaxa.SPECIES_SPORE, true, TextColor.fromRgb(0x546626))
                 .setBody(TextColor.fromRgb(0x6B589F))
@@ -860,21 +875,6 @@ public class MoreBeesDefinition {
                 })
                 .addMutations(mutations -> {
                     mutations.add(ForestryBeeSpecies.ENDED, ForestryBeeSpecies.SPECTRAL, 5);
-                })
-                .setAuthority("noodlepfp");
-
-        apiculture.registerSpecies(MoreBeesSpecies.WITHERED, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_WITHERED, true, TextColor.fromRgb(0x343434))
-                .setBody(TextColor.fromRgb(0x737373))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
-                .addProduct(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.WITHER_SKULL_BIT), 0.2f)
-                .setGlint(true)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_WITHERED);
-                    genome.set(BeeChromosomes.FLOWER_TYPE, ForestryAlleles.FLOWER_TYPE_NETHER);
-                    genome.set(BeeChromosomes.TEMPERATURE_TOLERANCE, ForestryAlleles.TOLERANCE_UP_1);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.BONY, MoreBeesSpecies.NETHERITE, 2);
                 })
                 .setAuthority("noodlepfp");
 
