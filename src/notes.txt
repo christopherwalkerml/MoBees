@@ -17,7 +17,6 @@ base combs + drops :
 - DONE - add night vision to rocky bees ONLY (for now)
 - DONE - add flower type stone for rocky bees
 - DONE - add flower type ores, for ore-specific bees
-- add jubilance for ore bees. they should be at their optimal ore spawn level for jubilance - extends IBeeJubilance ?
 - add magic bee sprite for some special bees
 - DONE - harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
  - alveary sun lamp should glow in game when on?
@@ -26,11 +25,6 @@ base combs + drops :
  - alveary stimulator ^ upgrade of frame housing, expensive
  - witchy bee only flies in the rain?
  - alveary flower box (holds flower item, no need to place them down?)
-
-ideas for new bee types..
-- librarian bee - fills nearby bookshelves with books.. small chance of enchanted ones
-- pupil bee -> scholarly bee -> librarian bee (enchanted books?)
-                             -> savant bee (paper)
 
 - volcanic drone (basalt, calcite)
 

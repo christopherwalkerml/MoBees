@@ -1,6 +1,10 @@
-package com.noodlepfp.mobees.bee;
+package com.noodlepfp.mobees.core.client;
 
 import com.noodlepfp.mobees.MoBees;
+import com.noodlepfp.mobees.bee.MoreBeesDefinition;
+import com.noodlepfp.mobees.bee.MoreBeesSpecies;
+import com.noodlepfp.mobees.bee.MoreBeesTaxonomy;
+import com.noodlepfp.mobees.core.client.MoreBeesClientRegistration;
 import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.core.data.MoreBeesFlowerType;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
@@ -11,6 +15,7 @@ import com.noodlepfp.mobees.genetics.effect.MelodicChimeEffect;
 import com.noodlepfp.mobees.genetics.effect.WitchingEffect;
 import com.noodlepfp.mobees.hive.MoreHiveDefinition;
 import com.noodlepfp.mobees.item.MoreBeesEnumHoneyComb;
+import forestry.api.client.plugin.IClientRegistration;
 import forestry.api.plugin.IApicultureRegistration;
 import forestry.api.plugin.IForestryPlugin;
 import forestry.api.plugin.IGeneticRegistration;
@@ -23,6 +28,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class MoreBeesPlugin implements IForestryPlugin {
@@ -86,6 +92,11 @@ public class MoreBeesPlugin implements IForestryPlugin {
     public void registerGenetics(IGeneticRegistration genetics) {
         // Taxonomy
         MoreBeesTaxonomy.defineTaxa(genetics);
+    }
+
+    @Override
+    public void registerClient(Consumer<Consumer<IClientRegistration>> registrar) {
+        registrar.accept(new MoreBeesClientRegistration());
     }
 
     private static Supplier<List<ItemStack>> getHoneyComb(MoreBeesEnumHoneyComb type) {

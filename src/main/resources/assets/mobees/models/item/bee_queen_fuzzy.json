@@ -1,0 +1,9 @@
+{
+  "parent": "forestry:item/mirror_hands",
+  "textures": {
+    "layer0": "mobees:item/mobees/queen.outline",
+    "layer1": "mobees:item/mobees/body1",
+    "layer2": "mobees:item/mobees/stripes",
+    "layer3": "mobees:item/mobees/queen.body2"
+  }
+}
