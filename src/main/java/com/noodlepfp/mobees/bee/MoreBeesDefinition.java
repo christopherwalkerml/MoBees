@@ -643,7 +643,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.WITHERED, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_WITHERED, true, TextColor.fromRgb(0x343434))
                 .setBody(TextColor.fromRgb(0x737373))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
-                .addProduct(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.WITHER_SKULL_BIT), 0.2f)
+                .addProduct(MoreBeesItems.BEE_PRODUCE_MATERIALS.stack(MoreBeesEnumBeeProduce.WITHER_SKULL_BIT), 0.02f)
                 .setGlint(true)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_WITHERED);
@@ -668,7 +668,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.GERMINATED, MoreBeesTaxa.GENUS_SPORE, MoreBeesTaxa.SPECIES_GERMINATED, false, TextColor.fromRgb(0x6B589F))
                 .setBody(TextColor.fromRgb(0xAAA9AF))
                 .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.MOSSY), 0.3f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.FUNGAL), 0.05f)
+                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.FUNGAL), 0.05f)
                 .setHumidity(HumidityType.DAMP)
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.SPORE, ForestryBeeSpecies.LUSH, 12);
@@ -705,7 +705,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.CURSED, MoreBeesTaxa.GENUS_CURSED, MoreBeesTaxa.SPECIES_CURSED, true, TextColor.fromRgb(0x6B589F))
                 .setBody(TextColor.fromRgb(0x983232))
                 .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.MYSTERIOUS), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.FUNGAL), 0.1f)
+                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.FUNGAL), 0.1f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_CURSED);
                     genome.set(BeeChromosomes.TOLERATES_RAIN, ForestryAlleles.TRUE);
@@ -876,7 +876,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.BONY, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_BONY, true, TextColor.fromRgb(0x8D8C4C))
                 .setBody(TextColor.fromRgb(0xD9D9D9))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
-                .addProduct(new ItemStack(Items.BONE), 0.5f)
+                .addProduct(new ItemStack(Items.BONE), 0.25f)
                 .addMutations(mutations -> {
                     mutations.add(ForestryBeeSpecies.MODEST, ForestryBeeSpecies.ZOMBIFIED, 6);
                 })
@@ -885,7 +885,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.CREEPY, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_CREEPY, true, TextColor.fromRgb(0x8D8C4C))
                 .setBody(TextColor.fromRgb(0x84B772))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
-                .addProduct(new ItemStack(Items.GUNPOWDER), 0.5f)
+                .addProduct(new ItemStack(Items.GUNPOWDER), 0.25f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.EFFECT, ForestryAlleles.EFFECT_CREEPER);
                 })
@@ -897,7 +897,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.SLIMY, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_SLIMY, true, TextColor.fromRgb(0x8D8C4C))
                 .setBody(TextColor.fromRgb(0x8FFF8C))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
-                .addProduct(new ItemStack(Items.SLIME_BALL), 0.5f)
+                .addProduct(new ItemStack(Items.SLIME_BALL), 0.25f)
                 .addMutations(mutations -> {
                     mutations.add(ForestryBeeSpecies.ZOMBIFIED, ForestryBeeSpecies.BOGGY, 5);
                 })
@@ -906,7 +906,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.PHANTOM, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_PHANTOM, true, TextColor.fromRgb(0x8D8C4C))
                 .setBody(TextColor.fromRgb(0xB4A0C9))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
-                .addProduct(new ItemStack(Items.PHANTOM_MEMBRANE), 0.2f)
+                .addProduct(new ItemStack(Items.PHANTOM_MEMBRANE), 0.1f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.SPEED, ForestryAlleles.SPEED_NORMAL);
                     genome.set(BeeChromosomes.FLOWER_TYPE, ForestryAlleles.FLOWER_TYPE_END);
@@ -939,6 +939,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.TURTLE, MoreBeesTaxa.GENUS_SHELLED, MoreBeesTaxa.SPECIES_TURTLE, false, TextColor.fromRgb(0x3F76E4))
                 .setBody(TextColor.fromRgb(0x7FAF63))
                 .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.SPONGE), 0.1f)
+                .addSpecialty(new ItemStack(Items.SCUTE), 0.05f)
                 .addMutations(mutations -> {
                     mutations.add(ForestryBeeSpecies.CULTIVATED, MoreBeesSpecies.SHELLED, 6);
                 })
@@ -947,7 +948,7 @@ public class MoreBeesDefinition {
         apiculture.registerSpecies(MoreBeesSpecies.DROWNED, MoreBeesTaxa.GENUS_MONSTER, MoreBeesTaxa.SPECIES_DROWNED, true, TextColor.fromRgb(0x3F76E4))
                 .setBody(TextColor.fromRgb(0x66AD83))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.DECAYED), 0.1f)
-                .addSpecialty(new ItemStack(Items.COPPER_INGOT), 0.005f)
+                .addSpecialty(new ItemStack(Items.COPPER_INGOT), 0.0025f)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.TOLERATES_RAIN, ForestryAlleles.TRUE);
                     genome.set(BeeChromosomes.FLOWER_TYPE, ForestryAlleles.FLOWER_TYPE_SEA);

@@ -17,17 +17,14 @@ base combs + drops :
 - DONE - add night vision to rocky bees ONLY (for now)
 - DONE - add flower type stone for rocky bees
 - DONE - add flower type ores, for ore-specific bees
-- add magic bee sprite for some special bees
+- DONE - add magic bee sprite for some special bees
 - DONE - harmonic bee should have music/jukebox effect (or amethyst chime? might be easier)
- - alveary sun lamp should glow in game when on?
+- DONE - alveary sun lamp should glow in game when on?
  - alveary mutator should consume some mutation accelerator item (or fluid, canister for base game)
  - alveary frame housing
  - alveary stimulator ^ upgrade of frame housing, expensive
  - witchy bee only flies in the rain?
  - alveary flower box (holds flower item, no need to place them down?)
-
-- volcanic drone (basalt, calcite)
-- add aluminum bee
 
 // TODO - make notes / descriptions for items
 - alveary mutator, compounding 1.5x, but caps at 5x.
