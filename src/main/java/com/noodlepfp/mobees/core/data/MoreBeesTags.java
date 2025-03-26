@@ -13,8 +13,6 @@ import java.util.Random;
 
 public class MoreBeesTags {
 
-    private static final Random random = new Random();
-
     @ApiStatus.Internal
     public static TagKey<Block> blockTag(String name) {
         return BlockTags.create(MoBeesModule.mobees(name));
@@ -46,7 +44,7 @@ public class MoreBeesTags {
         public static final TagKey<Block> ROCK_FLOWERS_LEAD = blockTag("flowers/lead");
         public static final TagKey<Block> ROCK_FLOWERS_ZINC = blockTag("flowers/zinc");
         public static final TagKey<Block> ROCK_FLOWERS_NICKEL = blockTag("flowers/nickel");
-        public static final TagKey<Block> ROCK_FLOWERS_PLATINUM = blockTag("flowers/platinum");
+        public static final TagKey<Block> ROCK_FLOWERS_ALUMINUM = blockTag("flowers/aluminum");
         public static final TagKey<Block> ROCK_FLOWERS_SILVER = blockTag("flowers/silver");
         public static final TagKey<Block> ROCK_FLOWERS_OSMIUM = blockTag("flowers/osmium");
         public static final TagKey<Block> ROCK_FLOWERS_ARDITE = blockTag("flowers/ardite");
@@ -70,7 +68,7 @@ public class MoreBeesTags {
         public static final TagKey<Block> F_ORE_OSMIUM = forgeBlockTag("ores/osmium");
         public static final TagKey<Block> F_ORE_ARDITE = forgeBlockTag("ores/ardite");
         public static final TagKey<Block> F_ORE_COBALT = forgeBlockTag("ores/cobalt");
-        public static final TagKey<Block> F_ORE_PLATINUM = forgeBlockTag("ores/platinum");
+        public static final TagKey<Block> F_ORE_ALUMINUM = forgeBlockTag("ores/aluminum");
         public static final TagKey<Block> F_ORE_SILVER = forgeBlockTag("ores/silver");
         public static final TagKey<Block> F_ORE_CERTUS_QUARTZ = forgeBlockTag("ores/certus_quartz");
         public static final TagKey<Block> F_ORE_YELLORIUM = forgeBlockTag("ores/yellorium");

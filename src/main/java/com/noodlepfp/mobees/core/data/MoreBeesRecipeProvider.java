@@ -36,10 +36,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.crafting.ConditionalRecipe;
-import net.minecraftforge.common.crafting.conditions.ItemExistsCondition;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.registries.ForgeRegistries;
 import thedarkcolour.modkit.data.MKRecipeProvider;
 
 import java.util.*;
@@ -206,8 +203,8 @@ public class MoreBeesRecipeProvider {
         recipes.shapelessCrafting("osmium_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.OSMIUM.getRegistryObject().get(), 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.OSMIUM_BIT), 8));
 
-        recipes.shapelessCrafting("platinum_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.PLATINUM.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.PLATINUM_BIT), 8));
+        recipes.shapelessCrafting("aluminum_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.ALUMINUM.getRegistryObject().get(), 1,
+                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ALUMINUM_BIT), 8));
 
         recipes.shapelessCrafting("yellorium_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.YELLORIUM.getRegistryObject().get(), 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.YELLORIUM_BIT), 8));
@@ -295,8 +292,8 @@ public class MoreBeesRecipeProvider {
                     MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ARDITE_BIT));
             put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.COBALT),
                     MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.COBALT_BIT));
-            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.PLATINUM),
-                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.PLATINUM_BIT));
+            put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.ALUMINUM),
+                    MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ALUMINUM_BIT));
             put(MoreBeesApicultureItems.BEE_COMBS.get(MoreBeesEnumHoneyComb.ZINC),
                     MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ZINC_BIT));
         }};

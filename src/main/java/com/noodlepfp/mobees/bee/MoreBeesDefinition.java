@@ -1,5 +1,6 @@
 package com.noodlepfp.mobees.bee;
 
+import com.noodlepfp.mobees.MoBeesEnumModCompat;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
 import com.noodlepfp.mobees.genetics.allele.MoreBeesAlleles;
@@ -17,13 +18,13 @@ import forestry.core.features.CoreItems;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.fml.ModList;
 
 import static forestry.apiculture.features.ApicultureItems.BEE_COMBS;
 
 public class MoreBeesDefinition {
 
     public static void defineNewBees(IApicultureRegistration apiculture) {
-
         /* ROCKY BEES */
         apiculture.registerSpecies(MoreBeesSpecies.ROCKY, MoreBeesTaxa.GENUS_ROCKY, MoreBeesTaxa.SPECIES_ROCKY, true, TextColor.fromRgb(0x9F9F9F))
                 .setBody(TextColor.fromRgb(0x757575))
@@ -138,121 +139,152 @@ public class MoreBeesDefinition {
                 })
                 .setAuthority("noodlepfp");
 
-        apiculture.registerSpecies(MoreBeesSpecies.NICKEL, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_NICKEL, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0xEFD797))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.NICKEL), 0.05f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.NICKEL), 0.025f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_NICKEL);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.LUSH, 6);
-                    mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.MARSHY, 6);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.NICKEL.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.NICKEL, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_NICKEL, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0xEFD797))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.NICKEL), 0.05f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.NICKEL), 0.025f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_NICKEL);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.LUSH, 6);
+                        mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.MARSHY, 6);
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
-        apiculture.registerSpecies(MoreBeesSpecies.LEAD, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_LEAD, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0x5A6680))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.LEAD), 0.05f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.LEAD), 0.025f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_LEAD);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.MEADOWS, 6);
-                    mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.MODEST, 6);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.LEAD.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.LEAD, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_LEAD, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0x5A6680))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.LEAD), 0.05f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.LEAD), 0.025f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_LEAD);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.MEADOWS, 6);
+                        mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.MODEST, 6);
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
-        apiculture.registerSpecies(MoreBeesSpecies.ZINC, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_ZINC, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0xDED0A1))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ZINC), 0.05f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ZINC), 0.025f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ZINC);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.WINTRY, 6);
-                    mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.TROPICAL, 6);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.ZINC.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.ZINC, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_ZINC, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0xDED0A1))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ZINC), 0.05f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ZINC), 0.025f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ZINC);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.WINTRY, 6);
+                        mutations.add(MoreBeesSpecies.RUSTY, ForestryBeeSpecies.TROPICAL, 6);
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
-        apiculture.registerSpecies(MoreBeesSpecies.SILVER, MoreBeesTaxa.GENUS_PRECIOUSMETALLIC, MoreBeesTaxa.SPECIES_SILVER, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0xE8E8E8))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SILVER), 0.06f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SILVER), 0.03f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_SILVER);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.TIN, 4);
-                    mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.LEAD, 4);
-                    mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.ZINC, 4);
-                    mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.NICKEL, 4);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.SILVER.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.SILVER, MoreBeesTaxa.GENUS_PRECIOUSMETALLIC, MoreBeesTaxa.SPECIES_SILVER, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0xE8E8E8))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SILVER), 0.06f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SILVER), 0.03f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_SILVER);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.TIN, 4);
+                        if (ModList.get().isLoaded(MoBeesEnumModCompat.LEAD.getModId())) {
+                            mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.LEAD, 4);
+                        }
+                        if (ModList.get().isLoaded(MoBeesEnumModCompat.ZINC.getModId())) {
+                            mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.ZINC, 4);
+                        }
+                        if (ModList.get().isLoaded(MoBeesEnumModCompat.NICKEL.getModId())) {
+                            mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.NICKEL, 4);
+                        }
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
-        apiculture.registerSpecies(MoreBeesSpecies.PLATINUM, MoreBeesTaxa.GENUS_PRECIOUSMETALLIC, MoreBeesTaxa.SPECIES_PLATINUM, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0xC8FFF5))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.PLATINUM), 0.05f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.PLATINUM), 0.025f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_PLATINUM);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.GOLD, MoreBeesSpecies.SILVER, 6);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.ALUMINUM.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.ALUMINUM, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_ALUMINUM, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0xC8FFF5))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ALUMINUM), 0.05f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ALUMINUM), 0.025f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ALUMINUM);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.GOLD, MoreBeesSpecies.SILVER, 6);
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
-        apiculture.registerSpecies(MoreBeesSpecies.OSMIUM, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_OSMIUM, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0x9BC2EF))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.OSMIUM), 0.05f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.OSMIUM), 0.025f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_OSMIUM);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.TIN, MoreBeesSpecies.LEAD, 6);
-                    mutations.add(MoreBeesSpecies.TIN, MoreBeesSpecies.SILVER, 6);
-                    mutations.add(MoreBeesSpecies.LEAD, MoreBeesSpecies.SILVER, 6);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.OSMIUM.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.OSMIUM, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_OSMIUM, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0x9BC2EF))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.OSMIUM), 0.05f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.OSMIUM), 0.025f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_OSMIUM);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.TIN, MoreBeesSpecies.ALPINE, 6);
+                        if (ModList.get().isLoaded(MoBeesEnumModCompat.LEAD.getModId())) {
+                            mutations.add(MoreBeesSpecies.TIN, MoreBeesSpecies.LEAD, 6);
+                        }
+                        if (ModList.get().isLoaded(MoBeesEnumModCompat.SILVER.getModId())) {
+                            mutations.add(MoreBeesSpecies.TIN, MoreBeesSpecies.SILVER, 6);
+                            if (ModList.get().isLoaded(MoBeesEnumModCompat.LEAD.getModId())) {
+                                mutations.add(MoreBeesSpecies.LEAD, MoreBeesSpecies.SILVER, 6);
+                            }
+                        }
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
-        apiculture.registerSpecies(MoreBeesSpecies.ARDITE, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_ARDITE, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0xC26D36))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ARDITE), 0.04f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ARDITE), 0.02f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ARDITE);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.LAPIS, MoreBeesSpecies.DESOLATE, 3);
-                    mutations.add(MoreBeesSpecies.DIAMOND, MoreBeesSpecies.DESOLATE, 3);
-                })
-                .setGlint(true)
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.ARDITE.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.ARDITE, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_ARDITE, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0xC26D36))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ARDITE), 0.04f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ARDITE), 0.02f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ARDITE);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.LAPIS, MoreBeesSpecies.DESOLATE, 3);
+                        mutations.add(MoreBeesSpecies.DIAMOND, MoreBeesSpecies.DESOLATE, 3);
+                    })
+                    .setGlint(true)
+                    .setAuthority("noodlepfp");
+        }
 
-        apiculture.registerSpecies(MoreBeesSpecies.COBALT, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_COBALT, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0x226FFF))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COBALT), 0.04f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COBALT), 0.02f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_COBALT);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.COPPER, MoreBeesSpecies.DESOLATE, 3);
-                    mutations.add(MoreBeesSpecies.NICKEL, MoreBeesSpecies.DESOLATE, 3);
-                })
-                .setGlint(true)
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.COBALT.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.COBALT, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_COBALT, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0x226FFF))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COBALT), 0.04f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.COBALT), 0.02f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_COBALT);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.COPPER, MoreBeesSpecies.DESOLATE, 3);
+                        if (ModList.get().isLoaded(MoBeesEnumModCompat.NICKEL.getModId())) {
+                            mutations.add(MoreBeesSpecies.NICKEL, MoreBeesSpecies.DESOLATE, 3);
+                        }
+                    })
+                    .setGlint(true)
+                    .setAuthority("noodlepfp");
+        }
 
         apiculture.registerSpecies(MoreBeesSpecies.IRON, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_IRON, true, TextColor.fromRgb(0x9F9F9F))
                 .setBody(TextColor.fromRgb(0xD5D5D5))
@@ -279,7 +311,9 @@ public class MoreBeesDefinition {
                 .addMutations(mutations -> {
                     mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.IRON, 4);
                     mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.COPPER, 4);
-                    mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.NICKEL, 4);
+                    if (ModList.get().isLoaded(MoBeesEnumModCompat.NICKEL.getModId())) {
+                        mutations.add(ForestryBeeSpecies.IMPERIAL, MoreBeesSpecies.NICKEL, 4);
+                    }
                 })
                 .setGlint(true)
                 .setAuthority("noodlepfp");
@@ -339,18 +373,20 @@ public class MoreBeesDefinition {
                 .setGlint(true)
                 .setAuthority("noodlepfp");
 
-        apiculture.registerSpecies(MoreBeesSpecies.CERTUS, MoreBeesTaxa.GENUS_BUDDING, MoreBeesTaxa.SPECIES_CERTUS, true, TextColor.fromRgb(0x9F9F9F))
-                .setBody(TextColor.fromRgb(0xEAD8FC))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.CERTUS), 0.05f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.CERTUS), 0.025f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_CERTUS_QUARTZ);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.BUDDING, MoreBeesSpecies.UNUSUAL, 5);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.CERTUS.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.CERTUS, MoreBeesTaxa.GENUS_BUDDING, MoreBeesTaxa.SPECIES_CERTUS, true, TextColor.fromRgb(0x9F9F9F))
+                    .setBody(TextColor.fromRgb(0xEAD8FC))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.CERTUS), 0.05f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.CERTUS), 0.025f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_CERTUS_QUARTZ);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.BUDDING, MoreBeesSpecies.UNUSUAL, 5);
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
         apiculture.registerSpecies(MoreBeesSpecies.AMETHYST, MoreBeesTaxa.GENUS_CRYSTALLINE, MoreBeesTaxa.SPECIES_AMETHYST, false, TextColor.fromRgb(0xE9C1FF))
                 .setBody(TextColor.fromRgb(0xB373EC))
@@ -709,31 +745,21 @@ public class MoreBeesDefinition {
                 .setAuthority("noodlepfp");
 
         // UNSTABLE LINE
-        apiculture.registerSpecies(MoreBeesSpecies.UNUSUAL, MoreBeesTaxa.GENUS_UNUSUAL, MoreBeesTaxa.SPECIES_UNUSUAL, true, TextColor.fromRgb(0x92DEE5))
-                .setBody(TextColor.fromRgb(0xE394AE))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SOULFUL), 0.07f)
-                .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.MYSTERIOUS), 0.25f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_ARCANE);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.MYSTERIOUS, MoreBeesSpecies.FUNGAL, 5);
-                })
-                .setAuthority("noodlepfp");
-
-        apiculture.registerSpecies(MoreBeesSpecies.YELLORIUM, MoreBeesTaxa.GENUS_UNUSUAL, MoreBeesTaxa.SPECIES_YELLORIUM, true, TextColor.fromRgb(0xFFF48A))
-                .setBody(TextColor.fromRgb(0xFFEA00))
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.YELLORIUM), 0.05f)
-                .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.YELLORIUM), 0.025f)
-                .setGenome(genome -> {
-                    genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_YELLORIUM);
-                    genome.set(BeeChromosomes.SPEED, ForestryAlleles.SPEED_SLOWEST);
-                })
-                .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.MINERAL, MoreBeesSpecies.UNUSUAL, 5);
-                })
-                .setAuthority("noodlepfp");
+        if (ModList.get().isLoaded(MoBeesEnumModCompat.YELLORIUM.getModId())) {
+            apiculture.registerSpecies(MoreBeesSpecies.YELLORIUM, MoreBeesTaxa.GENUS_UNUSUAL, MoreBeesTaxa.SPECIES_YELLORIUM, true, TextColor.fromRgb(0xFFF48A))
+                    .setBody(TextColor.fromRgb(0xFFEA00))
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
+                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.YELLORIUM), 0.05f)
+                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.YELLORIUM), 0.025f)
+                    .setGenome(genome -> {
+                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_YELLORIUM);
+                        genome.set(BeeChromosomes.SPEED, ForestryAlleles.SPEED_SLOWEST);
+                    })
+                    .addMutations(mutations -> {
+                        mutations.add(MoreBeesSpecies.MINERAL, MoreBeesSpecies.UNUSUAL, 5);
+                    })
+                    .setAuthority("noodlepfp");
+        }
 
         // ALPINE LINE
         apiculture.registerSpecies(MoreBeesSpecies.ALPINE, MoreBeesTaxa.GENUS_ALPINE, MoreBeesTaxa.SPECIES_ALPINE, true, TextColor.fromRgb(0x92DEE5))
@@ -783,6 +809,18 @@ public class MoreBeesDefinition {
                 })
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.SPIRITED, ForestryBeeSpecies.RURAL, 8);
+                })
+                .setAuthority("noodlepfp");
+
+        apiculture.registerSpecies(MoreBeesSpecies.UNUSUAL, MoreBeesTaxa.GENUS_UNUSUAL, MoreBeesTaxa.SPECIES_UNUSUAL, true, TextColor.fromRgb(0x92DEE5))
+                .setBody(TextColor.fromRgb(0xE394AE))
+                .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.SOULFUL), 0.07f)
+                .addProduct(ApicultureItems.BEE_COMBS.stack(EnumHoneyComb.MYSTERIOUS), 0.25f)
+                .setGenome(genome -> {
+                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_ARCANE);
+                })
+                .addMutations(mutations -> {
+                    mutations.add(MoreBeesSpecies.MYSTERIOUS, MoreBeesSpecies.FUNGAL, 5);
                 })
                 .setAuthority("noodlepfp");
 

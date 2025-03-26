@@ -22,7 +22,7 @@ public class MoreBeesAlleles {
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_ZINC = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_ZINC, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_NICKEL = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_NICKEL, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_SILVER = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_SILVER, BeeChromosomes.FLOWER_TYPE);
-    public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_PLATINUM = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_PLATINUM, BeeChromosomes.FLOWER_TYPE);
+    public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_ALUMINUM = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_ALUMINUM, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_OSMIUM = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_OSMIUM, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_ARDITE = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_ARDITE, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_COBALT = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_COBALT, BeeChromosomes.FLOWER_TYPE);

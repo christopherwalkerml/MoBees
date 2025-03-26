@@ -27,6 +27,7 @@ base combs + drops :
  - alveary flower box (holds flower item, no need to place them down?)
 
 - volcanic drone (basalt, calcite)
+- add aluminum bee
 
 // TODO - make notes / descriptions for items
 - alveary mutator, compounding 1.5x, but caps at 5x.

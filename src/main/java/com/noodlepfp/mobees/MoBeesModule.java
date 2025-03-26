@@ -9,7 +9,7 @@ public class MoBeesModule implements IForestryModule {
 
     @Override
     public ResourceLocation getId() {
-        return MoBees.loc("core");
+        return MoBeesModule.mobees("core");
     }
 
     public static ResourceLocation mobees(String path) {

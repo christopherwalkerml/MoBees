@@ -17,7 +17,7 @@ public class MoreBeesTaxa {
     public static final String SPECIES_LEAD = "Lead";
     public static final String SPECIES_ZINC = "Zinc";
     public static final String SPECIES_SILVER = "Silver";
-    public static final String SPECIES_PLATINUM = "Platinum";
+    public static final String SPECIES_ALUMINUM = "Aluminum";
     public static final String SPECIES_OSMIUM = "Osmium";
     public static final String SPECIES_UNUSUAL = "Unusual";
     public static final String SPECIES_YELLORIUM = "Yellorium";

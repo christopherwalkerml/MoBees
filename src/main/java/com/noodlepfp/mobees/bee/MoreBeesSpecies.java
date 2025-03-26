@@ -22,7 +22,7 @@ public class MoreBeesSpecies {
     public static final ResourceLocation NICKEL = mobees("bee_nickel");
     public static final ResourceLocation OSMIUM = mobees("bee_osmium");
     public static final ResourceLocation SILVER = mobees("bee_silver");
-    public static final ResourceLocation PLATINUM = mobees("bee_platinum");
+    public static final ResourceLocation ALUMINUM = mobees("bee_aluminum");
     public static final ResourceLocation CERTUS = mobees("bee_certus");
     public static final ResourceLocation COBALT = mobees("bee_cobalt");
     public static final ResourceLocation ARDITE = mobees("bee_ardite");

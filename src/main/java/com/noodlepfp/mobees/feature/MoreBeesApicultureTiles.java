@@ -1,6 +1,6 @@
 package com.noodlepfp.mobees.feature;
 
-import com.noodlepfp.mobees.MoBees;
+import com.noodlepfp.mobees.MoBeesModule;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.rainshield.TileAlvearyRainShield;
 import com.noodlepfp.mobees.alveary.mutator.TileAlvearyMutator;
@@ -14,7 +14,7 @@ import forestry.modules.features.ModFeatureRegistry;
 @FeatureProvider
 public class MoreBeesApicultureTiles {
 
-    private static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBees.loc("core"));
+    private static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBeesModule.mobees("core"));
 
     public static final FeatureTileType<MoreBeesTileHive> HIVE = REGISTRY.tile(MoreBeesTileHive::new, "hive", () -> MoreBeesApicultureBlocks.BEEHIVE.getBlocks());
     public static final FeatureTileType<TileAlvearySun> ALVEARY_SUN = REGISTRY.tile(TileAlvearySun::new, "alveary_sun", () -> MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.SUN).collect());

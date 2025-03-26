@@ -1,10 +1,9 @@
 package com.noodlepfp.mobees.core.client;
 
-import com.noodlepfp.mobees.MoBees;
+import com.noodlepfp.mobees.MoBeesModule;
 import com.noodlepfp.mobees.bee.MoreBeesDefinition;
 import com.noodlepfp.mobees.bee.MoreBeesSpecies;
 import com.noodlepfp.mobees.bee.MoreBeesTaxonomy;
-import com.noodlepfp.mobees.core.client.MoreBeesClientRegistration;
 import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.core.data.MoreBeesFlowerType;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
@@ -35,7 +34,7 @@ public class MoreBeesPlugin implements IForestryPlugin {
 
     @Override
     public ResourceLocation id() {
-        return MoBees.loc("core");
+        return MoBeesModule.mobees("core");
     }
 
     @Override
@@ -64,7 +63,7 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ARDITE, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ARDITE, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_COBALT, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_COBALT, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_SILVER, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER, true));
-        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_PLATINUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_PLATINUM, true));
+        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ALUMINUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ALUMINUM, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_YELLORIUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_YELLORIUM, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_CERTUS_QUARTZ, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_CERTUS_QUARTZ, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_IRON, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_IRON, true));

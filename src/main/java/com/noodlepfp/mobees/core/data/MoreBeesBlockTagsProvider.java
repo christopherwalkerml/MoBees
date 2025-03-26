@@ -2,19 +2,16 @@ package com.noodlepfp.mobees.core.data;
 
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.ForestryTags;
-import forestry.apiculture.features.ApicultureBlocks;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ForgeBlockTagsProvider;
 import thedarkcolour.modkit.data.MKTagsProvider;
 
 public class MoreBeesBlockTagsProvider {
 
-    public static void addTags(MKTagsProvider<Block> tags, HolderLookup.Provider lookup) {
+    public static void addTags(MKTagsProvider<Block> tags) {
         tags.tag(ForestryTags.Blocks.MINEABLE_SCOOP).add(MoreBeesApicultureBlocks.BEEHIVE.blockArray());
 
         tags.tag(MoreBeesTags.Blocks.ROCKY_BEE_WALL).add(Blocks.STONE).add(Blocks.GRANITE).add(Blocks.ANDESITE).add(Blocks.DIORITE);
@@ -31,7 +28,7 @@ public class MoreBeesBlockTagsProvider {
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_OSMIUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_OSMIUM);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_ARDITE).addOptionalTag(MoreBeesTags.Blocks.F_ORE_ARDITE);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_COBALT).addOptionalTag(MoreBeesTags.Blocks.F_ORE_COBALT);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_PLATINUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_PLATINUM);
+        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_ALUMINUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_ALUMINUM);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER).addOptionalTag(MoreBeesTags.Blocks.F_ORE_SILVER);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_YELLORIUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_YELLORIUM);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_CERTUS_QUARTZ).addOptionalTag(MoreBeesTags.Blocks.F_ORE_CERTUS_QUARTZ);

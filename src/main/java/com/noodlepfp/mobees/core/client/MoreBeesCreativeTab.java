@@ -1,9 +1,8 @@
 package com.noodlepfp.mobees.core.client;
 
 import com.mojang.logging.LogUtils;
-import com.noodlepfp.mobees.MoBees;
 import com.noodlepfp.mobees.MoBeesEnumModCompat;
-import com.noodlepfp.mobees.MoBeesModCompat;
+import com.noodlepfp.mobees.MoBeesModule;
 import com.noodlepfp.mobees.bee.MoreBeesSpecies;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
@@ -32,7 +31,7 @@ import org.slf4j.Logger;
 public class MoreBeesCreativeTab {
 
     private static final Logger LOGGER = LogUtils.getLogger();
-    private static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBees.loc("core"));
+    private static final IFeatureRegistry REGISTRY = ModFeatureRegistry.get(MoBeesModule.mobees("core"));
 
     public static final FeatureCreativeTab MOBEES = REGISTRY.creativeTab("mobees", tab -> {
         tab.icon(() -> SpeciesUtil.BEE_TYPE.get().createStack(MoreBeesSpecies.CRYSTALLINE, BeeLifeStage.QUEEN));
@@ -74,17 +73,17 @@ public class MoreBeesCreativeTab {
             registerModCompatItem(items, new ItemStack(comb), modCompat, true);
         }
 
+        // mod compat checks are redundant here since theyre already made when bees are defined
         for (ILifeStage stage : SpeciesUtil.BEE_TYPE.get().getLifeStages()) {
             for (IBeeSpecies species : SpeciesUtil.getAllBeeSpecies()) {
                 if (species.id().toString().contains("mobees")) {
-                    MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, species.getSpeciesName().toUpperCase());
-                    registerModCompatItem(items, species.createStack(stage), modCompat, false);
+                    items.accept(species.createStack(stage));
                 }
             }
         }
 
         for (MoreBeesBlockHoneyComb blockHoneyComb : MoreBeesApicultureBlocks.BEE_COMB.getBlocks()) {
-            MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, blockHoneyComb.getType().name().toUpperCase());
+            MoBeesEnumModCompat modCompat = EnumUtils.getEnum(MoBeesEnumModCompat.class, blockHoneyComb.getMoreBeesType().name.toUpperCase());
             registerModCompatItem(items, new ItemStack(blockHoneyComb), modCompat, false);
         }
 
