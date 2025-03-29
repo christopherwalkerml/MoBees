@@ -34,7 +34,7 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
         public float modifyMutationChance(IGenome genome, IGenome mate, IMutation<IBeeSpecies> mutation, float currentChance) {
-            if (getMutagenStorage() > MUTAGEN_STORAGE_CAP / 2) {
+            if (canConsumeMutagen()) {
                 setMutagenStorage(getMutagenStorage() - (MUTAGEN_STORAGE_CAP / 2));
                 return Math.min(currentChance * 2f, 0.5f);
             }
@@ -79,6 +79,10 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
 
     public int getMutagenStorage() {
         return this.mutagenStorage;
+    }
+
+    public boolean canConsumeMutagen() {
+        return this.mutagenStorage >= this.MUTAGEN_STORAGE_CAP / 2;
     }
 
     public void setMutagenStorage(int amt) {
