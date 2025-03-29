@@ -17,8 +17,11 @@ public class GuiAlvearyMutator extends GuiForestryTitled<ContainerAlvearyMutator
 
     @Override
     protected void drawWidgets(GuiGraphics graphics) {
-        int progress = this.tile.getProgressScaled(23);
-        graphics.blit(this.textureFile, 69 + (23 - progress), 45, 176 + (23 - progress), 22, progress, 4);
+        int reserveProgress = this.tile.getAttributeScaled(this.tile.getMutagenReserve(), this.tile.getMutagenReserveCap(), 23);
+        graphics.blit(this.textureFile, 69 + (23 - reserveProgress), 45, 176 + (23 - reserveProgress), 22, reserveProgress, 4);
+
+        int storageProgress = this.tile.getAttributeScaled(this.tile.getMutagenStorage(), this.tile.getMutagenStorageCap(), 59);
+        graphics.blit(this.textureFile, 96, 39, 176, 0, storageProgress, 16);
 
         if (this.tile.isActive()) {
             graphics.blit(this.textureFile, 77, 34, 176, 16, 6, 6);

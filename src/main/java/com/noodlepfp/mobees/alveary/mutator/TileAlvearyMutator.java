@@ -25,8 +25,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable {
     private final InventoryAlvearyMutator inventory;
-    private final int MUTAGEN_STORAGE_CAP = 1000;
-    private final int MUTAGEN_RESERVE_CAP = 100;
+    private final int MUTAGEN_STORAGE_CAP = 5000;
+    private final int MUTAGEN_RESERVE_CAP = 500;
     private final String MUTAGEN_STORAGE_STR = "storedMutagen";
     private final String MUTAGEN_RESERVE_STR = "reservedMutagen";
     private int mutagenStorage;
@@ -36,9 +36,9 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         public float modifyMutationChance(IGenome genome, IGenome mate, IMutation<IBeeSpecies> mutation, float currentChance) {
             if (getMutagenStorage() > MUTAGEN_STORAGE_CAP / 2) {
                 setMutagenStorage(getMutagenStorage() - (MUTAGEN_STORAGE_CAP / 2));
-                return Math.min(currentChance * 1.5f, 5.0f);
+                return Math.min(currentChance * 2f, 0.5f);
             }
-            return 1.0f;
+            return currentChance;
         }
     };
 
@@ -73,12 +73,20 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         this.mutagenReserve = amt;
     }
 
+    public int getMutagenReserveCap() {
+        return MUTAGEN_RESERVE_CAP;
+    }
+
     public int getMutagenStorage() {
         return this.mutagenStorage;
     }
 
     public void setMutagenStorage(int amt) {
         this.mutagenStorage = amt;
+    }
+
+    public int getMutagenStorageCap() {
+        return MUTAGEN_STORAGE_CAP;
     }
 
     @Override
@@ -90,8 +98,8 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         return this.inventory;
     }
 
-    public int getProgressScaled(int pixels) {
-        return this.mutagenReserve == 0 ? 0 : this.mutagenReserve * pixels / MUTAGEN_RESERVE_CAP;
+    public int getAttributeScaled(int val, int maxVal, int pixels) {
+        return val == 0 ? 0 : val * pixels / maxVal;
     }
 
     @Override
