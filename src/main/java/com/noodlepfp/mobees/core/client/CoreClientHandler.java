@@ -2,20 +2,21 @@ package com.noodlepfp.mobees.core.client;
 
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
+import com.noodlepfp.mobees.feature.MoreBeesApicultureMenuTypes;
 import com.noodlepfp.mobees.feature.MoreBeesCrateItems;
+import com.noodlepfp.mobees.gui.GuiAlvearyMutator;
 import forestry.api.ForestryConstants;
 import forestry.api.apiculture.genetics.BeeLifeStage;
 import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.client.IClientModuleHandler;
 import forestry.api.client.IForestryClientApi;
 import forestry.api.client.apiculture.IBeeClientManager;
-import forestry.apiculture.features.ApicultureBlocks;
 import forestry.apiculture.features.ApicultureItems;
 import forestry.apiimpl.client.ForestryClientApiImpl;
-import forestry.core.features.CoreBlocks;
 import forestry.core.models.ClientManager;
 import forestry.core.utils.SpeciesUtil;
 import forestry.modules.ModuleUtil;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
@@ -43,6 +44,8 @@ public class CoreClientHandler implements IClientModuleHandler {
 	private static void onClientSetup(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MoreBeesApicultureBlocks.BEE_COMB.getBlocks().forEach((block) -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutout()));
+
+			MenuScreens.register(MoreBeesApicultureMenuTypes.ALVEARY_MUTATOR.menuType(), GuiAlvearyMutator::new);
 		});
 	}
 

@@ -1,8 +1,5 @@
 package com.noodlepfp.mobees.alveary;
 
-import forestry.api.apiculture.genetics.BeeLifeStage;
-import forestry.api.apiculture.genetics.IBee;
-import forestry.api.genetics.capability.IIndividualHandlerItem;
 import forestry.api.multiblock.IAlvearyComponent;
 import forestry.apiculture.blocks.BlockAlveary;
 import forestry.apiculture.multiblock.MultiblockLogicAlveary;
@@ -13,7 +10,6 @@ import forestry.energy.ForestryEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -80,17 +76,6 @@ public class MoreBeesTileActivatable extends MoreBeesTileAlveary implements IAct
         super.saveAdditional(compoundNBT);
         energyStorage.write(compoundNBT);
         compoundNBT.putInt(actionVerb, workingTime);
-    }
-
-    /* Network */
-    @Override
-    protected void encodeDescriptionPacket(CompoundTag packetData) {
-        super.encodeDescriptionPacket(packetData);
-    }
-
-    @Override
-    protected void decodeDescriptionPacket(CompoundTag packetData) {
-        super.decodeDescriptionPacket(packetData);
     }
 
     /* IActivatable */
