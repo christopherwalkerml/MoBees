@@ -26,7 +26,7 @@ public class MoreBeesApicultureItems {
             .MoreBeesItemHiveFrameBuilder(256)
             .setSpeedMult(0.8f)
             .setDecayMult(1.2f)
-            .setMutationMult(1.8f)
+            .setMutationMult(1.25f)
             .build(), "frame_mutation");
 
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_FERTILE = REGISTRY.item(() -> new MoreBeesItemHiveFrame
@@ -34,7 +34,7 @@ public class MoreBeesApicultureItems {
             .setSpeedMult(0.8f)
             .setDecayMult(1.2f)
             .setPollinationMult(2.0f)
-            .setMutationMult(1.25f)
+            .setMutationMult(1.1f)
             .build(), "frame_fertile");
 
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_CRIMSON = REGISTRY.item(() -> new MoreBeesItemHiveFrame

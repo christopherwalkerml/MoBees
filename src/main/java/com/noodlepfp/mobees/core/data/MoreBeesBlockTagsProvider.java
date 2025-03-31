@@ -2,16 +2,16 @@ package com.noodlepfp.mobees.core.data;
 
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.ForestryTags;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-
 import net.minecraftforge.common.Tags;
 import thedarkcolour.modkit.data.MKTagsProvider;
 
 public class MoreBeesBlockTagsProvider {
 
     public static void addTags(MKTagsProvider<Block> tags) {
+        tags.tag(MoreBeesTags.Blocks.FROGLIGHT).add(Blocks.OCHRE_FROGLIGHT).add(Blocks.PEARLESCENT_FROGLIGHT).add(Blocks.VERDANT_FROGLIGHT);
+
         tags.tag(ForestryTags.Blocks.MINEABLE_SCOOP).add(MoreBeesApicultureBlocks.BEEHIVE.blockArray());
 
         tags.tag(MoreBeesTags.Blocks.ROCKY_BEE_WALL).add(Blocks.STONE).add(Blocks.GRANITE).add(Blocks.ANDESITE).add(Blocks.DIORITE);

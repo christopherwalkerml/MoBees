@@ -10,7 +10,8 @@ public enum MoreBeesBlockAlvearyType implements IBlockSubtype {
 
     SUN(true),
     MUTATOR(true),
-    RAINSHIELD(true);
+    RAINSHIELD(true),
+    FRAME_HOUSING(false);
 
     public final boolean activatable;
 
@@ -33,6 +34,7 @@ public enum MoreBeesBlockAlvearyType implements IBlockSubtype {
             case SUN -> MoreBeesApicultureTiles.ALVEARY_SUN;
             case MUTATOR -> MoreBeesApicultureTiles.ALVEARY_MUTATOR;
             case RAINSHIELD -> MoreBeesApicultureTiles.ALVEARY_RAINSHIELD;
+            case FRAME_HOUSING -> MoreBeesApicultureTiles.FRAME_HOUSING;
         };
     }
 

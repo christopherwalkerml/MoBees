@@ -34,6 +34,5 @@ public class GuiAlvearyMutator extends GuiForestryTitled<ContainerAlvearyMutator
 
     @Override
     protected void addLedgers() {
-        addErrorLedger(tile);
     }
 }

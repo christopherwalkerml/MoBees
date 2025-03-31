@@ -31,7 +31,8 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
         public float modifyMutationChance(IGenome genome, IGenome mate, IMutation<IBeeSpecies> mutation, float currentChance) {
-            if (canConsumeMutagen()) {
+            // if the chance is already above the max, ignore it
+            if (canConsumeMutagen() && currentChance < 0.5f) {
                 setMutagenStorage(getMutagenStorage() - (MUTAGEN_STORAGE_CAP / 2));
 
                 // mult cap is the base mutation chance to the power of 3. ie. 0.06 -> 0.09 -> 0.135 -> 0.203 -> 0.304, capped at 0.5

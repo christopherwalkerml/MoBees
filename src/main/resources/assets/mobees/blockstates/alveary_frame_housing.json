@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "mobees:block/alveary_frame_housing"
+    },
+    "facing=east": {
+      "model": "mobees:block/alveary_frame_housing",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mobees:block/alveary_frame_housing",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mobees:block/alveary_frame_housing",
+      "y": -90
     }
   }
 }

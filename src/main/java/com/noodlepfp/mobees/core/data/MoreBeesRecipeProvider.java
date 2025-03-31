@@ -39,7 +39,8 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.FluidStack;
 import thedarkcolour.modkit.data.MKRecipeProvider;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class MoreBeesRecipeProvider {
@@ -60,6 +61,7 @@ public class MoreBeesRecipeProvider {
         ItemLike goldElectronTube = CoreItems.ELECTRON_TUBES.get(EnumElectronTube.GOLD);
         ItemLike lapisElectronTube = CoreItems.ELECTRON_TUBES.get(EnumElectronTube.LAPIS);
         ItemLike emeraldElectronTube = CoreItems.ELECTRON_TUBES.get(EnumElectronTube.EMERALD);
+        ItemLike diamondElectronTube = CoreItems.ELECTRON_TUBES.get(EnumElectronTube.DIAMOND);
 
         recipes.shapedCrafting(RecipeCategory.BUILDING_BLOCKS, MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.SUN).block(), recipe -> {
             recipe.define('#', goldElectronTube);
@@ -85,11 +87,22 @@ public class MoreBeesRecipeProvider {
 
         recipes.shapedCrafting(RecipeCategory.BUILDING_BLOCKS, MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.MUTATOR).block(), recipe -> {
             recipe.define('#', emeraldElectronTube);
-            recipe.define('G', Items.GLASS);
+            recipe.define('R', Items.REDSTONE_BLOCK);
             recipe.define('C', MoreBeesItems.CRAFTING_MATERIALS.get(MoreBeesEnumCraftingMaterial.MUTATION_CATALYST));
             recipe.define('X', plain);
             recipe.pattern("#X#");
-            recipe.pattern("GCG");
+            recipe.pattern("RCR");
+            recipe.pattern("#X#");
+            recipe.group("alveary");
+        });
+
+        recipes.shapedCrafting(RecipeCategory.BUILDING_BLOCKS, MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.FRAME_HOUSING).block(), recipe -> {
+            recipe.define('#', diamondElectronTube);
+            recipe.define('W', CoreItems.CRAFTING_MATERIALS.get(EnumCraftingMaterial.SCENTED_PANELING));
+            recipe.define('C', ApicultureItems.FRAME_IMPREGNATED);
+            recipe.define('X', plain);
+            recipe.pattern("#X#");
+            recipe.pattern("WCW");
             recipe.pattern("#X#");
             recipe.group("alveary");
         });
@@ -113,7 +126,7 @@ public class MoreBeesRecipeProvider {
         });
 
         recipes.shapedCrafting(RecipeCategory.MISC, MoreBeesApicultureItems.FRAME_MUTATION, recipe -> {
-            recipe.define('#', MoreBeesItems.BEE_PRODUCE_MATERIALS.get(MoreBeesEnumBeeProduce.ARCANE_WAX));
+            recipe.define('#', CoreItems.CRAFTING_MATERIALS.get(EnumCraftingMaterial.BEESWAX));
             recipe.define('X', MoreBeesItems.CRAFTING_MATERIALS.get(MoreBeesEnumCraftingMaterial.MUTAGEN));
             recipe.define('A', ApicultureItems.FRAME_UNTREATED);
             recipe.pattern("#X#");
@@ -151,7 +164,7 @@ public class MoreBeesRecipeProvider {
 
     private static void registerMaterials(MKRecipeProvider recipes) {
         recipes.shapelessCrafting("mutagen_crafting", RecipeCategory.MISC, MoreBeesItems.CRAFTING_MATERIALS.get(MoreBeesEnumCraftingMaterial.MUTAGEN), 2,
-                Tags.Items.DUSTS_GLOWSTONE, Tags.Items.DUSTS_REDSTONE, Tags.Items.CROPS);
+                Tags.Items.DUSTS_GLOWSTONE, MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ARCANE_WAX), Tags.Items.CROPS);
 
         recipes.shapelessCrafting("copper_ingot_from_bits", RecipeCategory.MISC, Items.COPPER_INGOT, 1,
                 ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.COPPER_BIT), 8));

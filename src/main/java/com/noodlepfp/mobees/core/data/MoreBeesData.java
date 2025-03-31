@@ -2,8 +2,6 @@ package com.noodlepfp.mobees.core.data;
 
 import com.noodlepfp.mobees.MoBees;
 import com.noodlepfp.mobees.MoBeesModCompat;
-import forestry.core.data.ForestryRecipeProvider;
-import forestry.core.data.models.ForestryItemModelProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -32,6 +30,7 @@ public class MoreBeesData {
 
         dataHelper.createRecipes(MoreBeesRecipeProvider::addRecipes);
         dataHelper.createTags(Registries.BLOCK, MoreBeesBlockTagsProvider::addTags);
+        dataHelper.createTags(Registries.ITEM, MoreBeesItemTagsProvider::addTags);
 
         generator.addProvider(event.includeClient(), new MoreBeesItemModelProvider(output, existingFileHelper));
     }

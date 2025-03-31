@@ -9,8 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.ApiStatus;
 
-import java.util.Random;
-
 public class MoreBeesTags {
 
     @ApiStatus.Internal
@@ -32,6 +30,7 @@ public class MoreBeesTags {
     }
 
     public static class Blocks {
+        public static final TagKey<Block> FROGLIGHT = blockTag("froglight");
         public static final TagKey<Block> ROCKY_BEE_WALL = blockTag("hive_grounds/rocky");
         public static final TagKey<Block> ROCKY_CAVE_REPLACEABLE = blockTag("hive_grounds/rocky_cave_replaceable");
         public static final TagKey<Block> ALPINE_HIVE_GROUNDS = blockTag("hive_grounds/alpine");
@@ -76,5 +75,7 @@ public class MoreBeesTags {
 
     public static class Items {
         public static final TagKey<Item> FROGLIGHT = itemTag("froglight");
+
+        public static final TagKey<Item> BEE_FRAME = itemTag("bee_frame");
     }
 }

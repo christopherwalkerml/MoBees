@@ -10,6 +10,3 @@
  - alveary stimulator ^ upgrade of frame housing, expensive
  - witchy bee only flies in the rain?
  - alveary flower box (holds flower item, no need to place them down?)
-
-// TODO - make notes / descriptions for items
-- alveary mutator, compounding 1.5x, caps at x^4, capped at 50% chance.
