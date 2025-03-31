@@ -1,6 +1,6 @@
 package com.noodlepfp.mobees.gui;
 
-import com.noodlepfp.mobees.alveary.mutator.TileAlvearyMutator;
+import com.noodlepfp.mobees.alveary.block.TileAlvearyMutator;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureMenuTypes;
 import forestry.api.modules.IForestryPacketClient;
 import forestry.core.gui.ContainerTile;
@@ -16,6 +16,7 @@ public class ContainerAlvearyMutator extends ContainerTile<TileAlvearyMutator> {
     private int mutagenStorage = -1;
     private int mutagenReserve = -1;
     private boolean isActive = false;
+    private int energyStored = -1;
 
     public static ContainerAlvearyMutator fromNetwork(int windowId, Inventory inv, FriendlyByteBuf data) {
         TileAlvearyMutator tile = TileUtil.getTile(inv.player.level(), data.readBlockPos(), TileAlvearyMutator.class);
@@ -36,10 +37,12 @@ public class ContainerAlvearyMutator extends ContainerTile<TileAlvearyMutator> {
         int mutagenStorage = this.tile.getMutagenStorage();
         int mutagenReserve = this.tile.getMutagenReserve();
         boolean isActive = this.tile.isActive();
-        if (this.mutagenStorage != mutagenStorage || this.mutagenReserve != mutagenReserve || this.isActive != isActive) {
+        int energyStored = this.tile.getEnergyStorage().getEnergyStored();
+        if (this.mutagenStorage != mutagenStorage || this.mutagenReserve != mutagenReserve || this.isActive != isActive || this.energyStored != energyStored) {
             this.mutagenStorage = mutagenStorage;
             this.mutagenReserve = mutagenReserve;
             this.isActive = isActive;
+            this.energyStored = energyStored;
             IForestryPacketClient packet = new PacketGuiStream(this.tile);
             this.sendPacketToListeners(packet);
         }

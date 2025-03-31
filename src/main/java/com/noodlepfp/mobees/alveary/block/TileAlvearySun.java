@@ -1,30 +1,25 @@
-package com.noodlepfp.mobees.alveary.sun;
+package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import forestry.api.apiculture.IBeeModifier;
 import forestry.api.genetics.IGenome;
 import forestry.api.multiblock.IAlvearyComponent;
-import forestry.apiculture.blocks.BlockAlveary;
 import forestry.apiculture.multiblock.MultiblockLogicAlveary;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import static com.noodlepfp.mobees.alveary.MoreBeesBlockAlveary.LIGHT_LEVEL;
 
 public class TileAlvearySun extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 
-    private BlockState state;
-    private BlockPos pos;
+    private final BlockState state;
+    private final BlockPos pos;
 
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
         public boolean isAlwaysActive(IGenome genome) {
-            if (getWorkingTime() > 0) {
-                return true;
-            }
-            return false;
+            return getWorkingTime() > 0;
         }
     };
 

@@ -150,7 +150,7 @@ public class MoreBeesRecipeProvider {
     }
 
     private static void registerMaterials(MKRecipeProvider recipes) {
-        recipes.shapelessCrafting("mutagen_crafting", RecipeCategory.MISC, MoreBeesItems.CRAFTING_MATERIALS.get(MoreBeesEnumCraftingMaterial.MUTAGEN), 3,
+        recipes.shapelessCrafting("mutagen_crafting", RecipeCategory.MISC, MoreBeesItems.CRAFTING_MATERIALS.get(MoreBeesEnumCraftingMaterial.MUTAGEN), 2,
                 Tags.Items.DUSTS_GLOWSTONE, Tags.Items.DUSTS_REDSTONE, Tags.Items.CROPS);
 
         recipes.shapelessCrafting("copper_ingot_from_bits", RecipeCategory.MISC, Items.COPPER_INGOT, 1,

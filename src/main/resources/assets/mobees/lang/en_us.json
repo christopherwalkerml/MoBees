@@ -215,5 +215,11 @@
   "item.mobees.bee.modifier.lifespan_multiplier": "Lifespan",
   "item.mobees.bee.modifier.is_rainproof": "Shields Rain",
   "item.mobees.bee.modifier.is_always_sunny": "Simulates Sunlight",
-  "item.mobees.bee.modifier.is_hellish": "Simulates Nether"
+  "item.mobees.bee.modifier.is_hellish": "Simulates Nether",
+  "gui.widget.power.on": "Active",
+  "gui.widget.power.off": "Inactive",
+  "gui.widget.power.stored": "Energy Stored",
+  "gui.widget.mutagen.stored": "Mutagen Stored",
+  "gui.widget.mutagen.ready": "Ready to Mutate!",
+  "gui.widget.mutagen.insufficient": "Insufficient Mutagen!"
 }

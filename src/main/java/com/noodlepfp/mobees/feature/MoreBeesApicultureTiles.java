@@ -2,9 +2,9 @@ package com.noodlepfp.mobees.feature;
 
 import com.noodlepfp.mobees.MoBeesModule;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.rainshield.TileAlvearyRainShield;
-import com.noodlepfp.mobees.alveary.mutator.TileAlvearyMutator;
-import com.noodlepfp.mobees.alveary.sun.TileAlvearySun;
+import com.noodlepfp.mobees.alveary.block.TileAlvearyRainShield;
+import com.noodlepfp.mobees.alveary.block.TileAlvearyMutator;
+import com.noodlepfp.mobees.alveary.block.TileAlvearySun;
 import com.noodlepfp.mobees.hive.MoreBeesTileHive;
 import forestry.modules.features.FeatureProvider;
 import forestry.modules.features.FeatureTileType;

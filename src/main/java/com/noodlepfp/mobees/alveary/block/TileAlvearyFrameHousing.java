@@ -1,4 +1,4 @@
-package com.noodlepfp.mobees.alveary.rainshield;
+package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
@@ -8,7 +8,7 @@ import forestry.apiculture.multiblock.MultiblockLogicAlveary;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TileAlvearyRainShield extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
+public class TileAlvearyFrameHousing extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
@@ -20,7 +20,7 @@ public class TileAlvearyRainShield extends MoreBeesTileActivatable implements IA
         }
     };
 
-    public TileAlvearyRainShield(BlockPos pos, BlockState state) {
+    public TileAlvearyFrameHousing(BlockPos pos, BlockState state) {
         super(MoreBeesBlockAlvearyType.RAINSHIELD, pos, state, "Rainproofing", 1, 200);
     }
 

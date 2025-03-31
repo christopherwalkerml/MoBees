@@ -1,17 +1,13 @@
 package com.noodlepfp.mobees.alveary;
 
-import com.noodlepfp.mobees.alveary.rainshield.TileAlvearyRainShield;
-import com.noodlepfp.mobees.alveary.mutator.TileAlvearyMutator;
-import com.noodlepfp.mobees.alveary.sun.TileAlvearySun;
+import com.noodlepfp.mobees.alveary.block.TileAlvearyRainShield;
+import com.noodlepfp.mobees.alveary.block.TileAlvearyMutator;
+import com.noodlepfp.mobees.alveary.block.TileAlvearySun;
 import forestry.apiculture.blocks.BlockAlveary;
 import forestry.apiculture.blocks.BlockAlvearyType;
 import forestry.apiculture.multiblock.TileAlveary;
-import forestry.core.tiles.IActivatable;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,7 +15,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public class MoreBeesBlockAlveary extends BlockAlveary {
     public static final IntegerProperty LIGHT_LEVEL = IntegerProperty.create("light_level", 0, 15);

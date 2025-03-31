@@ -1,6 +1,6 @@
 package com.noodlepfp.mobees.gui;
 
-import com.noodlepfp.mobees.alveary.mutator.TileAlvearyMutator;
+import com.noodlepfp.mobees.alveary.block.TileAlvearyMutator;
 import com.noodlepfp.mobees.feature.MoreBeesItems;
 import com.noodlepfp.mobees.item.MoreBeesEnumCraftingMaterial;
 import forestry.core.inventory.InventoryAdapterTile;
@@ -15,8 +15,6 @@ public class InventoryAlvearyMutator extends InventoryAdapterTile<TileAlvearyMut
     public InventoryAlvearyMutator(TileAlvearyMutator alvearyMutator) {
         super(alvearyMutator, 1, "Items", 64);
     }
-    // TODO - create mutagen bar that fills up as the block is powered and has mutagen. only if its half full can it mutate a bee. half requires.. 4?
-    // takes a bit to fill up, maybe it consumes one every 30 seconds, starts a cooldown (like energy) that fills it up slowly, not in instant increments
 
     @Override
     public boolean canSlotAccept(int slotIndex, ItemStack stack) {

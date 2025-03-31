@@ -1,4 +1,4 @@
-package com.noodlepfp.mobees.alveary.mutator;
+package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
@@ -14,7 +14,6 @@ import forestry.core.inventory.IInventoryAdapter;
 import forestry.core.inventory.watchers.ISlotPickupWatcher;
 import forestry.core.network.IStreamable;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -27,8 +26,6 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     private final InventoryAlvearyMutator inventory;
     private final int MUTAGEN_STORAGE_CAP = 5000;
     private final int MUTAGEN_RESERVE_CAP = 500;
-    private final String MUTAGEN_STORAGE_STR = "storedMutagen";
-    private final String MUTAGEN_RESERVE_STR = "reservedMutagen";
     private int mutagenStorage;
     private int mutagenReserve;
     private final IBeeModifier MODIFIER = new IBeeModifier() {
@@ -36,7 +33,10 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         public float modifyMutationChance(IGenome genome, IGenome mate, IMutation<IBeeSpecies> mutation, float currentChance) {
             if (canConsumeMutagen()) {
                 setMutagenStorage(getMutagenStorage() - (MUTAGEN_STORAGE_CAP / 2));
-                return Math.min(currentChance * 2f, 0.5f);
+
+                // mult cap is the base mutation chance to the power of 3. ie. 0.06 -> 0.09 -> 0.135 -> 0.203 -> 0.304, capped at 0.5
+                float multCap = Math.min((float)(mutation.getChance() * (Math.pow(2, 4))), 0.5f);
+                return Math.min(currentChance * 1.5f, multCap);
             }
             return currentChance;
         }
@@ -117,20 +117,6 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     }
 
     @Override
-    public void load(CompoundTag compoundNBT) {
-        super.load(compoundNBT);
-        this.mutagenStorage = compoundNBT.getInt(MUTAGEN_STORAGE_STR);
-        this.mutagenReserve = compoundNBT.getInt(MUTAGEN_RESERVE_STR);
-    }
-
-    @Override
-    public void saveAdditional(CompoundTag compoundNBT) {
-        super.saveAdditional(compoundNBT);
-        compoundNBT.putInt(MUTAGEN_STORAGE_STR, this.mutagenStorage);
-        compoundNBT.putInt(MUTAGEN_RESERVE_STR, this.mutagenReserve);
-    }
-
-    @Override
     public void writeData(FriendlyByteBuf data) {
         data.writeVarInt(this.mutagenStorage);
         data.writeVarInt(this.mutagenReserve);
@@ -146,11 +132,13 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     public void writeGuiData(FriendlyByteBuf data) {
         data.writeVarInt(this.mutagenStorage);
         data.writeVarInt(this.mutagenReserve);
+        data.writeVarInt(this.getEnergyStorage().getEnergyStored());
     }
 
     @OnlyIn(Dist.CLIENT)
     public void readGuiData(FriendlyByteBuf data) {
         this.mutagenStorage = data.readVarInt();
         this.mutagenReserve = data.readVarInt();
+        this.getEnergyStorage().setEnergyStored(data.readVarInt());
     }
 }

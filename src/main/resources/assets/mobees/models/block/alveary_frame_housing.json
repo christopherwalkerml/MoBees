@@ -1,0 +1,10 @@
+{
+  "parent": "forestry:block/apiculture/alveary_plain_normal",
+  "textures": {
+    "particle": "mobees:block/alveary/alveary_frame_housing",
+    "north": "mobees:block/alveary/alveary_frame_housing",
+    "east": "forestry:block/apiculture/alveary.plain",
+    "south": "mobees:block/alveary/alveary_frame_housing",
+    "west": "forestry:block/apiculture/alveary.plain"
+  }
+}

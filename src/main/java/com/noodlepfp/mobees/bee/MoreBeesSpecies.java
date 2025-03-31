@@ -106,5 +106,5 @@ public class MoreBeesSpecies {
     public static final ResourceLocation PUPIL = mobees("bee_pupil");
     public static final ResourceLocation STUDIOUS = mobees("bee_studious");
     public static final ResourceLocation ERUDITE = mobees("bee_erudite");
-    public static final ResourceLocation SAGE = mobees("bee_sage"); // TODO erudite, monastic
+    public static final ResourceLocation SAGE = mobees("bee_sage");
 }
