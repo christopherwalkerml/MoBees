@@ -10,3 +10,6 @@
  - alveary stimulator ^ upgrade of frame housing, expensive
  - witchy bee only flies in the rain?
  - alveary flower box (holds flower item, no need to place them down?)
+
+add excited bee lightning effect
+refinery for bee ore produce? bit silly to combine bits into a whole ingot directly

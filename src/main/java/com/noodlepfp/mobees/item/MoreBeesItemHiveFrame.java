@@ -85,7 +85,7 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
         }
         if (beeModifier.isHellish) {
             tooltip.add(Component.translatable("item.mobees.bee.modifier.is_hellish")
-                    .append(": ").append(Component.literal("true").withStyle(ChatFormatting.RED)));
+                    .append(": ").append(Component.literal("true").withStyle(ChatFormatting.GREEN)));
         }
         if (!stack.isDamaged()) {
             tooltip.add(Component.translatable("item.forestry.durability", new Object[]{stack.getMaxDamage()}));

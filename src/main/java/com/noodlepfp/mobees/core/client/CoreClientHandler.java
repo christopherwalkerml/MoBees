@@ -4,6 +4,7 @@ import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureMenuTypes;
 import com.noodlepfp.mobees.feature.MoreBeesCrateItems;
+import com.noodlepfp.mobees.gui.GuiAlvearyFrameHousing;
 import com.noodlepfp.mobees.gui.GuiAlvearyMutator;
 import forestry.api.ForestryConstants;
 import forestry.api.apiculture.genetics.BeeLifeStage;
@@ -46,6 +47,7 @@ public class CoreClientHandler implements IClientModuleHandler {
 			MoreBeesApicultureBlocks.BEE_COMB.getBlocks().forEach((block) -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutout()));
 
 			MenuScreens.register(MoreBeesApicultureMenuTypes.ALVEARY_MUTATOR.menuType(), GuiAlvearyMutator::new);
+			MenuScreens.register(MoreBeesApicultureMenuTypes.ALVEARY_FRAME_HOUSING.menuType(), GuiAlvearyFrameHousing::new);
 		});
 	}
 

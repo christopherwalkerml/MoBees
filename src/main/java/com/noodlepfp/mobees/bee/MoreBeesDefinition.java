@@ -439,7 +439,7 @@ public class MoreBeesDefinition {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_DIAMOND);
                 })
                 .addMutations(mutations -> {
-                    mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.CHROMATIC, 3);
+                    mutations.add(MoreBeesSpecies.CRYSTALLINE, MoreBeesSpecies.CHROMATIC, 2);
                 })
                 .setAuthority("noodlepfp");
 
