@@ -119,7 +119,7 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
 
         @Override
         public float modifyMutationChance(IGenome genome, IGenome mate, IMutation<IBeeSpecies> mutation, float currentChance) {
-            return currentChance * mutationMult;
+            return Math.min(currentChance * mutationMult, 0.5f);
         }
 
         @Override

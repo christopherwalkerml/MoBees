@@ -2,9 +2,11 @@ package com.noodlepfp.mobees.gui;
 
 import com.noodlepfp.mobees.alveary.block.TileAlvearyFrameHousing;
 import com.noodlepfp.mobees.core.data.MoreBeesTags;
+import forestry.api.apiculture.hives.IHiveFrame;
 import forestry.core.inventory.InventoryAdapterTile;
 import forestry.core.inventory.watchers.ISlotPickupWatcher;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -24,6 +26,15 @@ public class InventoryAlvearyFrameHousing extends InventoryAdapterTile<TileAlvea
             }
         }
         return false;
+    }
+
+    public Tuple<IHiveFrame, ItemStack> getFrame() {
+        ItemStack stackInSlot = getItem(SLOT_FRAME);
+        Item itemInSlot = stackInSlot.getItem();
+        if (itemInSlot instanceof IHiveFrame frame) {
+            return new Tuple<>(frame, stackInSlot.copy());
+        }
+        return null;
     }
 
     /* ISlotPickupWatcher */
