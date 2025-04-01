@@ -42,13 +42,12 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
         this.type = type;
 
         BlockState defaultState = this.getStateDefinition().any();
+        defaultState = defaultState.setValue(STATE, State.OFF);
         if (type == MoreBeesBlockAlvearyType.SUN) {
-            defaultState = defaultState.setValue(STATE, State.OFF);
             defaultState = defaultState.setValue(LIGHT_LEVEL, 0);
-        } else {
-            defaultState = defaultState.setValue(STATE, State.OFF);
         }
         if (type == MoreBeesBlockAlvearyType.FRAME_HOUSING) {
+            defaultState = defaultState.setValue(STATE, State.ON);
             defaultState = defaultState.setValue(FACING, Direction.NORTH);
         }
         this.registerDefaultState(defaultState);
@@ -93,6 +92,7 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
 
         if (tile instanceof TileAlvearyFrameHousing frameHousing) {
             state = state.setValue(FACING, frameHousing.getDirection());
+            state = state.setValue(STATE, State.ON);
         }
 
         return state;

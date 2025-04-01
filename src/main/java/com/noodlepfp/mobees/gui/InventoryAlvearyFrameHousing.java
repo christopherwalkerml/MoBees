@@ -37,6 +37,16 @@ public class InventoryAlvearyFrameHousing extends InventoryAdapterTile<TileAlvea
         return null;
     }
 
+    public void damageFrame(int wear) {
+        ItemStack frameStack = getItem(SLOT_FRAME);
+        Item frameItem = frameStack.getItem();
+
+        if (frameItem instanceof IHiveFrame hiveFrame) {
+            ItemStack usedFrame = hiveFrame.frameUsed(tile, frameStack, null, wear);
+            setItem(SLOT_FRAME, usedFrame);
+        }
+    }
+
     /* ISlotPickupWatcher */
     @Override
     public void onTake(int slotIndex, Player player) {

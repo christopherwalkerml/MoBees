@@ -5,6 +5,7 @@ import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileAlveary;
 import com.noodlepfp.mobees.gui.ContainerAlvearyFrameHousing;
 import com.noodlepfp.mobees.gui.InventoryAlvearyFrameHousing;
+import forestry.api.apiculture.IBeeListener;
 import forestry.api.apiculture.IBeeModifier;
 import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.apiculture.hives.IHiveFrame;
@@ -24,7 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-public class TileAlvearyFrameHousing extends MoreBeesTileAlveary implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
+public class TileAlvearyFrameHousing extends MoreBeesTileAlveary implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IAlvearyComponent.BeeListener<MultiblockLogicAlveary> {
 
     private final InventoryAlvearyFrameHousing inventory;
 
@@ -108,5 +109,17 @@ public class TileAlvearyFrameHousing extends MoreBeesTileAlveary implements IAlv
     @Override
     public IBeeModifier getBeeModifier() {
         return MODIFIER;
+    }
+
+    private final IBeeListener LISTENER = new IBeeListener() {
+        @Override
+        public void wearOutEquipment(int amount) {
+            inventory.damageFrame(amount);
+        }
+    };
+
+    @Override
+    public IBeeListener getBeeListener() {
+        return LISTENER;
     }
 }

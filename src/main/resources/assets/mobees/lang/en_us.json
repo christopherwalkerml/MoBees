@@ -216,7 +216,7 @@
   "item.mobees.bee.modifier.decay_multiplier": "Decay",
   "item.mobees.bee.modifier.pollination_multiplier": "Pollination",
   "item.mobees.bee.modifier.mutation_multiplier": "Mutation",
-  "item.mobees.bee.modifier.lifespan_multiplier": "Lifespan",
+  "item.mobees.bee.modifier.aging_multiplier": "Aging",
   "item.mobees.bee.modifier.is_rainproof": "Shields Rain",
   "item.mobees.bee.modifier.is_always_sunny": "Simulates Sunlight",
   "item.mobees.bee.modifier.is_hellish": "Simulates Nether",

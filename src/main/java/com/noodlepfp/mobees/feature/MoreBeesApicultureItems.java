@@ -16,7 +16,7 @@ public class MoreBeesApicultureItems {
 
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_DESTRUCTION = REGISTRY.item(() -> new MoreBeesItemHiveFrame
             .MoreBeesItemHiveFrameBuilder(256)
-            .setAgeMult(0.2f)
+            .setAgeMult(5f)
             .setSpeedMult(0.5f)
             .setMutationMult(1.25f)
             .setDecayMult(1.25f)

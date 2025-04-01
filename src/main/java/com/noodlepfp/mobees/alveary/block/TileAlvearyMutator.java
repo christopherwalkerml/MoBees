@@ -14,6 +14,7 @@ import forestry.core.inventory.IInventoryAdapter;
 import forestry.core.inventory.watchers.ISlotPickupWatcher;
 import forestry.core.network.IStreamable;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -26,6 +27,8 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     private final InventoryAlvearyMutator inventory;
     private final int MUTAGEN_STORAGE_CAP = 5000;
     private final int MUTAGEN_RESERVE_CAP = 500;
+    private final String MUTAGEN_STORAGE_STR = "storedMutagen";
+    private final String MUTAGEN_RESERVE_STR = "reservedMutagen";
     private int mutagenStorage;
     private int mutagenReserve;
     private final IBeeModifier MODIFIER = new IBeeModifier() {
@@ -115,6 +118,20 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     @Override
     public AbstractContainerMenu createMenu(int windowId, Inventory inv, Player player) {
         return new ContainerAlvearyMutator(windowId, inv, this);
+    }
+
+    @Override
+    public void load(CompoundTag compoundNBT) {
+        super.load(compoundNBT);
+        this.mutagenStorage = compoundNBT.getInt(MUTAGEN_STORAGE_STR);
+        this.mutagenReserve = compoundNBT.getInt(MUTAGEN_RESERVE_STR);
+    }
+
+    @Override
+    public void saveAdditional(CompoundTag compoundNBT) {
+        super.saveAdditional(compoundNBT);
+        compoundNBT.putInt(MUTAGEN_STORAGE_STR, this.mutagenStorage);
+        compoundNBT.putInt(MUTAGEN_RESERVE_STR, this.mutagenReserve);
     }
 
     @Override

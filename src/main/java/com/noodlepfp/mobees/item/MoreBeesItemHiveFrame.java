@@ -70,7 +70,7 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
                             .withStyle(beeModifier.mutationMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.ageMult != 1) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.lifespan_multiplier")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.aging_multiplier")
                     .append(": ")
                     .append(Component.literal(FORMAT.format(beeModifier.ageMult) + "x")
                             .withStyle(beeModifier.ageMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
