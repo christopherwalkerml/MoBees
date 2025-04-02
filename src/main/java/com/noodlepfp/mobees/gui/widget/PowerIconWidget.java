@@ -41,13 +41,13 @@ public class PowerIconWidget extends Widget {
             toolTip.clear();
             if (tile.isActive()) {
                 toolTip.add(Component.translatable("gui.widget.power.on").withStyle(ChatFormatting.YELLOW));
-                int stored = tile.getEnergyStorage().getEnergyStored();
-                int cap = tile.getEnergyStorage().getMaxEnergyStored();
-                toolTip.add(Component.translatable("gui.widget.power.stored").append(":").withStyle(ChatFormatting.GOLD));
-                toolTip.add(Component.literal(stored + "/" + cap + " RF").withStyle(ChatFormatting.GRAY));
             } else {
                 toolTip.add(Component.translatable("gui.widget.power.off").withStyle(ChatFormatting.GRAY));
             }
+            int stored = tile.getEnergyStorage().getEnergyStored();
+            int cap = tile.getEnergyStorage().getMaxEnergyStored();
+            toolTip.add(Component.translatable("gui.widget.power.stored").append(":").withStyle(ChatFormatting.WHITE));
+            toolTip.add(Component.literal(stored + "/" + cap + " RF").withStyle(ChatFormatting.GRAY));
         }
     };
 }

@@ -58,16 +58,20 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
 
     @Override
     public void updateServer(int tickCount) {
-        super.updateServer(tickCount);
+        // should only consume power if there is mutagen waiting to be ingested
+        if (getMutagenReserve() > 0) {
+            super.updateServer(tickCount);
+        }
+        // can reserve mutagen without power
+        if (getMutagenReserve() == 0 && inventory.canUseMutagen()) {
+            inventory.useMutagen();
+            setMutagenReserve(MUTAGEN_RESERVE_CAP);
+        }
+        // only ingests mutagen into storage if powered and in reserve and less than cap
         if (isActive()) {
-            if (getMutagenReserve() == 0 && inventory.canUseMutagen()) {
-                inventory.useMutagen();
-                setMutagenReserve(MUTAGEN_RESERVE_CAP);
-            } else {
-                if (getMutagenReserve() > 0 && getMutagenStorage() < MUTAGEN_STORAGE_CAP) {
-                    setMutagenReserve(getMutagenReserve() - 1);
-                    setMutagenStorage(getMutagenStorage() + 1);
-                }
+            if (getMutagenReserve() > 0 && getMutagenStorage() < MUTAGEN_STORAGE_CAP) {
+                setMutagenReserve(getMutagenReserve() - 1);
+                setMutagenStorage(getMutagenStorage() + 1);
             }
         }
     }
