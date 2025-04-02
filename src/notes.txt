@@ -10,9 +10,8 @@
  - alveary stimulator ^ upgrade of frame housing, expensive
  - witchy bee only flies in the rain?
  - alveary flower box (holds flower item, no need to place them down?) - maybe also gives a boost to pollination, can be a mini game?
-   - maybe the flower box increases in fertility as it goes on
- - alveary blocks dont drop their contents or themselves
- - mutator should hold its data when it drops
+   - maybe the flower box increases in fertility as it goes on. mini game is flowers have to be watered every now and again to boost prod.?
+ - mutator doesnt consume power when no reserve? item gets automatically put into reserve, just not ingested.
 
 add excited bee lightning effect
 refinery for bee ore produce? bit silly to combine bits into a whole ingot directly

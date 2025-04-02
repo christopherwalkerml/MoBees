@@ -31,6 +31,8 @@ public class MoreBeesBlockLootTables extends BlockLootSubProvider {
 				dropSelf(block);
 			}
 		});
+
+		add(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.MUTATOR).block(), LootTableHandler.alvearyMutatorLootTable());
 	}
 
 	@Override

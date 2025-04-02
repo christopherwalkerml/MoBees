@@ -1,5 +1,6 @@
 package com.noodlepfp.mobees.alveary.block;
 
+import com.noodlepfp.mobees.alveary.INBTStorable;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import com.noodlepfp.mobees.gui.ContainerAlvearyMutator;
@@ -24,7 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable {
+public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable, INBTStorable {
     private final InventoryAlvearyMutator inventory;
     private final int MUTAGEN_STORAGE_CAP = 5000;
     private final int MUTAGEN_RESERVE_CAP = 500;
@@ -145,10 +146,11 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
 
     // if the tile has anything in its inventory, or has any mutagen stored or being processed, it should store it when turned into an item.
     // energy should be ignored, it will cause inventory cluttering.
-    public static void modifyItemNBT(TileAlvearyMutator mutator, ItemStack stack) {
-        if (mutator.getMutagenReserve() > 0 || mutator.getMutagenStorage() > 0 || !mutator.getInternalInventory().isEmpty()) {
+    @Override
+    public void modifyItemNBT(ItemStack stack) {
+        if (getMutagenReserve() > 0 || getMutagenStorage() > 0 || !getInternalInventory().isEmpty()) {
             CompoundTag tag = new CompoundTag();
-            mutator.saveNbt(tag); // Save the BlockEntity data into tag
+            saveNbt(tag); // Save the BlockEntity data into tag
             stack.addTagElement(TileAlvearyMutator.ITEM_NBT_TAG, tag);
         }
     }

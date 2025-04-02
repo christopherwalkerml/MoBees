@@ -158,7 +158,7 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
         BlockEntity tile = TileUtil.getTile(world, pos);
         if (tile instanceof TileAlvearyMutator mutator) {
             ItemStack stack = new ItemStack(mutator.getBlockState().getBlock());
-            TileAlvearyMutator.modifyItemNBT(mutator, stack);
+            mutator.modifyItemNBT(stack);
             return stack;
         }
         return ItemStack.EMPTY;

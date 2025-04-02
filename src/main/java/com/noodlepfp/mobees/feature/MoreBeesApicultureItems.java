@@ -10,7 +10,7 @@ public class MoreBeesApicultureItems {
     public static final FeatureItemGroup<MoreBeesItemHoneyComb, MoreBeesEnumHoneyComb> BEE_COMBS = REGISTRY.itemGroup(MoreBeesItemHoneyComb::new, "bee_comb", MoreBeesEnumHoneyComb.VALUES);
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_PRESERVATION = REGISTRY.item(() -> new MoreBeesItemHiveFrame
             .MoreBeesItemHiveFrameBuilder(256)
-            .setAgeMult(2.0f)
+            .setAgeMult(0.5f)
             .setDecayMult(0.8f)
             .build(), "frame_preservation");
 
@@ -46,7 +46,7 @@ public class MoreBeesApicultureItems {
     public static final FeatureItem<MoreBeesItemHiveFrame> FRAME_KIND = REGISTRY.item(() -> new MoreBeesItemHiveFrame
             .MoreBeesItemHiveFrameBuilder(512)
             .setSpeedMult(1.5f)
-            .setAgeMult(1.5f)
+            .setAgeMult(0.75f)
             .setDecayMult(0.05f)
             .setMutationMult(0.5f)
             .build(), "frame_kind");
