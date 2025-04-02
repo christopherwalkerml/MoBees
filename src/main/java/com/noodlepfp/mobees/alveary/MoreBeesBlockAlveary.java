@@ -133,6 +133,10 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
                 tooltip.add(Component.translatable("block.forestry.alveary_fan_tooltip").withStyle(ChatFormatting.GRAY));
             }
             tooltip.add(Component.empty());
+        } else {
+            if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.MUTATOR).item())) {
+                TileAlvearyMutator.modifyTooltip(tooltip, stack);
+            }
         }
     }
 

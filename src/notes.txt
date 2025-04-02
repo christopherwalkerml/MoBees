@@ -11,6 +11,7 @@
  - witchy bee only flies in the rain?
  - alveary flower box (holds flower item, no need to place them down?) - maybe also gives a boost to pollination, can be a mini game?
    - maybe the flower box increases in fertility as it goes on. mini game is flowers have to be watered every now and again to boost prod.?
+ - show mutator contents when hovering?
 
 add excited bee lightning effect
 refinery for bee ore produce? bit silly to combine bits into a whole ingot directly

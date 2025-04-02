@@ -14,9 +14,12 @@ import forestry.apiculture.multiblock.MultiblockLogicAlveary;
 import forestry.core.inventory.IInventoryAdapter;
 import forestry.core.inventory.watchers.ISlotPickupWatcher;
 import forestry.core.network.IStreamable;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -25,10 +28,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+import java.util.List;
+
 public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable, INBTStorable {
     private final InventoryAlvearyMutator inventory;
-    private final int MUTAGEN_STORAGE_CAP = 5000;
-    private final int MUTAGEN_RESERVE_CAP = 500;
+    public static final int MUTAGEN_STORAGE_CAP = 5000;
+    public static final int MUTAGEN_RESERVE_CAP = 500;
     private final String MUTAGEN_STORAGE_STR = "storedMutagen";
     private final String MUTAGEN_RESERVE_STR = "reservedMutagen";
     public final static String ITEM_NBT_TAG = "MutatorData";
@@ -84,7 +89,7 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         this.mutagenReserve = amt;
     }
 
-    public int getMutagenReserveCap() {
+    public static int getMutagenReserveCap() {
         return MUTAGEN_RESERVE_CAP;
     }
 
@@ -93,14 +98,14 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     }
 
     public boolean canConsumeMutagen() {
-        return this.mutagenStorage >= this.MUTAGEN_STORAGE_CAP / 2;
+        return this.mutagenStorage >= MUTAGEN_STORAGE_CAP / 2;
     }
 
     public void setMutagenStorage(int amt) {
         this.mutagenStorage = amt;
     }
 
-    public int getMutagenStorageCap() {
+    public static int getMutagenStorageCap() {
         return MUTAGEN_STORAGE_CAP;
     }
 
@@ -183,5 +188,22 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         this.mutagenStorage = data.readVarInt();
         this.mutagenReserve = data.readVarInt();
         this.getEnergyStorage().setEnergyStored(data.readVarInt());
+    }
+
+    public static void modifyTooltip(List<Component> tooltip, ItemStack stack) {
+        if (stack.hasTag() && stack.getTag().contains("MutatorData")) {
+            CompoundTag mutatorData = stack.getTag().getCompound("MutatorData");
+
+            // Extract mutagenReserve and mutagenStorage
+            int mutagenStorage = mutatorData.getInt("storedMutagen");
+            int storagePercent = (int)(mutagenStorage / (float) TileAlvearyMutator.getMutagenStorageCap() * 100);
+
+            tooltip.add(1, Component.literal("Mutagen Storage: ").withStyle(ChatFormatting.GRAY)
+                    .append(Component.literal("[").withStyle(ChatFormatting.WHITE))
+                    .append(Component.literal("|".repeat((storagePercent / 10) * 2)).withStyle(Style.EMPTY.withColor(0x79a66c)))
+                    .append(Component.literal("|".repeat((10 - (storagePercent / 10)) * 2)).withStyle(ChatFormatting.DARK_GRAY))
+                    .append(Component.literal("]").withStyle(ChatFormatting.WHITE)));
+            tooltip.add(2, Component.empty());
+        }
     }
 }

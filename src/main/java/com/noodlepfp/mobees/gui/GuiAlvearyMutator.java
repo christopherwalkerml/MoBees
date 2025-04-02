@@ -22,7 +22,7 @@ public class GuiAlvearyMutator extends GuiForestryTitled<ContainerAlvearyMutator
 
     @Override
     protected void drawWidgets(GuiGraphics graphics) {
-        int reserveProgress = this.tile.getAttributeScaled(this.tile.getMutagenReserve(), this.tile.getMutagenReserveCap(), 23);
+        int reserveProgress = this.tile.getAttributeScaled(this.tile.getMutagenReserve(), TileAlvearyMutator.getMutagenReserveCap(), 23);
         graphics.blit(this.textureFile, 69 + (23 - reserveProgress), 45, 176 + (23 - reserveProgress), 26, reserveProgress, 4);
 
         if (this.tile.canConsumeMutagen()) {

@@ -24,7 +24,7 @@ public class MutagenStorageWidget extends Widget {
 
     @Override
     public void draw(GuiGraphics graphics, int startX, int startY) {
-        int storageProgress = tile.getAttributeScaled(tile.getMutagenStorage(), tile.getMutagenStorageCap(), 59);
+        int storageProgress = tile.getAttributeScaled(tile.getMutagenStorage(), TileAlvearyMutator.getMutagenStorageCap(), 59);
         graphics.blit(manager.gui.textureFile, 96, 39, 176, 0, storageProgress, 16);
     }
 
@@ -40,7 +40,7 @@ public class MutagenStorageWidget extends Widget {
         public void refresh() {
             toolTip.clear();
             int stored = tile.getMutagenStorage();
-            int cap = tile.getMutagenStorageCap();
+            int cap = TileAlvearyMutator.getMutagenStorageCap();
             toolTip.add(Component.translatable("gui.widget.mutagen.stored").withStyle(Style.EMPTY.withColor(0x79a66c)));
             toolTip.add(Component.literal(stored + "/" + cap).withStyle(ChatFormatting.GRAY));
             toolTip.add(Component.empty());
