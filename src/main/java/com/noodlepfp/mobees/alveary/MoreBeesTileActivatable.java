@@ -78,6 +78,12 @@ public class MoreBeesTileActivatable extends MoreBeesTileAlveary implements IAct
         compoundNBT.putInt(actionVerb, workingTime);
     }
 
+    public void saveNbt(CompoundTag compoundNBT) {
+        energyStorage.write(compoundNBT);
+        compoundNBT.putInt(actionVerb, workingTime);
+        this.getInternalInventory().write(compoundNBT);
+    }
+
     /* IActivatable */
     @Override
     public boolean isActive() {

@@ -19,6 +19,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -29,6 +30,7 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     private final int MUTAGEN_RESERVE_CAP = 500;
     private final String MUTAGEN_STORAGE_STR = "storedMutagen";
     private final String MUTAGEN_RESERVE_STR = "reservedMutagen";
+    public final static String ITEM_NBT_TAG = "MutatorData";
     private int mutagenStorage;
     private int mutagenReserve;
     private final IBeeModifier MODIFIER = new IBeeModifier() {
@@ -39,7 +41,7 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
                 setMutagenStorage(getMutagenStorage() - (MUTAGEN_STORAGE_CAP / 2));
 
                 // mult cap is the base mutation chance to the power of 3. ie. 0.06 -> 0.09 -> 0.135 -> 0.203 -> 0.304, capped at 0.5
-                float multCap = Math.min((float)(mutation.getChance() * (Math.pow(2, 4))), 0.5f);
+                float multCap = Math.min((float)(mutation.getChance() * (Math.pow(1.5, 4))), 0.5f);
                 return Math.min(currentChance * 1.5f, multCap);
             }
             return currentChance;
@@ -47,7 +49,7 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     };
 
     public TileAlvearyMutator(BlockPos pos, BlockState state) {
-        super(MoreBeesBlockAlvearyType.MUTATOR, pos, state, "Mutating", 1, 200);
+        super(MoreBeesBlockAlvearyType.MUTATOR, pos, state, "Ingesting", 1, 200);
         this.inventory = new InventoryAlvearyMutator(this);
         this.mutagenStorage = 0;
         this.mutagenReserve = 0;
@@ -132,6 +134,23 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
         super.saveAdditional(compoundNBT);
         compoundNBT.putInt(MUTAGEN_STORAGE_STR, this.mutagenStorage);
         compoundNBT.putInt(MUTAGEN_RESERVE_STR, this.mutagenReserve);
+    }
+
+    @Override
+    public void saveNbt(CompoundTag compoundNBT) {
+        super.saveNbt(compoundNBT);
+        compoundNBT.putInt(MUTAGEN_STORAGE_STR, this.mutagenStorage);
+        compoundNBT.putInt(MUTAGEN_RESERVE_STR, this.mutagenReserve);
+    }
+
+    // if the tile has anything in its inventory, or has any mutagen stored or being processed, it should store it when turned into an item.
+    // energy should be ignored, it will cause inventory cluttering.
+    public static void modifyItemNBT(TileAlvearyMutator mutator, ItemStack stack) {
+        if (mutator.getMutagenReserve() > 0 || mutator.getMutagenStorage() > 0 || !mutator.getInternalInventory().isEmpty()) {
+            CompoundTag tag = new CompoundTag();
+            mutator.saveNbt(tag); // Save the BlockEntity data into tag
+            stack.addTagElement(TileAlvearyMutator.ITEM_NBT_TAG, tag);
+        }
     }
 
     @Override

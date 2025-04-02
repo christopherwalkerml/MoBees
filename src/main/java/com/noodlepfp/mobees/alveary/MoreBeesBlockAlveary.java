@@ -8,17 +8,23 @@ import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.farming.HorizontalDirection;
 import forestry.apiculture.blocks.BlockAlveary;
 import forestry.apiculture.blocks.BlockAlvearyType;
+import forestry.apiculture.features.ApicultureBlocks;
 import forestry.apiculture.multiblock.TileAlveary;
+import forestry.core.tiles.TileUtil;
+import forestry.core.utils.ItemStackUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -110,17 +116,62 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter world, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, world, tooltip, flag);
         if (Screen.hasShiftDown()) {
+            tooltip.add(Component.empty());
             if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.MUTATOR).item())) {
-                tooltip.add(Component.empty());
                 String[] ttSplitMsg = Component.translatable("block.mobees.alveary_mutator_tooltip").getString().split("%MUTAGEN");
                 Component ttMsg = Component.literal(ttSplitMsg[0]).withStyle(ChatFormatting.GRAY)
                         .append(Component.translatable("block.mobees.alveary_mutator_mutagen_key").withStyle(Style.EMPTY.withColor(0x79a66c)))
                         .append(ttSplitMsg[1]).withStyle(ChatFormatting.GRAY);
                 tooltip.add(ttMsg);
             } else if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.SUN).item())) {
-                tooltip.add(Component.empty());
                 tooltip.add(Component.translatable("block.mobees.alveary_sun_lamp_tooltip").withStyle(ChatFormatting.GRAY));
+            } else if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.RAINSHIELD).item())) {
+                tooltip.add(Component.translatable("block.mobees.alveary_rain_shield_tooltip").withStyle(ChatFormatting.GRAY));
+            } else if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.FRAME_HOUSING).item())) {
+                tooltip.add(Component.translatable("block.mobees.alveary_frame_housing_tooltip").withStyle(ChatFormatting.GRAY));
+            } else if (stack.getItem().equals(ApicultureBlocks.ALVEARY.get(BlockAlvearyType.FAN).item())) {
+                tooltip.add(Component.translatable("block.forestry.alveary_fan_tooltip").withStyle(ChatFormatting.GRAY));
+            }
+            tooltip.add(Component.empty());
+        }
+    }
+
+    @Override
+    public void playerDestroy(Level world, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity te, ItemStack stack) {
+        if (world.isClientSide) {
+            return;
+        }
+
+        if (canHarvestBlock(state, world, pos, player) && te instanceof TileAlvearyFrameHousing frameHousing) {
+            List<ItemStack> drops = ((IInventoryHolder)frameHousing.getInternalInventory()).getDrops();
+
+            for (ItemStack s : drops) {
+                ItemStackUtil.dropItemStackAsEntity(s, world, pos);
             }
         }
+
+        super.playerDestroy(world, player, pos, state, te, stack);
+    }
+
+    @Override
+    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
+        BlockEntity tile = TileUtil.getTile(world, pos);
+        if (tile instanceof TileAlvearyMutator mutator) {
+            ItemStack stack = new ItemStack(mutator.getBlockState().getBlock());
+            TileAlvearyMutator.modifyItemNBT(mutator, stack);
+            return stack;
+        }
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    public void setPlacedBy(Level world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
+        if (stack.hasTag() && stack.getTag().contains(TileAlvearyMutator.ITEM_NBT_TAG)) {
+            BlockEntity tile = world.getBlockEntity(pos);
+            if (tile instanceof TileAlvearyMutator mutator) {
+                mutator.load(stack.getTag().getCompound(TileAlvearyMutator.ITEM_NBT_TAG)); // Load stored data
+            }
+        }
+        super.setPlacedBy(world, pos, state, placer, stack);
     }
 }

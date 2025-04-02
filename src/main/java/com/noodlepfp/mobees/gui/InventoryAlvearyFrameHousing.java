@@ -1,7 +1,8 @@
 package com.noodlepfp.mobees.gui;
 
+import com.noodlepfp.mobees.alveary.IInventoryHolder;
 import com.noodlepfp.mobees.alveary.block.TileAlvearyFrameHousing;
-import com.noodlepfp.mobees.core.data.MoreBeesTags;
+import com.noodlepfp.mobees.core.data.tag.MoreBeesTags;
 import forestry.api.apiculture.hives.IHiveFrame;
 import forestry.core.inventory.InventoryAdapterTile;
 import forestry.core.inventory.watchers.ISlotPickupWatcher;
@@ -11,7 +12,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class InventoryAlvearyFrameHousing extends InventoryAdapterTile<TileAlvearyFrameHousing> implements ISlotPickupWatcher {
+import java.util.ArrayList;
+import java.util.List;
+
+public class InventoryAlvearyFrameHousing extends InventoryAdapterTile<TileAlvearyFrameHousing> implements ISlotPickupWatcher, IInventoryHolder {
     public static final int SLOT_FRAME = 0;
 
     public InventoryAlvearyFrameHousing(TileAlvearyFrameHousing alvearyFrameHousing) {
@@ -51,5 +55,12 @@ public class InventoryAlvearyFrameHousing extends InventoryAdapterTile<TileAlvea
     @Override
     public void onTake(int slotIndex, Player player) {
         setItem(SLOT_FRAME, ItemStack.EMPTY);
+    }
+
+    @Override
+    public List<ItemStack> getDrops() {
+        List<ItemStack> drops = new ArrayList<>();
+        drops.add(getItem(SLOT_FRAME));
+        return drops;
     }
 }

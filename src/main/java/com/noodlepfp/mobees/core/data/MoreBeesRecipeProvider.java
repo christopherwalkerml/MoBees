@@ -2,6 +2,7 @@ package com.noodlepfp.mobees.core.data;
 
 import com.noodlepfp.mobees.MoBeesEnumModCompat;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
+import com.noodlepfp.mobees.core.data.tag.MoreBeesTags;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesCrateItems;

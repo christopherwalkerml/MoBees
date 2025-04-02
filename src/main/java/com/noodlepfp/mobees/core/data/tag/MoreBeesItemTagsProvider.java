@@ -1,4 +1,4 @@
-package com.noodlepfp.mobees.core.data;
+package com.noodlepfp.mobees.core.data.tag;
 
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import forestry.apiculture.features.ApicultureItems;

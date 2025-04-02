@@ -46,45 +46,45 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
         DecimalFormat FORMAT = new DecimalFormat("#.##");
 
         if (beeModifier.speedMult != 1) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.speed_multiplier")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.speed_multiplier").withStyle(ChatFormatting.GRAY)
                     .append(": ")
                     .append(Component.literal(FORMAT.format(beeModifier.speedMult) + "x")
                             .withStyle(beeModifier.speedMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.decayMult != 1) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.decay_multiplier")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.decay_multiplier").withStyle(ChatFormatting.GRAY)
                     .append(": ")
                     .append(Component.literal(FORMAT.format(beeModifier.decayMult) + "x")
                             .withStyle(beeModifier.decayMult > 1 ? ChatFormatting.RED : ChatFormatting.GREEN)));
         }
         if (beeModifier.pollinationMult != 1) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.pollination_multiplier")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.pollination_multiplier").withStyle(ChatFormatting.GRAY)
                     .append(": ")
                     .append(Component.literal(FORMAT.format(beeModifier.pollinationMult) + "x")
                             .withStyle(beeModifier.pollinationMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.mutationMult != 1) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.mutation_multiplier")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.mutation_multiplier").withStyle(ChatFormatting.GRAY)
                     .append(": ")
                     .append(Component.literal(FORMAT.format(beeModifier.mutationMult) + "x")
                             .withStyle(beeModifier.mutationMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
         }
         if (beeModifier.ageMult != 1) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.aging_multiplier")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.aging_multiplier").withStyle(ChatFormatting.GRAY)
                     .append(": ")
                     .append(Component.literal(FORMAT.format(beeModifier.ageMult) + "x")
-                            .withStyle(beeModifier.ageMult > 1 ? ChatFormatting.GREEN : ChatFormatting.RED)));
+                            .withStyle(beeModifier.ageMult > 1 ? ChatFormatting.RED : ChatFormatting.GREEN)));
         }
         if (beeModifier.isRainproof) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_rainproof")
-                    .append(": ").append(Component.literal("true").withStyle(ChatFormatting.BLUE)));
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_rainproof").withStyle(ChatFormatting.GRAY)
+                    .append(": ").append(Component.literal("true").withStyle(ChatFormatting.GREEN)));
         }
         if (beeModifier.isAlwaysSunny) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_always_sunny")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_always_sunny").withStyle(ChatFormatting.GRAY)
                     .append(": ").append(Component.literal("true").withStyle(ChatFormatting.GREEN)));
         }
         if (beeModifier.isHellish) {
-            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_hellish")
+            tooltip.add(Component.translatable("item.mobees.bee.modifier.is_hellish").withStyle(ChatFormatting.GRAY)
                     .append(": ").append(Component.literal("true").withStyle(ChatFormatting.GREEN)));
         }
         if (!stack.isDamaged()) {
@@ -119,7 +119,9 @@ public class MoreBeesItemHiveFrame extends ItemForestry implements IHiveFrame {
 
         @Override
         public float modifyMutationChance(IGenome genome, IGenome mate, IMutation<IBeeSpecies> mutation, float currentChance) {
-            return Math.min(currentChance * mutationMult, 0.5f);
+            // mult cap is the base mutation chance to the power of 3. ie. 0.06 -> 0.09 -> 0.135 -> 0.203 -> 0.304, capped at 0.5
+            float multCap = Math.min((float)(mutation.getChance() * (Math.pow(1.5, 4))), 0.5f);
+            return Math.min(currentChance * mutationMult, multCap);
         }
 
         @Override

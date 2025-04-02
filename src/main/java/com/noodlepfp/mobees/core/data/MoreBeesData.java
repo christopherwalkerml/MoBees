@@ -2,6 +2,9 @@ package com.noodlepfp.mobees.core.data;
 
 import com.noodlepfp.mobees.MoBees;
 import com.noodlepfp.mobees.MoBeesModCompat;
+import com.noodlepfp.mobees.core.data.loot.MoreBeesLootTableProvider;
+import com.noodlepfp.mobees.core.data.tag.MoreBeesBlockTagsProvider;
+import com.noodlepfp.mobees.core.data.tag.MoreBeesItemTagsProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -33,5 +36,7 @@ public class MoreBeesData {
         dataHelper.createTags(Registries.ITEM, MoreBeesItemTagsProvider::addTags);
 
         generator.addProvider(event.includeClient(), new MoreBeesItemModelProvider(output, existingFileHelper));
+
+        generator.addProvider(event.includeServer(), new MoreBeesLootTableProvider(output));
     }
 }

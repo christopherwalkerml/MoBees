@@ -1,4 +1,4 @@
-package com.noodlepfp.mobees.core.data;
+package com.noodlepfp.mobees.core.data.tag;
 
 import com.noodlepfp.mobees.MoBeesModule;
 import net.minecraft.resources.ResourceLocation;

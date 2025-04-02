@@ -40,7 +40,7 @@ public class PowerIconWidget extends Widget {
         public void refresh() {
             toolTip.clear();
             if (tile.isActive()) {
-                toolTip.add(Component.translatable("gui.widget.power.on").withStyle(ChatFormatting.GREEN));
+                toolTip.add(Component.translatable("gui.widget.power.on").withStyle(ChatFormatting.YELLOW));
                 int stored = tile.getEnergyStorage().getEnergyStored();
                 int cap = tile.getEnergyStorage().getMaxEnergyStored();
                 toolTip.add(Component.translatable("gui.widget.power.stored").append(":").withStyle(ChatFormatting.GOLD));

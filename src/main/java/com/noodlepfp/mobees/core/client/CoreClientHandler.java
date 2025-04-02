@@ -1,5 +1,6 @@
 package com.noodlepfp.mobees.core.client;
 
+import com.noodlepfp.mobees.core.data.loot.MoreBeesLootFunctions;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureMenuTypes;
@@ -40,6 +41,8 @@ public class CoreClientHandler implements IClientModuleHandler {
 		modBus.addListener(CoreClientHandler::registerBlockColors);
 
 		ModuleUtil.getModBus(ForestryConstants.MOD_ID).addListener(EventPriority.HIGHEST, ((ForestryClientApiImpl) IForestryClientApi.INSTANCE)::initializeTextureManager);
+
+		MoreBeesLootFunctions.register();
 	}
 
 	private static void onClientSetup(FMLClientSetupEvent event) {

@@ -1,9 +1,8 @@
 package com.noodlepfp.mobees.hive;
 
 import com.noodlepfp.mobees.bee.MoreBeesSpecies;
-import com.noodlepfp.mobees.core.data.MoreBeesTags;
+import com.noodlepfp.mobees.core.data.tag.MoreBeesTags;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
-import forestry.api.ForestryTags;
 import forestry.api.apiculture.genetics.IBeeSpecies;
 import forestry.api.apiculture.hives.IHiveDefinition;
 import forestry.api.apiculture.hives.IHiveGen;
@@ -20,8 +19,6 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public enum MoreHiveDefinition implements IHiveDefinition {

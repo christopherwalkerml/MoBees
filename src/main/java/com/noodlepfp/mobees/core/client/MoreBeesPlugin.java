@@ -6,7 +6,7 @@ import com.noodlepfp.mobees.bee.MoreBeesSpecies;
 import com.noodlepfp.mobees.bee.MoreBeesTaxonomy;
 import com.noodlepfp.mobees.core.data.MoreBeesEffect;
 import com.noodlepfp.mobees.core.data.MoreBeesFlowerType;
-import com.noodlepfp.mobees.core.data.MoreBeesTags;
+import com.noodlepfp.mobees.core.data.tag.MoreBeesTags;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureItems;
 import com.noodlepfp.mobees.genetics.effect.CursedEffect;
 import com.noodlepfp.mobees.genetics.effect.LibrarianEffect;

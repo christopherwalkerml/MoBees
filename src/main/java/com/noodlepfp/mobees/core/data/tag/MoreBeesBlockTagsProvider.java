@@ -1,7 +1,8 @@
-package com.noodlepfp.mobees.core.data;
+package com.noodlepfp.mobees.core.data.tag;
 
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.ForestryTags;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -13,6 +14,8 @@ public class MoreBeesBlockTagsProvider {
         tags.tag(MoreBeesTags.Blocks.FROGLIGHT).add(Blocks.OCHRE_FROGLIGHT).add(Blocks.PEARLESCENT_FROGLIGHT).add(Blocks.VERDANT_FROGLIGHT);
 
         tags.tag(ForestryTags.Blocks.MINEABLE_SCOOP).add(MoreBeesApicultureBlocks.BEEHIVE.blockArray());
+
+        tags.tag(BlockTags.MINEABLE_WITH_AXE).add(MoreBeesApicultureBlocks.ALVEARY.blockArray());
 
         tags.tag(MoreBeesTags.Blocks.ROCKY_BEE_WALL).add(Blocks.STONE).add(Blocks.GRANITE).add(Blocks.ANDESITE).add(Blocks.DIORITE);
         tags.tag(MoreBeesTags.Blocks.ALPINE_HIVE_GROUNDS).add(Blocks.SNOW_BLOCK).add(Blocks.POWDER_SNOW).add(Blocks.PACKED_ICE);
@@ -41,5 +44,4 @@ public class MoreBeesBlockTagsProvider {
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_EMERALD).addTag(Tags.Blocks.ORES_EMERALD);
         tags.tag(MoreBeesTags.Blocks.FLOWERS_READABLE).addTag(Tags.Blocks.BOOKSHELVES).add(Blocks.CHISELED_BOOKSHELF);
     }
-
 }
