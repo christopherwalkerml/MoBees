@@ -864,7 +864,7 @@ public class MoreBeesDefinition {
                 .setBody(TextColor.fromRgb(0x4167FF))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ARCANE), 0.25f)
                 .setGenome(genome -> {
-                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_VANISHING);
+                    genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_ARCANE);
                 })
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.FORLORN, MoreBeesSpecies.EPHEMERAL, 4);

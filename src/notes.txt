@@ -7,11 +7,11 @@
 - DONE - alveary sun lamp should glow in game when on?
 - DONE - alveary mutator should consume some mutation accelerator item (or fluid, canister for base game)
 - DONE - alveary frame housing
- - alveary stimulator ^ upgrade of frame housing, expensive
- - witchy bee only flies in the rain?
  - alveary flower box (holds flower item, no need to place them down?) - maybe also gives a boost to pollination, can be a mini game?
    - maybe the flower box increases in fertility as it goes on. mini game is flowers have to be watered every now and again to boost prod.?
- - show mutator contents when hovering?
+   - alveary flower box starts with 7 tiles. a proper flower must go in the center spot, then 'boosting' flowers will automatically
+     sprout around it.. but only if theyre adjacent to a proper flower. tiles will open adjacent to sprouted flowers.
+     The user will have to place flowers in empty tiles, it wont be the most efficient always
 
 add excited bee lightning effect
 refinery for bee ore produce? bit silly to combine bits into a whole ingot directly

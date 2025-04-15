@@ -17,6 +17,8 @@ import forestry.core.network.IStreamable;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -29,6 +31,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
+
+import static com.noodlepfp.mobees.gui.InventoryAlvearyFrameHousing.SLOT_FRAME;
 
 public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable, INBTStorable {
     private final InventoryAlvearyMutator inventory;
@@ -64,7 +68,7 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
     @Override
     public void updateServer(int tickCount) {
         // should only consume power if there is mutagen waiting to be ingested
-        if (getMutagenReserve() > 0) {
+        if (getMutagenReserve() > 0 && getMutagenStorage() < getMutagenStorageCap()) {
             super.updateServer(tickCount);
         }
         // can reserve mutagen without power
@@ -197,12 +201,19 @@ public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlve
             // Extract mutagenReserve and mutagenStorage
             int mutagenStorage = mutatorData.getInt("storedMutagen");
             int storagePercent = (int)(mutagenStorage / (float) TileAlvearyMutator.getMutagenStorageCap() * 100);
+            int mutagenCount = 0;
+            ListTag items = mutatorData.getList("Items", Tag.TAG_COMPOUND);
+            if (!items.isEmpty()) {
+                mutagenCount = items.getCompound(SLOT_FRAME).getByte("Count");
+            }
 
+            // Add the extracted values to the tooltip
             tooltip.add(1, Component.literal("Mutagen Storage: ").withStyle(ChatFormatting.GRAY)
                     .append(Component.literal("[").withStyle(ChatFormatting.WHITE))
                     .append(Component.literal("|".repeat((storagePercent / 10) * 2)).withStyle(Style.EMPTY.withColor(0x79a66c)))
                     .append(Component.literal("|".repeat((10 - (storagePercent / 10)) * 2)).withStyle(ChatFormatting.DARK_GRAY))
-                    .append(Component.literal("]").withStyle(ChatFormatting.WHITE)));
+                    .append(Component.literal("]").withStyle(ChatFormatting.WHITE))
+                    .append(Component.literal(mutagenCount > 0 ? " + " + mutagenCount + "x" : "").withStyle(Style.EMPTY.withColor(0x79a66c))));
             tooltip.add(2, Component.empty());
         }
     }
