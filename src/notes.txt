@@ -12,6 +12,8 @@
    - alveary flower box starts with 7 tiles. a proper flower must go in the center spot, then 'boosting' flowers will automatically
      sprout around it.. but only if theyre adjacent to a proper flower. tiles will open adjacent to sprouted flowers.
      The user will have to place flowers in empty tiles, it wont be the most efficient always
+- make a check within isAlwaysActive for the sun lamp to only work at night.
+- make a night light too, for the opposite effect
 
 add excited bee lightning effect
 refinery for bee ore produce? bit silly to combine bits into a whole ingot directly

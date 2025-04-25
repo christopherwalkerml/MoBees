@@ -24,7 +24,6 @@ public class MoreBeesAlleles {
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_SILVER = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_SILVER, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_ALUMINUM = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_ALUMINUM, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_OSMIUM = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_OSMIUM, BeeChromosomes.FLOWER_TYPE);
-    public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_ARDITE = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_ARDITE, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_COBALT = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_COBALT, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_YELLORIUM = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_YELLORIUM, BeeChromosomes.FLOWER_TYPE);
     public static final IRegistryAllele<IFlowerType> FLOWER_TYPE_CERTUS_QUARTZ = REGISTRY.registryAllele(MoreBeesFlowerType.ROCK_CERTUS_QUARTZ, BeeChromosomes.FLOWER_TYPE);

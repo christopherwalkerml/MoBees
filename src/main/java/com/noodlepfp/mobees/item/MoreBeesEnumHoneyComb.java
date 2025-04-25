@@ -29,7 +29,6 @@ public enum MoreBeesEnumHoneyComb implements StringRepresentable, IItemSubtype, 
     // BACK TO REGULAR
     IRON(new Color(0x9F9F9F), new Color(0xD5D5D5)),
     GOLD(new Color(0x9F9F9F), new Color(0xE5AE47)),
-    ARDITE(new Color(0x9F9F9F), new Color(0xC26D36)),
     COBALT(new Color(0x9F9F9F), new Color(0x226FFF)),
     LAPIS(new Color(0x9F9F9F), new Color(0x4A3DF1)),
     APATITE(new Color(0x9F9F9F), new Color(0x5978EE)),

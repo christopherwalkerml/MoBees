@@ -29,7 +29,6 @@ public class MoreBeesBlockTagsProvider {
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_LEAD).addOptionalTag(MoreBeesTags.Blocks.F_ORE_LEAD);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_NICKEL).addOptionalTag(MoreBeesTags.Blocks.F_ORE_NICKEL);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_OSMIUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_OSMIUM);
-        tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_ARDITE).addOptionalTag(MoreBeesTags.Blocks.F_ORE_ARDITE);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_COBALT).addOptionalTag(MoreBeesTags.Blocks.F_ORE_COBALT);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_ALUMINUM).addOptionalTag(MoreBeesTags.Blocks.F_ORE_ALUMINUM);
         tags.tag(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER).addOptionalTag(MoreBeesTags.Blocks.F_ORE_SILVER);

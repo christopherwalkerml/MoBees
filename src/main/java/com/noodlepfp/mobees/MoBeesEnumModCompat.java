@@ -16,8 +16,7 @@ public enum MoBeesEnumModCompat {
     ALUMINUM("ingots/aluminum", MoBeesModCompat.ModCompatConstants.tinkersId, MoBeesModCompat.ALUMINUM_INGOT),
     CERTUS("gems/certus_quartz", MoBeesModCompat.ModCompatConstants.appliedEnergisticsId, MoBeesModCompat.CERTUS_QUARTZ),
     YELLORIUM("ingots/yellorium", MoBeesModCompat.ModCompatConstants.bigReactorsId, MoBeesModCompat.YELLORIUM_INGOT),
-    COBALT("ingots/cobalt", MoBeesModCompat.ModCompatConstants.tinkersId, MoBeesModCompat.COBALT_INGOT),
-    ARDITE("ingots/ardite", MoBeesModCompat.ModCompatConstants.tinkersId, MoBeesModCompat.ARDITE_INGOT);
+    COBALT("ingots/cobalt", MoBeesModCompat.ModCompatConstants.tinkersId, MoBeesModCompat.COBALT_INGOT);
 
     // the forge tag for the item
     private final String modCompatTag;

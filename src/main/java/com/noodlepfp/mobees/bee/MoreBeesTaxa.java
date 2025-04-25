@@ -24,7 +24,6 @@ public class MoreBeesTaxa {
     public static final String SPECIES_CERTUS = "Certus";
     public static final String SPECIES_IRON = "Iron";
     public static final String SPECIES_GOLD = "Gold";
-    public static final String SPECIES_ARDITE = "Ardite";
     public static final String SPECIES_COBALT = "Cobalt";
     public static final String SPECIES_LAPIS = "Lapis";
     public static final String SPECIES_APATITE = "Apatine";

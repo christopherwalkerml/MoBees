@@ -60,7 +60,6 @@ public class MoreBeesPlugin implements IForestryPlugin {
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_NICKEL, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_NICKEL, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ZINC, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ZINC, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_OSMIUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_OSMIUM, true));
-        apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ARDITE, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ARDITE, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_COBALT, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_COBALT, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_SILVER, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_SILVER, true));
         apiculture.registerFlowerType(MoreBeesFlowerType.ROCK_ALUMINUM, new FlowerType(MoreBeesTags.Blocks.ROCK_FLOWERS_ALUMINUM, true));

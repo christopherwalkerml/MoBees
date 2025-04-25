@@ -250,23 +250,6 @@ public class MoreBeesDefinition {
                     .setAuthority("noodlepfp");
         }
 
-        if (ModList.get().isLoaded(MoBeesEnumModCompat.ARDITE.getModId())) {
-            apiculture.registerSpecies(MoreBeesSpecies.ARDITE, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_ARDITE, true, TextColor.fromRgb(0x9F9F9F))
-                    .setBody(TextColor.fromRgb(0xC26D36))
-                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.2f)
-                    .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ARDITE), 0.04f)
-                    .addSpecialty(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ARDITE), 0.02f)
-                    .setGenome(genome -> {
-                        genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ARDITE);
-                    })
-                    .addMutations(mutations -> {
-                        mutations.add(MoreBeesSpecies.LAPIS, MoreBeesSpecies.DESOLATE, 3);
-                        mutations.add(MoreBeesSpecies.DIAMOND, MoreBeesSpecies.DESOLATE, 3);
-                    })
-                    .setGlint(true)
-                    .setAuthority("noodlepfp");
-        }
-
         if (ModList.get().isLoaded(MoBeesEnumModCompat.COBALT.getModId())) {
             apiculture.registerSpecies(MoreBeesSpecies.COBALT, MoreBeesTaxa.GENUS_METALLIC, MoreBeesTaxa.SPECIES_COBALT, true, TextColor.fromRgb(0x9F9F9F))
                     .setBody(TextColor.fromRgb(0x226FFF))

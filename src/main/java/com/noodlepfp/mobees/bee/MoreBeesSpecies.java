@@ -25,7 +25,6 @@ public class MoreBeesSpecies {
     public static final ResourceLocation ALUMINUM = mobees("bee_aluminum");
     public static final ResourceLocation CERTUS = mobees("bee_certus");
     public static final ResourceLocation COBALT = mobees("bee_cobalt");
-    public static final ResourceLocation ARDITE = mobees("bee_ardite");
     public static final ResourceLocation GOLD = mobees("bee_gold");
     public static final ResourceLocation LAPIS = mobees("bee_lapis");
     public static final ResourceLocation APATITE = mobees("bee_apatite");
