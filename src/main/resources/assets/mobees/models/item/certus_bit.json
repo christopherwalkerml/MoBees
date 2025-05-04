@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mobees:item/material/copper_bit"
+    "layer0": "mobees:item/material/certus_bit"
   }
 }

@@ -21,7 +21,7 @@ public class MoBeesModCompat {
         OSMIUM_INGOT = item(ModCompatConstants.mekanismId, "ingot_osmium"),
         YELLORIUM_INGOT = item(ModCompatConstants.bigReactorsId, "yellorium_ingot"),
         COBALT_INGOT = item(ModCompatConstants.tinkersId, "cobalt_ingot"),
-        CERTUS_QUARTZ = item(ModCompatConstants.appliedEnergisticsId, "certus_quartz");
+        CERTUS_QUARTZ = item(ModCompatConstants.appliedEnergisticsId, "certus_quartz_crystal");
 
     private static RegistryObject<Item> item(String modid, String name) {
         if (DatagenModLoader.isRunningDataGen()) {
