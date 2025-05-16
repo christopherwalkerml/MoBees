@@ -221,7 +221,10 @@ public class MoreBeesDefinition {
                         genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ALUMINUM);
                     })
                     .addMutations(mutations -> {
-                        mutations.add(MoreBeesSpecies.GOLD, MoreBeesSpecies.SILVER, 6);
+                        mutations.add(MoreBeesSpecies.GOLD, MoreBeesSpecies.IRON, 4);
+                        if (ModList.get().isLoaded(MoBeesEnumModCompat.SILVER.getModId())) {
+                            mutations.add(MoreBeesSpecies.GOLD, MoreBeesSpecies.SILVER, 6);
+                        }
                     })
                     .setAuthority("noodlepfp");
         }

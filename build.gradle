@@ -68,6 +68,10 @@ repositories {
         url 'https://jitpack.io'
         content { includeGroup 'com.github.thedarkcolour' }
     }
+    maven {
+        name 'DVS1 Maven FS'
+        url 'https://dvs1.progwml6.com/files/maven'
+    }
     exclusiveContent {
         forRepository {
             maven {
@@ -95,9 +99,11 @@ dependencies {
 
     implementation fg.deobf("maven.modrinth:forestry-community-edition:$forestryVersion")
 
-    implementation fg.deobf("maven.modrinth:cofh-core:11.0.2")
-    implementation fg.deobf("maven.modrinth:thermal-foundation:11.0.6")
-    implementation fg.deobf("maven.modrinth:thermal-dynamics:11.0.1")
+//    implementation fg.deobf("maven.modrinth:cofh-core:11.0.2")
+//    implementation fg.deobf("maven.modrinth:thermal-foundation:11.0.6")
+//    implementation fg.deobf("maven.modrinth:thermal-dynamics:11.0.1")
+    implementation fg.deobf("slimeknights.mantle:Mantle:1.20.1-1.11.50")
+    implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.20.1-3.9.1.19")
 
     // ModKit DEV ONLY
     implementation fg.deobf('com.github.thedarkcolour:ModKit:0302f9aa42')
