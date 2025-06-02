@@ -9,3 +9,6 @@
 
 ## MoBees 0.1.2
 - fixed crash with tcon aluminum mutation requiring thermal silver
+
+## MoBees 0.1.3
+- fixed aluminum looking for Thermal. looks for Immersive Engineering now.
