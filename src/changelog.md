@@ -7,5 +7,5 @@
 ## MoBees 0.1.1
 - fixed issue with server instances not being able to boot the mod
 
-## MoBees 0.1.1
+## MoBees 0.1.2
 - fixed crash with tcon aluminum mutation requiring thermal silver

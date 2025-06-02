@@ -13,7 +13,7 @@ public enum MoBeesEnumModCompat {
     NICKEL("ingots/nickel", MoBeesModCompat.ModCompatConstants.thermalId, MoBeesModCompat.NICKEL_INGOT),
     OSMIUM("ingots/osmium", MoBeesModCompat.ModCompatConstants.mekanismId, MoBeesModCompat.OSMIUM_INGOT),
     SILVER("ingots/silver", MoBeesModCompat.ModCompatConstants.thermalId, MoBeesModCompat.SILVER_INGOT),
-    ALUMINUM("ingots/aluminum", MoBeesModCompat.ModCompatConstants.tinkersId, MoBeesModCompat.ALUMINUM_INGOT),
+    ALUMINUM("ingots/aluminum", MoBeesModCompat.ModCompatConstants.immersiveEngineeringId, MoBeesModCompat.ALUMINUM_INGOT),
     CERTUS("gems/certus_quartz", MoBeesModCompat.ModCompatConstants.appliedEnergisticsId, MoBeesModCompat.CERTUS_QUARTZ),
     YELLORIUM("ingots/yellorium", MoBeesModCompat.ModCompatConstants.bigReactorsId, MoBeesModCompat.YELLORIUM_INGOT),
     COBALT("ingots/cobalt", MoBeesModCompat.ModCompatConstants.tinkersId, MoBeesModCompat.COBALT_INGOT);

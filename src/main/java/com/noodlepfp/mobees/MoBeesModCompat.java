@@ -17,7 +17,7 @@ public class MoBeesModCompat {
         LEAD_INGOT = item(ModCompatConstants.thermalId, "lead_ingot"),
         NICKEL_INGOT = item(ModCompatConstants.thermalId, "nickel_ingot"),
         SILVER_INGOT = item(ModCompatConstants.thermalId, "silver_ingot"),
-        ALUMINUM_INGOT = item(ModCompatConstants.thermalId, "aluminum_ingot"),
+        ALUMINUM_INGOT = item(ModCompatConstants.immersiveEngineeringId, "ingot_aluminum"),
         OSMIUM_INGOT = item(ModCompatConstants.mekanismId, "ingot_osmium"),
         YELLORIUM_INGOT = item(ModCompatConstants.bigReactorsId, "yellorium_ingot"),
         COBALT_INGOT = item(ModCompatConstants.tinkersId, "cobalt_ingot"),
@@ -47,5 +47,6 @@ public class MoBeesModCompat {
         public static String bigReactorsId = "bigreactors";
         public static String createId = "create";
         public static String tinkersId = "tconstruct";
+        public static String immersiveEngineeringId = "immersiveengineering";
     }
 }
