@@ -49,7 +49,7 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
 
         BlockState defaultState = this.getStateDefinition().any();
         defaultState = defaultState.setValue(STATE, State.OFF);
-        if (type == MoreBeesBlockAlvearyType.SUN) {
+        if (type == MoreBeesBlockAlvearyType.SUN || type == MoreBeesBlockAlvearyType.MOON) {
             defaultState = defaultState.setValue(LIGHT_LEVEL, 0);
         }
         if (type == MoreBeesBlockAlvearyType.FRAME_HOUSING) {
@@ -82,6 +82,7 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return switch (type) {
             case SUN -> new TileAlvearySun(pos, state);
+            case MOON -> new TileAlvearyMoon(pos, state);
             case RAINSHIELD -> new TileAlvearyRainShield(pos, state);
             case MUTATOR -> new TileAlvearyMutator(pos, state);
             case FRAME_HOUSING -> new TileAlvearyFrameHousing(pos, state);
@@ -94,6 +95,10 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
 
         if (tile instanceof TileAlvearySun sun) {
             state = state.setValue(LIGHT_LEVEL, sun.getLightLevel());
+        }
+
+        if (tile instanceof TileAlvearyMoon moon) {
+            state = state.setValue(LIGHT_LEVEL, moon.getLightLevel());
         }
 
         if (tile instanceof TileAlvearyFrameHousing frameHousing) {
@@ -125,6 +130,8 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
                 tooltip.add(ttMsg);
             } else if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.SUN).item())) {
                 tooltip.add(Component.translatable("block.mobees.alveary_sun_lamp_tooltip").withStyle(ChatFormatting.GRAY));
+            } else if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.MOON).item())) {
+                tooltip.add(Component.translatable("block.mobees.alveary_moon_lamp_tooltip").withStyle(ChatFormatting.GRAY));
             } else if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.RAINSHIELD).item())) {
                 tooltip.add(Component.translatable("block.mobees.alveary_rain_shield_tooltip").withStyle(ChatFormatting.GRAY));
             } else if (stack.getItem().equals(MoreBeesApicultureBlocks.ALVEARY.get(MoreBeesBlockAlvearyType.FRAME_HOUSING).item())) {

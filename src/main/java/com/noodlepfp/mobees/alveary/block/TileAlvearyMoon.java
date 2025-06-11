@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import static com.noodlepfp.mobees.alveary.MoreBeesBlockAlveary.LIGHT_LEVEL;
 
-public class TileAlvearySun extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
+public class TileAlvearyMoon extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 
     private final BlockState state;
     private final BlockPos pos;
@@ -20,13 +20,13 @@ public class TileAlvearySun extends MoreBeesTilePowerable implements IAlvearyCom
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
         public boolean isAlwaysActive(IGenome genome) {
-            // if in game time is night time. check forestry if there is existing method?
+            // if in game time is day time. check forestry if there is existing method?
             return getWorkingTime() > 0;
         }
     };
 
-    public TileAlvearySun(BlockPos pos, BlockState state) {
-        super(MoreBeesBlockAlvearyType.SUN, pos, state, "Shining", 1, 300);
+    public TileAlvearyMoon(BlockPos pos, BlockState state) {
+        super(MoreBeesBlockAlvearyType.MOON, pos, state, "Glowing", 1, 300);
         this.state = state;
         this.pos = pos;
     }
@@ -36,7 +36,7 @@ public class TileAlvearySun extends MoreBeesTilePowerable implements IAlvearyCom
         super.updateServer(tickCount);
         if (super.isActive()) {
             if (getLightLevel() == 0) {
-                this.level.setBlockAndUpdate(pos, state.setValue(LIGHT_LEVEL, 12));
+                this.level.setBlockAndUpdate(pos, state.setValue(LIGHT_LEVEL, 3));
             }
         } else {
             if (getLightLevel() != 0) {
