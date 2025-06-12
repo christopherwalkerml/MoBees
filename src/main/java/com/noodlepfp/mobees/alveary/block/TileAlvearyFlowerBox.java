@@ -5,6 +5,7 @@ import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import com.noodlepfp.mobees.gui.ContainerAlvearyFlowerBox;
 import com.noodlepfp.mobees.gui.InventoryAlvearyFlowerBox;
+import forestry.api.multiblock.IMultiblockComponent;
 import forestry.core.inventory.IInventoryAdapter;
 import forestry.core.inventory.watchers.ISlotPickupWatcher;
 import forestry.core.network.IStreamable;
@@ -40,8 +41,8 @@ public class TileAlvearyFlowerBox extends MoreBeesTileActivatable implements ISt
     private Set<Integer> flowersGrown;
     private Set<Integer> flowersDry;
     private int flowerGrowthProgress;
+    private TileAlvearyBroodBox linkedBroodBox;
     private int flowerBoxUpdateTickRate = 200;
-    private boolean isAlvearyWorking;
 
     public TileAlvearyFlowerBox(BlockPos pos, BlockState state) {
         super(MoreBeesBlockAlvearyType.FLOWER_BOX, pos, state);
@@ -49,7 +50,10 @@ public class TileAlvearyFlowerBox extends MoreBeesTileActivatable implements ISt
         this.flowersGrown = new HashSet<>();
         this.flowersDry = new HashSet<>();
         this.flowerGrowthProgress = FLOWER_GROWTH_TIME;
-        this.isAlvearyWorking = false;
+        this.linkedBroodBox = getAlvearyBroodBox();
+        if (this.linkedBroodBox != null) {
+            setActive(true);
+        }
     }
 
     @Override
@@ -65,11 +69,9 @@ public class TileAlvearyFlowerBox extends MoreBeesTileActivatable implements ISt
     }
 
     private void tickFlowerBoxGrowth() {
-        this.isAlvearyWorking = getMultiblockLogic().getController().getBeekeepingLogic().canWork();
-
         // if the alveary is working, and has a brood box (isActive), tick flower growth by update rate
         // TODO flower growth time should be decreased by bee population. up to 20% decrease?
-        if (this.isAlvearyWorking) {
+        if (getBeekeepingLogic().canWork()) {
             // flower box has to be checked on frequently. any dry flowers will prevent more
             // from growing fully (they will still grow, but max 75% growth)
             if (!this.flowersDry.isEmpty()) {
@@ -110,6 +112,16 @@ public class TileAlvearyFlowerBox extends MoreBeesTileActivatable implements ISt
         }
     }
 
+    private TileAlvearyBroodBox getAlvearyBroodBox() {
+        final Collection<IMultiblockComponent> components = getMultiblockLogic().getController().getComponents();
+        for (IMultiblockComponent comp : components) {
+            if (comp instanceof TileAlvearyBroodBox broodBox) {
+                return broodBox;
+            }
+        }
+        return null;
+    }
+
     @Override
     public void updateClient(int tickCount) {
     }
@@ -134,6 +146,9 @@ public class TileAlvearyFlowerBox extends MoreBeesTileActivatable implements ISt
         this.flowerGrowthProgress = compoundNBT.getInt(FLOWER_GROWTH_PROGRESS_STR);
         this.flowersGrown = new HashSet(Arrays.asList(compoundNBT.getIntArray(FLOWERS_GROWN_STR)));
         this.flowersDry = new HashSet(Arrays.asList(compoundNBT.getIntArray(FLOWERS_DRY_STR)));
+        if (this.isActive()) {
+            this.linkedBroodBox = getAlvearyBroodBox();
+        }
     }
 
     @Override

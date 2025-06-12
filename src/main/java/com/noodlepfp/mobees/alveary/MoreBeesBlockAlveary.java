@@ -1,9 +1,6 @@
 package com.noodlepfp.mobees.alveary;
 
-import com.noodlepfp.mobees.alveary.block.TileAlvearyFrameHousing;
-import com.noodlepfp.mobees.alveary.block.TileAlvearyMutator;
-import com.noodlepfp.mobees.alveary.block.TileAlvearyRainShield;
-import com.noodlepfp.mobees.alveary.block.TileAlvearySun;
+import com.noodlepfp.mobees.alveary.block.*;
 import com.noodlepfp.mobees.feature.MoreBeesApicultureBlocks;
 import forestry.api.farming.HorizontalDirection;
 import forestry.apiculture.blocks.BlockAlveary;
@@ -86,6 +83,8 @@ public class MoreBeesBlockAlveary extends BlockAlveary {
             case RAINSHIELD -> new TileAlvearyRainShield(pos, state);
             case MUTATOR -> new TileAlvearyMutator(pos, state);
             case FRAME_HOUSING -> new TileAlvearyFrameHousing(pos, state);
+            case FLOWER_BOX -> new TileAlvearyFlowerBox(pos, state);
+            case BROOD_BOX -> new TileAlvearyBroodBox(pos, state);
         };
     }
 
