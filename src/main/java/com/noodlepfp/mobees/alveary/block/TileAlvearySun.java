@@ -1,7 +1,6 @@
 package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
 import forestry.api.apiculture.IBeeModifier;
 import forestry.api.apiculture.genetics.BeeLifeStage;
@@ -16,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import static com.noodlepfp.mobees.alveary.MoreBeesBlockAlveary.LIGHT_LEVEL;
 import static forestry.api.genetics.alleles.ForestryAlleles.ACTIVITY_DIURNAL;
-import static forestry.api.genetics.alleles.ForestryAlleles.ACTIVITY_NOCTURNAL;
 
 public class TileAlvearySun extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 

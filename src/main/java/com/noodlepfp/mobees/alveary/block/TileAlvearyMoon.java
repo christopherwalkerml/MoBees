@@ -1,7 +1,6 @@
 package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
 import forestry.api.apiculture.IBeeModifier;
 import forestry.api.apiculture.genetics.BeeLifeStage;

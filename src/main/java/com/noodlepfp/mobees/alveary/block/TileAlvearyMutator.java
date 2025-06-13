@@ -2,7 +2,6 @@ package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.INBTStorable;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
 import com.noodlepfp.mobees.gui.ContainerAlvearyMutator;
 import com.noodlepfp.mobees.gui.InventoryAlvearyMutator;
