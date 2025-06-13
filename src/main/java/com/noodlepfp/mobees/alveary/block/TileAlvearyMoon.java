@@ -4,13 +4,18 @@ import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
 import forestry.api.apiculture.IBeeModifier;
+import forestry.api.apiculture.genetics.BeeLifeStage;
 import forestry.api.genetics.IGenome;
+import forestry.api.genetics.IIndividual;
+import forestry.api.genetics.alleles.BeeChromosomes;
+import forestry.api.genetics.capability.IIndividualHandlerItem;
 import forestry.api.multiblock.IAlvearyComponent;
 import forestry.apiculture.multiblock.MultiblockLogicAlveary;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
 import static com.noodlepfp.mobees.alveary.MoreBeesBlockAlveary.LIGHT_LEVEL;
+import static forestry.api.genetics.alleles.ForestryAlleles.ACTIVITY_NOCTURNAL;
 
 public class TileAlvearyMoon extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 
@@ -20,13 +25,16 @@ public class TileAlvearyMoon extends MoreBeesTilePowerable implements IAlvearyCo
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
         public boolean isAlwaysActive(IGenome genome) {
-            // if in game time is day time. check forestry if there is existing method?
-            return getWorkingTime() > 0;
+            if (isActiveBeeNocturnal()) {
+                // if active bee is nocturnal, moon lamp will make bee always active
+                return getWorkingTime() > 0;
+            }
+            return false;
         }
     };
 
     public TileAlvearyMoon(BlockPos pos, BlockState state) {
-        super(MoreBeesBlockAlvearyType.MOON, pos, state, "Glowing", 1, 300);
+        super(MoreBeesBlockAlvearyType.MOON, pos, state, "Glowing", 1, 100);
         this.state = state;
         this.pos = pos;
     }
@@ -47,6 +55,18 @@ public class TileAlvearyMoon extends MoreBeesTilePowerable implements IAlvearyCo
 
     public int getLightLevel() {
         return getBlockState().getValue(LIGHT_LEVEL);
+    }
+
+    private boolean isActiveBeeNocturnal() {
+        IIndividualHandlerItem handler = IIndividualHandlerItem.get(getBeeInventory().getQueen());
+
+        if (handler != null && handler.getStage() == BeeLifeStage.QUEEN) {
+            IIndividual queen = handler.getIndividual();
+            IGenome genome = queen.getGenome();
+
+            return genome.getActiveAllele(BeeChromosomes.ACTIVITY) == ACTIVITY_NOCTURNAL;
+        }
+        return false;
     }
 
     @Override
