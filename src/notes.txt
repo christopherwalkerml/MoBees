@@ -14,6 +14,9 @@
      The user will have to place flowers in empty tiles, it wont be the most efficient always
    - ONLY 1 PER ALVEARY???? if possible... pls or its too OP
    - maybe flowers can die during box growth, but not once full? or maybe still when full.
+   - GUI
+    - plots become available as flower box ages. player will dig hole, plant flower.
+    - different flowers have different abilities. faster pop. growth, better prod., longer life, etc.
  - alveary brood box. must be at bottom of hive. adjacent to flower box.
 - make a check within isAlwaysActive for the sun lamp to only work at night.
 - make a night light too, for the opposite effect

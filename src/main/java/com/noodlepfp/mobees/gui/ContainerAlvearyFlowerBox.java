@@ -11,12 +11,14 @@ import forestry.core.tiles.TileUtil;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 
+import java.util.Set;
+
 public class ContainerAlvearyFlowerBox extends ContainerTile<TileAlvearyFlowerBox> {
 
-    private int mutagenStorage = -1;
-    private int mutagenReserve = -1;
+    private Set<Integer> flowersGrown;
+    private Set<Integer> flowersDry;
+    private int flowerGrowthProgress;
     private boolean isActive = false;
-    private int energyStored = -1;
 
     public static ContainerAlvearyFlowerBox fromNetwork(int windowId, Inventory inv, FriendlyByteBuf data) {
         TileAlvearyFlowerBox tile = TileUtil.getTile(inv.player.level(), data.readBlockPos(), TileAlvearyFlowerBox.class);
@@ -34,15 +36,15 @@ public class ContainerAlvearyFlowerBox extends ContainerTile<TileAlvearyFlowerBo
     @Override
     public void broadcastChanges() {
         super.broadcastChanges();
-        int mutagenStorage = this.tile.getMutagenStorage();
-        int mutagenReserve = this.tile.getMutagenReserve();
+        Set<Integer> flowersGrown = this.tile.getFlowersGrown();
+        Set<Integer> flowersDry = this.tile.getFlowersGrown();
+        int flowerGrowthProgress = this.tile.getFlowerGrowthProgress();
         boolean isActive = this.tile.isActive();
-        int energyStored = this.tile.getEnergyStorage().getEnergyStored();
-        if (this.mutagenStorage != mutagenStorage || this.mutagenReserve != mutagenReserve || this.isActive != isActive || this.energyStored != energyStored) {
-            this.mutagenStorage = mutagenStorage;
-            this.mutagenReserve = mutagenReserve;
+
+        if (this.flowersGrown != flowersGrown || this.flowersDry != flowersDry || this.isActive != isActive || this.flowerGrowthProgress != flowerGrowthProgress) {
+            this.flowersGrown = flowersGrown;
+            this.flowersDry = flowersDry;
             this.isActive = isActive;
-            this.energyStored = energyStored;
             IForestryPacketClient packet = new PacketGuiStream(this.tile);
             this.sendPacketToListeners(packet);
         }

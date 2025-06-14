@@ -56,59 +56,79 @@ public class TileAlvearyFlowerBox extends MoreBeesTileActivatable implements ISt
         }
     }
 
+    public Set<Integer> getFlowersGrown() {
+        return this.flowersGrown;
+    }
+
+    public Set<Integer> getFlowersDry() {
+        return this.flowersDry;
+    }
+
+    public int getFlowerGrowthProgress() {
+        return this.flowerGrowthProgress;
+    }
+
     @Override
     public void updateServer(int tickCount) {
         // if alveary is actively producing, tick flower growth progress
         // isActive should be set when the alveary is built, and a population box is detected.
         if (isActive()) {
-            // check canWork every 10 seconds, no need to check more often, save on ticking.
-            if (tickCount % this.flowerBoxUpdateTickRate == 0) {
-                this.tickFlowerBoxGrowth();
+            this.tickFlowerBoxGrowth(tickCount);
+        }
+    }
+
+    private void tickFlowerBoxGrowth(int tickCount) {
+        // check canWork every 10 seconds, no need to check more often, save on ticking.
+        if (tickCount % this.flowerBoxUpdateTickRate == 0) {
+            // if the alveary is working, and has a brood box (isActive), tick flower growth by update rate
+            // TODO flower growth time should be decreased by bee population. up to 20% decrease?
+            if (getBeekeepingLogic().canWork()) {
+                // flower box has to be checked on frequently. any dry flowers will prevent more
+                // from growing fully (they will still grow, but max 75% growth)
+                if (!this.flowersDry.isEmpty()) {
+                    this.flowerGrowthProgress = Math.max((int) (TileAlvearyFlowerBox.FLOWER_GROWTH_TIME * 0.25),
+                            this.flowerGrowthProgress - this.flowerBoxUpdateTickRate);
+                }
+
+                // if there are no dry flowers in the box... continue growth
+                this.flowerGrowthProgress -= flowerBoxUpdateTickRate;
+                if (this.flowerGrowthProgress <= 0) {
+                    newFlowerGrowthTick();
+                }
+                // if growth is complete, every flower growth time * 1.75, dry a flower out. max 8 flowers.
+                else if (this.flowerGrowthProgress <= (TileAlvearyFlowerBox.FLOWER_GROWTH_TIME * 0.25)) {
+                    fullBoxDecayTick();
+                }
             }
         }
     }
 
-    private void tickFlowerBoxGrowth() {
-        // if the alveary is working, and has a brood box (isActive), tick flower growth by update rate
-        // TODO flower growth time should be decreased by bee population. up to 20% decrease?
-        if (getBeekeepingLogic().canWork()) {
-            // flower box has to be checked on frequently. any dry flowers will prevent more
-            // from growing fully (they will still grow, but max 75% growth)
-            if (!this.flowersDry.isEmpty()) {
-                this.flowerGrowthProgress = Math.max((int)(TileAlvearyFlowerBox.FLOWER_GROWTH_TIME * 0.25),
-                        this.flowerGrowthProgress - this.flowerBoxUpdateTickRate);
-            }
+    private void newFlowerGrowthTick() {
+        this.flowerGrowthProgress = TileAlvearyFlowerBox.FLOWER_GROWTH_TIME;
 
-            // if there are no dry flowers in the box... continue growth
-            this.flowerGrowthProgress -= flowerBoxUpdateTickRate;
-            if (this.flowerGrowthProgress <= 0) {
-                this.flowerGrowthProgress = TileAlvearyFlowerBox.FLOWER_GROWTH_TIME;
+        // if there are still empty plots and growth is complete, add a dry flower.
+        if (this.flowersGrown.size() < TileAlvearyFlowerBox.FLOWER_PLOTS.size()) {
+            List<Integer> availableFlowers = FLOWER_PLOTS.stream()
+                    .filter(flower -> !flowersGrown.contains(flower))
+                    .collect(Collectors.toList());
 
-                // if there are still empty plots and growth is complete, add a dry flower.
-                if (this.flowersGrown.size() < TileAlvearyFlowerBox.FLOWER_PLOTS.size()) {
-                    List<Integer> availableFlowers = FLOWER_PLOTS.stream()
-                            .filter(flower -> !flowersGrown.contains(flower))
-                            .collect(Collectors.toList());
+            int randPlot = new Random().nextInt(availableFlowers.size());
+            flowersGrown.add(availableFlowers.get(randPlot));
+            flowersDry.add(availableFlowers.get(randPlot));
+        }
+    }
 
-                    int randPlot = new Random().nextInt(availableFlowers.size());
-                    flowersGrown.add(availableFlowers.get(randPlot));
-                    flowersDry.add(availableFlowers.get(randPlot));
-                }
-            }
-            // if growth is complete, every flower growth time * 1.75, dry a flower out. max 8 flowers.
-            else if (this.flowerGrowthProgress <= (TileAlvearyFlowerBox.FLOWER_GROWTH_TIME * 0.25)) {
-                if (this.flowersGrown.size() == TileAlvearyFlowerBox.FLOWER_PLOTS.size() &&
-                        this.flowersDry.size() < 8) {
-                    this.flowerGrowthProgress = TileAlvearyFlowerBox.FLOWER_GROWTH_TIME * 2;
+    private void fullBoxDecayTick() {
+        if (this.flowersGrown.size() == TileAlvearyFlowerBox.FLOWER_PLOTS.size() &&
+                this.flowersDry.size() < 8) {
+            this.flowerGrowthProgress = TileAlvearyFlowerBox.FLOWER_GROWTH_TIME * 2;
 
-                    List<Integer> availableFlowers = FLOWER_PLOTS.stream()
-                            .filter(flower -> !flowersDry.contains(flower))
-                            .collect(Collectors.toList());
+            List<Integer> availableFlowers = FLOWER_PLOTS.stream()
+                    .filter(flower -> !flowersDry.contains(flower))
+                    .collect(Collectors.toList());
 
-                    int randPlot = new Random().nextInt(availableFlowers.size());
-                    flowersDry.add(availableFlowers.get(randPlot));
-                }
-            }
+            int randPlot = new Random().nextInt(availableFlowers.size());
+            flowersDry.add(availableFlowers.get(randPlot));
         }
     }
 
