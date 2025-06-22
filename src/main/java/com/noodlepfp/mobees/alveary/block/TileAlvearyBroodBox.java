@@ -3,6 +3,8 @@ package com.noodlepfp.mobees.alveary.block;
 import com.noodlepfp.mobees.alveary.INBTStorable;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
 import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
+import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
+import com.noodlepfp.mobees.gui.ContainerAlvearyBroodBox;
 import com.noodlepfp.mobees.gui.ContainerAlvearyMutator;
 import com.noodlepfp.mobees.gui.InventoryAlvearyBroodBox;
 import forestry.api.apiculture.IBeeModifier;
@@ -34,7 +36,7 @@ import java.util.List;
 
 import static com.noodlepfp.mobees.gui.InventoryAlvearyFrameHousing.SLOT_FRAME;
 
-public class TileAlvearyBroodBox extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable, INBTStorable {
+public class TileAlvearyBroodBox extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable, INBTStorable {
     private final InventoryAlvearyBroodBox inventory;
     public static final int MUTAGEN_STORAGE_CAP = 5000;
     public static final int MUTAGEN_RESERVE_CAP = 500;
@@ -133,7 +135,7 @@ public class TileAlvearyBroodBox extends MoreBeesTileActivatable implements IAlv
 
     @Override
     public AbstractContainerMenu createMenu(int windowId, Inventory inv, Player player) {
-        return new ContainerAlvearyMutator(windowId, inv, this);
+        return new ContainerAlvearyBroodBox(windowId, inv, this);
     }
 
     @Override
