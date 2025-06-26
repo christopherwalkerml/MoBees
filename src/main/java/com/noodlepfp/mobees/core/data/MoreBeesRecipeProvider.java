@@ -30,6 +30,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -38,6 +39,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.registries.RegistryObject;
 import thedarkcolour.modkit.data.MKRecipeProvider;
 
 import java.util.HashMap;
@@ -202,32 +204,32 @@ public class MoreBeesRecipeProvider {
     }
 
     private static void registerModCompatRecipes(MKRecipeProvider recipes) {
-        recipes.shapelessCrafting("lead_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.LEAD.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.LEAD_BIT), 8));
+        registerModCompatBitRecipe(recipes, "lead_from_bits", MoBeesEnumModCompat.LEAD, MoreBeesEnumBeeProduce.LEAD_BIT);
 
-        recipes.shapelessCrafting("nickel_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.NICKEL.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.NICKEL_BIT), 8));
+        registerModCompatBitRecipe(recipes, "nickel_from_bits", MoBeesEnumModCompat.NICKEL, MoreBeesEnumBeeProduce.NICKEL_BIT);
 
-        recipes.shapelessCrafting("zinc_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.ZINC.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ZINC_BIT), 8));
+        registerModCompatBitRecipe(recipes, "zinc_from_bits", MoBeesEnumModCompat.ZINC, MoreBeesEnumBeeProduce.ZINC_BIT);
 
-        recipes.shapelessCrafting("silver_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.SILVER.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.SILVER_BIT), 8));
+        registerModCompatBitRecipe(recipes, "silver_from_bits", MoBeesEnumModCompat.SILVER, MoreBeesEnumBeeProduce.SILVER_BIT);
 
-        recipes.shapelessCrafting("osmium_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.OSMIUM.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.OSMIUM_BIT), 8));
+        registerModCompatBitRecipe(recipes, "osmium_from_bits", MoBeesEnumModCompat.OSMIUM, MoreBeesEnumBeeProduce.OSMIUM_BIT);
 
-        recipes.shapelessCrafting("aluminum_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.ALUMINUM.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.ALUMINUM_BIT), 8));
+        registerModCompatBitRecipe(recipes, "aluminum_from_bits", MoBeesEnumModCompat.ALUMINUM, MoreBeesEnumBeeProduce.ALUMINUM_BIT);
 
-        recipes.shapelessCrafting("yellorium_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.YELLORIUM.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.YELLORIUM_BIT), 8));
+        registerModCompatBitRecipe(recipes, "yellorium_from_bits", MoBeesEnumModCompat.YELLORIUM, MoreBeesEnumBeeProduce.YELLORIUM_BIT);
 
-        recipes.shapelessCrafting("certus_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.CERTUS.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.CERTUS_BIT), 8));
+        registerModCompatBitRecipe(recipes, "certus_from_bits", MoBeesEnumModCompat.CERTUS, MoreBeesEnumBeeProduce.CERTUS_BIT);
 
-        recipes.shapelessCrafting("cobalt_from_bits", RecipeCategory.MISC, MoBeesEnumModCompat.COBALT.getRegistryObject().get(), 1,
-                ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(MoreBeesEnumBeeProduce.COBALT_BIT), 8));
+        registerModCompatBitRecipe(recipes, "cobalt_from_bits", MoBeesEnumModCompat.COBALT, MoreBeesEnumBeeProduce.COBALT_BIT);
+    }
+
+    private static void registerModCompatBitRecipe(MKRecipeProvider recipes, String recipeId, MoBeesEnumModCompat compatItem, MoreBeesEnumBeeProduce produce) {
+        Map<String, RegistryObject<Item>> itemLibrary = compatItem.getItemLibrary();
+
+        for (String modKey : itemLibrary.keySet()) {
+            recipes.shapelessCrafting(recipeId + "_" + modKey, RecipeCategory.MISC, itemLibrary.get(modKey).get(), 1,
+                    ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(produce), 8));
+        }
     }
 
     private static void registerCombRecipes(MKRecipeProvider recipes) {
@@ -325,6 +327,6 @@ public class MoreBeesRecipeProvider {
     }
 
     private static ResourceLocation id(String... path) {
-        return new ResourceLocation("mobees", String.join("/", path));
+        return ResourceLocation.fromNamespaceAndPath("mobees", String.join("/", path));
     }
 }
