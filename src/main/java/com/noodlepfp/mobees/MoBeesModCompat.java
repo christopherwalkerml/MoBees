@@ -12,6 +12,7 @@ import java.util.Map;
 
 public class MoBeesModCompat {
     private static final Map<String, DeferredRegister<Item>> itemRegistries = new HashMap<>();
+    private static final Map<String, DeferredRegister<Item>> dummyRegistries = new HashMap<>();
 
     public static final Map<String, RegistryObject<Item>>
         ZINC_INGOT = Map.of(ModCompatConstants.createId, item(ModCompatConstants.createId, "zinc_ingot")),
@@ -30,7 +31,8 @@ public class MoBeesModCompat {
             DeferredRegister<Item> registry = itemRegistries.computeIfAbsent(modid, key -> DeferredRegister.create(Registries.ITEM, key));
             return registry.register(name, () -> new Item(new Item.Properties()));
         } else {
-            return null;
+            DeferredRegister<Item> registry = dummyRegistries.computeIfAbsent(MoBees.MOD_ID, key -> DeferredRegister.create(Registries.ITEM, key));
+            return registry.register(name, () -> new Item(new Item.Properties()));
         }
     }
 
