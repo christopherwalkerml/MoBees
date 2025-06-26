@@ -2,7 +2,7 @@ package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.INBTStorable;
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
+import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import com.noodlepfp.mobees.gui.ContainerAlvearyMutator;
 import com.noodlepfp.mobees.gui.InventoryAlvearyMutator;
 import forestry.api.apiculture.IBeeModifier;
@@ -34,7 +34,7 @@ import java.util.List;
 
 import static com.noodlepfp.mobees.gui.InventoryAlvearyFrameHousing.SLOT_FRAME;
 
-public class TileAlvearyMutator extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable, INBTStorable {
+public class TileAlvearyMutator extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary>, IStreamable, INBTStorable {
     private final InventoryAlvearyMutator inventory;
     public static final int MUTAGEN_STORAGE_CAP = 5000;
     public static final int MUTAGEN_RESERVE_CAP = 500;
@@ -195,8 +195,8 @@ public class TileAlvearyMutator extends MoreBeesTilePowerable implements IAlvear
     }
 
     public static void modifyTooltip(List<Component> tooltip, ItemStack stack) {
-        if (stack.hasTag() && stack.getTag().contains(TileAlvearyMutator.ITEM_NBT_TAG)) {
-            CompoundTag mutatorData = stack.getTag().getCompound(TileAlvearyMutator.ITEM_NBT_TAG);
+        if (stack.hasTag() && stack.getTag().contains("MutatorData")) {
+            CompoundTag mutatorData = stack.getTag().getCompound("MutatorData");
 
             // Extract mutagenReserve and mutagenStorage
             int mutagenStorage = mutatorData.getInt("storedMutagen");

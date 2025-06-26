@@ -1,22 +1,17 @@
 package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
+import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
 import forestry.api.apiculture.IBeeModifier;
-import forestry.api.apiculture.genetics.BeeLifeStage;
 import forestry.api.genetics.IGenome;
-import forestry.api.genetics.IIndividual;
-import forestry.api.genetics.alleles.BeeChromosomes;
-import forestry.api.genetics.capability.IIndividualHandlerItem;
 import forestry.api.multiblock.IAlvearyComponent;
 import forestry.apiculture.multiblock.MultiblockLogicAlveary;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
 import static com.noodlepfp.mobees.alveary.MoreBeesBlockAlveary.LIGHT_LEVEL;
-import static forestry.api.genetics.alleles.ForestryAlleles.ACTIVITY_DIURNAL;
 
-public class TileAlvearySun extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
+public class TileAlvearySun extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 
     private final BlockState state;
     private final BlockPos pos;
@@ -24,11 +19,7 @@ public class TileAlvearySun extends MoreBeesTilePowerable implements IAlvearyCom
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
         public boolean isAlwaysActive(IGenome genome) {
-            if (isActiveBeeDiurnal()) {
-                // if active bee is diurnal, sun lamp will make bee always active
-                return getWorkingTime() > 0;
-            }
-            return false;
+            return getWorkingTime() > 0;
         }
     };
 
@@ -54,18 +45,6 @@ public class TileAlvearySun extends MoreBeesTilePowerable implements IAlvearyCom
 
     public int getLightLevel() {
         return getBlockState().getValue(LIGHT_LEVEL);
-    }
-
-    private boolean isActiveBeeDiurnal() {
-        IIndividualHandlerItem handler = IIndividualHandlerItem.get(getBeeInventory().getQueen());
-
-        if (handler != null && handler.getStage() == BeeLifeStage.QUEEN) {
-            IIndividual queen = handler.getIndividual();
-            IGenome genome = queen.getGenome();
-
-            return genome.getActiveAllele(BeeChromosomes.ACTIVITY) == ACTIVITY_DIURNAL;
-        }
-        return false;
     }
 
     @Override
