@@ -1,14 +1,14 @@
 package com.noodlepfp.mobees.alveary.block;
 
 import com.noodlepfp.mobees.alveary.MoreBeesBlockAlvearyType;
-import com.noodlepfp.mobees.alveary.MoreBeesTileActivatable;
+import com.noodlepfp.mobees.alveary.MoreBeesTilePowerable;
 import forestry.api.apiculture.IBeeModifier;
 import forestry.api.multiblock.IAlvearyComponent;
 import forestry.apiculture.multiblock.MultiblockLogicAlveary;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TileAlvearyRainShield extends MoreBeesTileActivatable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
+public class TileAlvearyRainShield extends MoreBeesTilePowerable implements IAlvearyComponent.BeeModifier<MultiblockLogicAlveary> {
 
     private final IBeeModifier MODIFIER = new IBeeModifier() {
         @Override
