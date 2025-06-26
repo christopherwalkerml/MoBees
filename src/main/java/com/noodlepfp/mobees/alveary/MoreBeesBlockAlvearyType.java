@@ -9,12 +9,9 @@ import java.util.Locale;
 public enum MoreBeesBlockAlvearyType implements IBlockSubtype {
 
     SUN(true),
-    MOON(true),
     MUTATOR(true),
     RAINSHIELD(true),
-    FRAME_HOUSING(false),
-    FLOWER_BOX(false),
-    BROOD_BOX(false);
+    FRAME_HOUSING(false);
 
     public final boolean activatable;
 
@@ -35,12 +32,9 @@ public enum MoreBeesBlockAlvearyType implements IBlockSubtype {
     public FeatureTileType<?> getTileType() {
         return switch (this) {
             case SUN -> MoreBeesApicultureTiles.ALVEARY_SUN;
-            case MOON -> MoreBeesApicultureTiles.ALVEARY_MOON;
             case MUTATOR -> MoreBeesApicultureTiles.ALVEARY_MUTATOR;
             case RAINSHIELD -> MoreBeesApicultureTiles.ALVEARY_RAINSHIELD;
             case FRAME_HOUSING -> MoreBeesApicultureTiles.FRAME_HOUSING;
-            case FLOWER_BOX -> MoreBeesApicultureTiles.FLOWER_BOX;
-            case BROOD_BOX -> MoreBeesApicultureTiles.BROOD_BOX;
         };
     }
 

@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "top": "mobees:block/beehive/rocky_top",
+    "bottom": "mobees:block/beehive/rocky_top",
     "side": "mobees:block/beehive/rocky_side",
-    "bottom": "mobees:block/beehive/rocky_bottom"
+    "top": "mobees:block/beehive/rocky_top"
   }
 }
