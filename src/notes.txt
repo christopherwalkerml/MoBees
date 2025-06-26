@@ -9,9 +9,15 @@
 - DONE - alveary frame housing
  - alveary flower box (holds flower item, no need to place them down?) - maybe also gives a boost to pollination, can be a mini game?
    - maybe the flower box increases in fertility as it goes on. mini game is flowers have to be watered every now and again to boost prod.?
-   - alveary flower box starts with 7 tiles. a proper flower must go in the center spot, then 'boosting' flowers will automatically
-     sprout around it.. but only if theyre adjacent to a proper flower. tiles will open adjacent to sprouted flowers.
-     The user will have to place flowers in empty tiles, it wont be the most efficient always
+   - alveary flower box starts with empty tiles. a flower sprout must go in new spots. once grown, new plots can open up.
+     flowers, grass, grain, etc.. will sprout around 'boosting' flowers automatically from bees.
+   - ONLY 1 PER ALVEARY???? if possible... pls or its too OP
+   - flowers need to be watered during growth, and when fully grown, but way less.
+   - GUI
+    - plots become available as flower box ages. player will dig hole, plant flower.
+    - different flowers have different abilities? faster pop. growth, better prod., longer life, etc.
+    - players can dig out and relocate grown flowers?
+ - alveary brood box. must be at bottom of hive. adjacent to flower box.
 - make a check within isAlwaysActive for the sun lamp to only work at night.
 - make a night light too, for the opposite effect
 
