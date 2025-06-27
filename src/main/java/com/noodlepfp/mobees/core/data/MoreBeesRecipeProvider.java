@@ -227,8 +227,11 @@ public class MoreBeesRecipeProvider {
         Map<String, RegistryObject<Item>> itemLibrary = compatItem.getItemLibrary();
 
         for (String modKey : itemLibrary.keySet()) {
-            recipes.shapelessCrafting(recipeId + "_" + modKey, RecipeCategory.MISC, itemLibrary.get(modKey).get(), 1,
-                    ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(produce), 8));
+            RegistryObject<Item> result = itemLibrary.get(modKey);
+            if (result != null && result.isPresent()) {
+                recipes.shapelessCrafting(recipeId + "_" + modKey, RecipeCategory.MISC, itemLibrary.get(modKey).get(), 1,
+                        ObjectIntPair.of(MoreBeesItems.BEE_PRODUCE_MATERIALS.item(produce), 8));
+            }
         }
     }
 

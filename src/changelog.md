@@ -12,3 +12,6 @@
 
 ## MoBees 0.1.3
 - fixed aluminum looking for Thermal. looks for Immersive Engineering now.
+
+## MoBees 0.1.4
+- bees and recipes now support more than just one mod per. ie. silver looks for thermal, IE, ATO, etc...
