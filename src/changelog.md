@@ -15,3 +15,6 @@
 
 ## MoBees 0.1.4
 - bees and recipes now support more than just one mod per. ie. silver looks for thermal, IE, ATO, etc...
+
+## MoBees 0.1.5
+- removed cold/damp requirement from early rocky bees. later gemstone bees still need it.
