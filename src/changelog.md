@@ -15,3 +15,6 @@
 
 ## MoBees 0.1.4
 - bees and recipes now support more than just one mod per. ie. silver looks for thermal, IE, ATO, etc...
+
+## MoBees 0.1.5
+- early rocky bees dont need cold/damp. later ones still do due to their irl creation requirements
