@@ -29,7 +29,7 @@ public class MoreBeesDefinition {
                 .setBody(TextColor.fromRgb(0x757575))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.3f)
                 .setTemperature(TemperatureType.COLD)
-                .setHumidity(HumidityType.DAMP)
+                .setHumidity(HumidityType.NORMAL)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.EFFECT, MoreBeesAlleles.EFFECT_CAVE_SIGHT);
                 })
@@ -39,7 +39,7 @@ public class MoreBeesDefinition {
                 .setBody(TextColor.fromRgb(0xC5C5C5))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.5f)
                 .setTemperature(TemperatureType.COLD)
-                .setHumidity(HumidityType.DAMP)
+                .setHumidity(HumidityType.NORMAL)
                 .addMutations(mutations -> {
                     mutations.add(MoreBeesSpecies.ROCKY, ForestryBeeSpecies.COMMON, 10);
                 })
@@ -49,7 +49,7 @@ public class MoreBeesDefinition {
                 .setBody(TextColor.fromRgb(0xC5C5C5))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.5f)
                 .setTemperature(TemperatureType.COLD)
-                .setHumidity(HumidityType.DAMP)
+                .setHumidity(HumidityType.NORMAL)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.TEMPERATURE_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_1);
                     genome.set(BeeChromosomes.HUMIDITY_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_1);
@@ -63,7 +63,7 @@ public class MoreBeesDefinition {
                 .setBody(TextColor.fromRgb(0x91877A))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.MINERAL), 0.3f)
                 .setTemperature(TemperatureType.COLD)
-                .setHumidity(HumidityType.DAMP)
+                .setHumidity(HumidityType.NORMAL)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.FLOWER_TYPE, MoreBeesAlleles.FLOWER_TYPE_ROCK);
                 })
@@ -76,7 +76,7 @@ public class MoreBeesDefinition {
                 .setBody(TextColor.fromRgb(0xC5C5C5))
                 .addProduct(MoreBeesApicultureItems.BEE_COMBS.stack(MoreBeesEnumHoneyComb.ROCKY), 0.5f)
                 .setTemperature(TemperatureType.COLD)
-                .setHumidity(HumidityType.DAMP)
+                .setHumidity(HumidityType.NORMAL)
                 .setGenome(genome -> {
                     genome.set(BeeChromosomes.TEMPERATURE_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_2);
                     genome.set(BeeChromosomes.HUMIDITY_TOLERANCE, ForestryAlleles.TOLERANCE_BOTH_2);
